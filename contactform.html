@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ipoulu design</title>
+    <title>ipoulu design/Contact Form</title>
 
     <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">
     <link rel="stylesheet" href="./css/style.css">
+
 </head>
 
 <body>
@@ -29,17 +30,36 @@
                     <h2>contactform</h2>
                     <h3>お問い合わせ</h3>
                 </div>
-                    <p class="contactform-text">
-                        お問い合わせいただき、ありがとうございます。<br>
-ご依頼やご質問などがございましたら、以下のフォームに必要事項をご記入の上、お送りください。
-                    </p>
-            
-                    
+                <p class="contactform-text">
+                    お問い合わせいただき、ありがとうございます。<br>
+                    ご依頼やご質問などがございましたら、以下のフォームに必要事項をご記入の上、お送りください。
+                </p>
+                <div class="Form">
+
+                    <div class="Form-Item">
+                        <p class="Form-Item-Label">NAME</p>
+                        <input type="text" class="Form-Item-Input">
+                    </div>
+
+                    <div class="Form-Item">
+                        <p class="Form-Item-Label">TEL</p>
+                        <input type="text" class="Form-Item-Input">
+                    </div>
+
+                    <div class="Form-Item">
+                        <p class="Form-Item-Label">E-MAIL</p>
+                        <input type="email" class="Form-Item-Input">
+                    </div>
+
+                    <div class="Form-Item">
+                        <p class="Form-Item-Label isMsg">MESSAGE</p>
+                        <textarea class="Form-Item-Textarea"></textarea>
+                    </div>
+
+                    <input type="submit" class="Form-Btn" value="SEND">
+                </div>
 
 
-                    <a class="detail-link" href="index.html#information">INFORMATION</a>
-                    
-    </main>
             </section>
 
         </div>

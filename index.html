@@ -5,25 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ipoulu&thinsp;design</title>
-
+    <!-- lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css"
+        integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <!-- reset-->
     <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">
+    <!-- css -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- j Query -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- slick -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"
+        integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+    <section id="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <p class="loading-text">
+            LOADING...
+        </p>
+    </section>
+
     <header>
         <nav class="pc-nav">
             <ul>
-                <li><a href="index.html#about">ABOUT</a></li>
-                <li><a href="index.html#works">WORKS</a></li>
-                <li><a href="index.html#skills">SKILLS</a></li>
-                <li><a href="profile.html">PROFILE</a></li>
-                <li><a href="index.html#information">INFORMATION</a></li>
+                <li><a href="index.html#about" class="light-pink">ABOUT</a></li>
+                <li><a href="index.html#works" class="light-yellow">WORKS</a></li>
+                <li><a href="index.html#skills" class="light-red">SKILLS</a></li>
+                <li><a href="profile.html" class="light-blue">PROFILE</a></li>
+                <li><a href="index.html#information" class="light-teal">INFORMATION</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section id="mainvisual">
+
+    <section id="mainvisual">
         <h1><img src="./images/text.svg" alt="mainvisual-img"></h1>
 
         <div class="rainbow-1"></div>
@@ -32,37 +60,41 @@
         <div class="rainbow-4"></div>
         <div class="rainbow-5"></div>
     </section>
-
-   
+    <main>
         <div class="wrapper">
+
             <section id="about">
                 <div class="left-title">
-                    <h2>ABOUT</h2>
+                    <h2 class="text">ABOUT</h2>
                     <h3>ipouluについて</h3>
                 </div>
                 <div class="about-text">
-                    <p class="about-title">共に歩んでいけるデザインを</p>
-                    <p class="about-story">
-                        視覚的な美しさだけでなく、そこに込められたストーリーや想いを大事にし、それぞれの背景やメッセージを深く理解し、デザインを通じてその魅力を最大限し心に響くデザインを大切にしています。<br><br>
+                    <div class="smooth">
+                        <p class="about-title"><span class="line">共に歩んでいけるデザインを</span></p>
+                        <p class="about-story">
+                            <span class="line">視覚的な美しさだけでなく、そこに込められたストーリーや想いを大事にし、それぞれの背景やメッセージを深く理解し、</span><span
+                                class="line">デザインを通じてその魅力を最大限し心に響くデザインを大切にしています。<br><br></span>
 
-                        IPOULUという名前は、ハワイ語で「大切な人」と「成長する」を意味し、デザインを通じて共に成長していくことを目指しています。
-                        トレンドに左右されることなく、永続的に愛されるデザインを、丁寧にあなたと向き合いながら、それぞれの魅力やメッセージで彩ります。<br><br>
+                            <span class="line">IPOULUという名前は、ハワイ語で「大切な人」と「成長する」を意味し、デザインを通じて共に成長していくことを目指しています。</span>
+                            <span
+                                class="line">トレンドに左右されることなく、永続的に愛されるデザインを、丁寧に向き合いながら、それぞれの魅力やメッセージで彩ります。<br><br></span>
 
-                        デザインを通じて、あなたの個性やビジョンを形にし、共に歩み、成長する存在でありたいと考えています。
-                    </p>
+                            <span class="line">デザインを通じて、あなたの個性やビジョンを形にし、共に歩み、成長する存在でありたいと考えています。</span>
+                        </p>
+                    </div>
+
                     <a class="link" href="profile.html">PROFILE</a>
                 </div>
+
+
             </section>
-            <div class="scrolldown4"><span>Scroll</span></div>
+
+
             <section id="works">
                 <div class="right-title">
-                    <h2>WORKS</h2>
+                    <h2 class="text-right">WORKS</h2>
                     <h3>制作について</h3>
                 </div>
-
-                
-
-
                 <div class="website">
                     <p class="works-title">WEB&thinsp;SITE</p>
                     <div class="website_slider">
@@ -71,11 +103,12 @@
                         <img src="./images/Website3.png" alt="website_03" class="website_image">
                         <img src="./images/Website4.png" alt="website_04" class="website_image">
                     </div>
-                    <a class="link" href="website-list.html">VISIT&thinsp;WORKS</a>
+                    <a class="link" href="website-list.html">VISIT&thinsp;WEBSITE</a>
+
                 </div>
                 <div class="banner">
                     <p class="banner-title">BANNER</p>
-                    <div class="banner_slider">
+                    <div class="banner_slider" dir="rtl">
                         <img src="./images/Banner-1.jpg" alt="banner_01" class="banner_image">
                         <img src="./images/Banner-2.jpg" alt="banner_02" class="banner_image">
                         <img src="./images/Banner-3.jpg" alt="banner_03" class="banner_image">
@@ -87,69 +120,59 @@
 
             <section id="skills">
                 <div class="left-title">
-                    <h2>SKILLS</h2>
+                    <h2 class="text">SKILLS</h2>
                     <h3>スキル</h3>
                 </div>
                 <div class="skills-garrary">
                     <div class="skill">
-                        <div class="skill-title">
-                            design
-                        </div>
+                        <div class="skill-title">Design</div>
                         <p class="skill-text">
                             見た目と機能性を兼ね備え、ユーザー目線を忘れず使いやすいデザインができます。
                         </p>
                         <div class="icon">
-                            <img src="images/illustrator_icon.svg" alt="illustrator_icon">
-                            <img src="images/photoshop_icon.svg" alt="photoshop_icon">
-                            <img src="images/figma_icon.svg" alt="figma_icon">
+                            <img class="icon-img" src="images/illustrator_icon.svg" alt="illustrator_icon">
+                            <img class="icon-img" src="images/photoshop_icon.svg" alt="photoshop_icon">
+                            <img class="icon-img" src="images/figma_icon.svg" alt="figma_icon">
                         </div>
                     </div>
                     <div class="skill">
-                        <div class="skill-title">
-                            Coding
-                        </div>
+                        <div class="skill-title">Coding</div>
                         <p class="skill-text">
                             育てやすいサイトを作ることを意識したコーディングができます。<br><br>
                         </p>
                         <div class="icon">
-                            <img src="images/html5_icon.svg" alt="html5_icon">
-                            <img src="images/css3_icon.svg" alt="css3_icon">
-                            <img src="images/sass_icon.svg" alt="sass_icon">
-                            <img src="images/javascript_icon.svg" alt="javascript_icon">
+                            <img class="icon-img" src="images/html5_icon.svg" alt="html5_icon">
+                            <img class="icon-img" src="images/css3_icon.svg" alt="css3_icon">
+                            <img class="icon-img" src="images/sass_icon.svg" alt="sass_icon">
+                            <img class="icon-img" src="images/javascript_icon.svg" alt="javascript_icon">
                         </div>
                     </div>
                     <div class="skill">
-                        <div class="skill-title">
-                            Wordpress
-                        </div>
+                        <div class="skill-title">Wordpress</div>
                         <p class="skill-text">
                             オリジナルテーマでサイトを一から制作することができます。<br><br>
                         </p>
                         <div class="icon">
-                            <img src="images/wordpress_icon.svg" alt="wordpress_icon">
-                            <img src="images/php_icon.svg" alt="php_icon">
-
+                            <img class="icon-img" src="images/wordpress_icon.svg" alt="wordpress_icon">
+                            <img class="icon-img" src="images/php_icon.svg" alt="php_icon">
                         </div>
                     </div>
                     <div class="skill">
-                        <div class="skill-title">
-                            Other
-                        </div>
+                        <div class="skill-title">Other</div>
                         <p class="skill-text">
                             GitHub、filezillaなどデザイナーとして必要なスキルも使用することができます。
                         </p>
                         <div class="icon">
-                            <img src="images/github_icon.svg" alt="github_icon">
-                            <img src="images/filezilla-logo.svg" alt="filezilla-logo">
-
+                            <img class="icon-img" src="images/github_icon.svg" alt="github_icon">
+                            <img class="icon-img" src="images/filezilla-logo.svg" alt="filezilla-logo">
                         </div>
                     </div>
                 </div>
-
             </section>
+
             <section id="information">
                 <div class="right-title">
-                    <h2>INFORMATION</h2>
+                    <h2 class="text-right">INFORMATION</h2>
                     <h3>お問い合わせ</h3>
                 </div>
                 <div class="info">
@@ -162,10 +185,9 @@
                     </div>
                     <div class="sns">
                         <p class="info-text">
-                            日々の活動をのんびりと配信中です。<br>
-                            フォローしてくれると嬉しいです。
+                            日々の活動をのんびりと配信中です。<br>フォローしてくれると嬉しいです。
                         </p>
-                        <div class="icon">
+                        <div class="contactform-icon">
                             <a href=""> <img src="images/Instagram_White.svg" alt="Instagram_icon"></a>
                             <a href=""> <img src="images/X-logo.svg" alt="X_icon"></a>
                         </div>
@@ -175,15 +197,294 @@
         </div>
     </main>
     <footer>
-        <div class="rainbow">
-            <div class="footer-rainbow-1"></div>
-            <div class="footer-rainbow-2"></div>
-            <div class="footer-rainbow-3"></div>
-            <div class="footer-rainbow-4"></div>
-            <div class="footer-rainbow-5"></div>
-        </div>
         <p class="footer-text">©︎Ipoulu&thinsp;Design</p>
-    </footer>
+
+        <div class="footer-rainbow-1"></div>
+        <div class="footer-rainbow-2"></div>
+        <div class="footer-rainbow-3"></div>
+        <div class="footer-rainbow-4"></div>
+        <div class="footer-rainbow-5"></div>
+
+
+        <a href="#works">
+            <div class="scroll">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+                    <text>
+                        <textPath xlink:href="#circle">
+                            SCROOL&thinsp;
+                            SCROOL&thinsp;
+                            SCROOL&thinsp;
+                            SCROOL&thinsp;
+                        </textPath>
+                    </text>
+                </svg>
+                <div class="arrow-down"></div>
+            </div>
+        </a>
+        
+        <a href="#mainvisual">
+            <div class="pagetop">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+                    <text>
+                        <textPath xlink:href="#circle">
+                            PAGETOP&thinsp;
+                            PAGETOP&thinsp;
+                            PAGETOP&thinsp;
+                           
+                        </textPath>
+                    </text>
+                </svg>
+                <div class="arrow-up"></div> <!-- 上向き矢印を追加 -->
+            </div>
+        </a>
+</footer>
+    <script>
+// hedderの表示の設定
+document.addEventListener('DOMContentLoaded', function () {
+            const header = document.querySelector('header');
+            const mainVisual = document.getElementById('mainvisual');
+
+            // mainvisualの高さを取得
+            const mainVisualHeight = mainVisual.offsetHeight;
+
+            window.addEventListener('scroll', function () {
+                if (window.scrollY < mainVisualHeight) {
+                    header.classList.add('hidden'); // ヘッダーを隠す
+                } else {
+                    header.classList.remove('hidden'); // ヘッダーを表示
+                }
+            });
+
+            const headerHeight = header.offsetHeight; // ヘッダーの高さを取得
+
+            // 各リンクにクリックイベントを追加
+            document.querySelectorAll('a[href="#about"], a[href="#works"], a[href="#skills"], a[href="#information"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault(); // デフォルトのリンク動作を無効化
+
+                    const targetId = this.getAttribute('href'); // クリックされたリンクのhrefを取得
+                    const targetElement = document.querySelector(targetId); // 対応するセクションを取得
+
+                    if (targetElement) {
+                        const targetPosition = targetElement.offsetTop - headerHeight; // ヘッダーの高さを考慮したスクロール位置
+
+                        // スムーズスクロールを実行
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+
+// ローディング画面の設定
+        document.getElementById("loading").style.display = "block";
+        fetch('api/data')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // データ処理
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            })
+            .finally(() => {
+                // 成功・失敗に関わらずローディングを非表示にする
+                document.getElementById("loading").style.display = "none";
+            });
+
+// slider
+        $(function () {
+            // website_sliderを右から左に流す設定
+            $('.website_slider').slick({
+                autoplay: true, // 自動でスクロール
+                autoplaySpeed: 0, // 自動再生のスライド切り替えまでの時間を設定
+                speed: 10000, // スライドが流れる速度を設定
+                cssEase: "linear", // スライドの流れ方を等速に設定
+                slidesToShow: 3, // 表示するスライドの
+                swipe: false, // 操作による切り替えはさせない
+                arrows: false, // 矢印非表示
+                variableWidth: true, // 幅を可変にする場合
+                pauseOnFocus: false, // スライダーをフォーカスした時にスライドを停止させるか
+                pauseOnHover: false, // スライダーにマウスホバーした時にスライドを停止させるか
+                responsive: [
+                    {
+                        breakpoint: 750,
+                        settings: {
+                            slidesToShow: 2, // 画面幅750px以下でスライド2枚表示
+                        }
+                    }
+                ]
+            });
+
+            $('.banner_slider').slick({
+                autoplay: true, // 自動でスクロール
+                autoplaySpeed: 0, // 自動再生のスライド切り替えまでの時間を設定
+                speed: 10000, // スライドが流れる速度を設定
+                cssEase: "linear", // スライドの流れ方を等速に設定
+                slidesToShow: 3, // 表示するスライドの
+                swipe: false, // 操作による切り替えはさせない
+                arrows: false, // 矢印非表示
+                variableWidth: true, // 幅を可変にする場合
+                rtl: true, // スライダーを左から右に流す（逆向き）
+                pauseOnFocus: false, // スライダーをフォーカスした時にスライドを停止させるか
+                pauseOnHover: false, // スライダーにマウスホバーした時にスライドを停止させるか
+                responsive: [
+                    {
+                        breakpoint: 750,
+                        settings: {
+                            slidesToShow: 2, // 画面幅750px以下でスライド2枚表示
+                        }
+                    }
+                ]
+            });
+        });
+        // scroll
+        $(document).ready(function () {
+            // スクロールボタンの表示/非表示を制御
+            $(window).scroll(function () {
+                var scrollPos = $(this).scrollTop();
+                var aboutOffset = $('#about').offset().top;
+                var skillsOffset = $('#skills').offset().top;
+                var worksOffset = $('#works').offset().top;
+
+                if (scrollPos >= aboutOffset && scrollPos < skillsOffset) {
+                    $('.scroll').fadeIn();
+                    $('.pagetop').fadeOut();
+                } else if (scrollPos >= skillsOffset) {
+                    $('.scroll').fadeOut();
+                    $('.pagetop').fadeIn();
+                } else {
+                    $('.scroll').fadeOut();
+                    $('.pagetop').fadeOut();
+                }
+            });
+
+            // スクロールボタンのクリックイベント
+            $('.scroll').click(function (e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: '+=800px' // 700px進む
+                }, 300); // アニメーションの速度
+            });
+        });
+// ページトップボタンの設定
+        $('.pagetop').click(function () {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 0, "linear");
+            return false;
+        });
+
+// サブタイトルの動作の設定
+        $(window).scroll(function () {
+            $('.text').each(function () {
+                var elemPos = $(this).offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll > elemPos - windowHeight) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+            });
+        });
+        $(window).scroll(function () {
+            $('.text-right').each(function () {
+                var elemPos = $(this).offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll > elemPos - windowHeight) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+            });
+        });
+
+// aboutの文章の表示動作
+        document.addEventListener("DOMContentLoaded", function () {
+            const lines = document.querySelectorAll('.line');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        lines.forEach((line, index) => {
+                            setTimeout(() => {
+                                line.classList.add('is-animated');
+                            }, index * 500); // 各行ごとに0.5秒の時間差
+                        });
+                        observer.disconnect(); // アニメーションが完了したらオブザーバーを停止
+                    }
+                });
+            });
+
+            const aboutText = document.querySelector('.about-text');
+            observer.observe(aboutText); // about-text が表示されるタイミングで観測開始
+        });
+
+// skill画面の表示設定
+        document.addEventListener("DOMContentLoaded", function () {
+            const skills = document.querySelectorAll('.skill');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-animated');
+                    }
+                });
+            }, {
+                threshold: 0.4 // スクロールで10%見えたら発動
+            });
+
+            skills.forEach(skill => {
+                observer.observe(skill);
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const skills = document.querySelectorAll('.skill');
+            const icons = document.querySelectorAll('.icon-img');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-animated');
+                        const skillIcons = entry.target.querySelectorAll('.icon-img');
+                        skillIcons.forEach((icon, index) => {
+                            setTimeout(() => {
+                                icon.classList.add('is-animated');
+                            }, index * 500); // 300ms ずつアイコンを順番にアニメーション
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            skills.forEach(skill => {
+                observer.observe(skill);
+            });
+        });
+
+
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+        $('.lb-close').on('click', function () {
+            $('.lb-close').toggleClass('open');
+            $('.lb-close').fadeToggle();
+        })
+
+    </script>
+
 </body>
 
 </html>

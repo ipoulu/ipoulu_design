@@ -4,25 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ipoulu design/Contact Form</title>
-
+    <title>ipoulu&thinsp;design</title>
+    <!-- lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css"
+        integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <!-- reset-->
     <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">
+    <!-- css -->
     <link rel="stylesheet" href="./css/style.css">
-
+    <!-- j Query -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- slick -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"
+        integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+    <section id="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <p class="loading-text">
+            LOADING...
+        </p>
+    </section>
+
     <header>
         <nav class="pc-nav">
             <ul>
-                <li><a href="index.html#about">ABOUT</a></li>
-                <li><a href="index.html#works">WORKS</a></li>
-                <li><a href="index.html#skills">SKILLS</a></li>
-                <li><a href="profile.html">PROFILE</a></li>
-                <li><a href="index.html#information">INFORMATION</a></li>
+                <li><a href="index.html#about" class="light-pink">ABOUT</a></li>
+                <li><a href="index.html#works" class="light-yellow">WORKS</a></li>
+                <li><a href="index.html#skills" class="light-red">SKILLS</a></li>
+                <li><a href="profile.html" class="light-blue">PROFILE</a></li>
+                <li><a href="index.html#information" class="light-teal">INFORMATION</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <div class="wrapper">
             <section id="contactform">
@@ -74,6 +102,268 @@
         </div>
         <p class="footer-text">©︎Ipoulu Design</p>
     </footer>
+
+
+<a href="index.html">
+    <div class="pagetop">
+        <svg viewBox="0 0 100 100">
+            <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+            <text>
+
+                <textPath xlink:href="#circle">
+                    MAINTOP&thinsp;
+                    MAINTOP&thinsp;
+                    MAINTOP&thinsp;
+
+                </textPath>
+
+            </text>
+        </svg>
+    </div>
+</a>
+
+<script>
+// hedderの表示の設定
+document.addEventListener('DOMContentLoaded', function () {
+        const header = document.querySelector('header');
+        const mainVisual = document.getElementById('mainvisual');
+
+        // mainvisualの高さを取得
+        const mainVisualHeight = mainVisual.offsetHeight;
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY < mainVisualHeight) {
+                header.classList.add('hidden'); // ヘッダーを隠す
+            } else {
+                header.classList.remove('hidden'); // ヘッダーを表示
+            }
+        });
+
+        const headerHeight = header.offsetHeight; // ヘッダーの高さを取得
+
+        // 各リンクにクリックイベントを追加
+        document.querySelectorAll('a[href="#about"], a[href="#works"], a[href="#skills"], a[href="#information"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); // デフォルトのリンク動作を無効化
+
+                const targetId = this.getAttribute('href'); // クリックされたリンクのhrefを取得
+                const targetElement = document.querySelector(targetId); // 対応するセクションを取得
+
+                if (targetElement) {
+                    const targetPosition = targetElement.offsetTop - headerHeight; // ヘッダーの高さを考慮したスクロール位置
+
+                    // スムーズスクロールを実行
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+
+
+// ローディング画面の設定
+    document.getElementById("loading").style.display = "block";
+    fetch('api/data')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // データ処理
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        })
+        .finally(() => {
+            // 成功・失敗に関わらずローディングを非表示にする
+            document.getElementById("loading").style.display = "none";
+        });
+
+// slider
+    $(function () {
+        // website_sliderを右から左に流す設定
+        $('.website_slider').slick({
+            autoplay: true, // 自動でスクロール
+            autoplaySpeed: 0, // 自動再生のスライド切り替えまでの時間を設定
+            speed: 10000, // スライドが流れる速度を設定
+            cssEase: "linear", // スライドの流れ方を等速に設定
+            slidesToShow: 3, // 表示するスライドの
+            swipe: false, // 操作による切り替えはさせない
+            arrows: false, // 矢印非表示
+            variableWidth: true, // 幅を可変にする場合
+            pauseOnFocus: false, // スライダーをフォーカスした時にスライドを停止させるか
+            pauseOnHover: false, // スライダーにマウスホバーした時にスライドを停止させるか
+            responsive: [
+                {
+                    breakpoint: 750,
+                    settings: {
+                        slidesToShow: 2, // 画面幅750px以下でスライド2枚表示
+                    }
+                }
+            ]
+        });
+
+        $('.banner_slider').slick({
+            autoplay: true, // 自動でスクロール
+            autoplaySpeed: 0, // 自動再生のスライド切り替えまでの時間を設定
+            speed: 10000, // スライドが流れる速度を設定
+            cssEase: "linear", // スライドの流れ方を等速に設定
+            slidesToShow: 3, // 表示するスライドの
+            swipe: false, // 操作による切り替えはさせない
+            arrows: false, // 矢印非表示
+            variableWidth: true, // 幅を可変にする場合
+            rtl: true, // スライダーを左から右に流す（逆向き）
+            pauseOnFocus: false, // スライダーをフォーカスした時にスライドを停止させるか
+            pauseOnHover: false, // スライダーにマウスホバーした時にスライドを停止させるか
+            responsive: [
+                {
+                    breakpoint: 750,
+                    settings: {
+                        slidesToShow: 2, // 画面幅750px以下でスライド2枚表示
+                    }
+                }
+            ]
+        });
+    });
+    // scroll
+    $(document).ready(function () {
+        // スクロールボタンの表示/非表示を制御
+        $(window).scroll(function () {
+            var scrollPos = $(this).scrollTop();
+            var aboutOffset = $('#about').offset().top;
+            var skillsOffset = $('#skills').offset().top;
+            var worksOffset = $('#works').offset().top;
+
+            if (scrollPos >= aboutOffset && scrollPos < skillsOffset) {
+                $('.scroll').fadeIn();
+                $('.pagetop').fadeOut();
+            } else if (scrollPos >= skillsOffset) {
+                $('.scroll').fadeOut();
+                $('.pagetop').fadeIn();
+            } else {
+                $('.scroll').fadeOut();
+                $('.pagetop').fadeOut();
+            }
+        });
+
+        // スクロールボタンのクリックイベント
+        $('.scroll').click(function (e) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: '+=800px' // 700px進む
+            }, 300); // アニメーションの速度
+        });
+    });
+// ページトップボタンの設定
+$('.pagetop').click(function() {
+    window.location.href = 'index.html'; // index.html へ遷移
+    return false; // デフォルトの動作を防ぐ
+});
+// サブタイトルの動作の設定
+    $(window).scroll(function () {
+        $('.text').each(function () {
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > elemPos - windowHeight) {
+                $(this).addClass('active');
+            } else {
+                $(this).removeClass('active');
+            }
+        });
+    });
+    $(window).scroll(function () {
+        $('.text-right').each(function () {
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > elemPos - windowHeight) {
+                $(this).addClass('active');
+            } else {
+                $(this).removeClass('active');
+            }
+        });
+    });
+
+// aboutの文章の表示動作
+    document.addEventListener("DOMContentLoaded", function () {
+        const lines = document.querySelectorAll('.line');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    lines.forEach((line, index) => {
+                        setTimeout(() => {
+                            line.classList.add('is-animated');
+                        }, index * 500); // 各行ごとに0.5秒の時間差
+                    });
+                    observer.disconnect(); // アニメーションが完了したらオブザーバーを停止
+                }
+            });
+        });
+
+        const aboutText = document.querySelector('.about-text');
+        observer.observe(aboutText); // about-text が表示されるタイミングで観測開始
+    });
+
+// skill画面の表示設定
+    document.addEventListener("DOMContentLoaded", function () {
+        const skills = document.querySelectorAll('.skill');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-animated');
+                }
+            });
+        }, {
+            threshold: 0.4 // スクロールで10%見えたら発動
+        });
+
+        skills.forEach(skill => {
+            observer.observe(skill);
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const skills = document.querySelectorAll('.skill');
+        const icons = document.querySelectorAll('.icon-img');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-animated');
+                    const skillIcons = entry.target.querySelectorAll('.icon-img');
+                    skillIcons.forEach((icon, index) => {
+                        setTimeout(() => {
+                            icon.classList.add('is-animated');
+                        }, index * 500); // 300ms ずつアイコンを順番にアニメーション
+                    });
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        skills.forEach(skill => {
+            observer.observe(skill);
+        });
+    });
+
+
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true
+    })
+    $('.lb-close').on('click', function () {
+        $('.lb-close').toggleClass('open');
+        $('.lb-close').fadeToggle();
+    })
+
+</script>
+
 </body>
 
 </html>

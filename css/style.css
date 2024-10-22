@@ -225,7 +225,8 @@ h1 {
     position: absolute;
     left: -100%;
     /* 初期位置を画面外に */
-    width: 100vw;
+    width: calc(100vw - calc(100vw - 100%));
+    /* 100vwのスクロールバーの横幅をひく */
     height: 4%;
     animation: slideRight 2s ease-out forwards;
     /* 右に移動するアニメーションを適用 */
@@ -272,7 +273,7 @@ h1 {
 @keyframes slideRight {
     from {
 
-        left: calc(-100% - 10px);
+        left: -100%;
         /* 左側から開始 */
     }
 

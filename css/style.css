@@ -271,7 +271,8 @@ h1 {
 /* アニメーションの定義 */
 @keyframes slideRight {
     from {
-        left: -100%;
+
+        left: calc(-100% - 10px);
         /* 左側から開始 */
     }
 
@@ -872,6 +873,7 @@ footer {
 }
 
 .scroll {
+    display: none;
     position: fixed;
     bottom: 3%;
     right: 190px;
@@ -885,14 +887,16 @@ footer {
     align-items: center;    /* 垂直方向中央 */
     flex-direction: column; /* 矢印を縦に配置 */
 }
-
-.pagetop {
+.pagetopwrap {
+    display: none;
     position: fixed;
     bottom: 3%;
     right: 190px;
     width: 50px;
     height: 50px;
     margin: 20px auto;
+}
+.pagetop {
     font-size: 18px;
     z-index: 300;
     animation: donut-spin 10s linear infinite;
@@ -976,7 +980,12 @@ div text {
     bottom: -0.5px; /* 矢印の位置微調整 */
     box-sizing: border-box;
 }
-
+.arrow-upwrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .arrow-up {
     display: inline-block;
     vertical-align: middle;
@@ -987,7 +996,6 @@ div text {
     height: 1em;
     background: currentColor;
     animation: arrow-bounce 1s infinite;
-    margin-top: -30px; /* 矢印を下に移動 */
 }
 
 .arrow-up::before {

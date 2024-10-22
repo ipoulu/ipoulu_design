@@ -222,27 +222,31 @@
                 <div class="arrow-down"></div>
             </div>
         </a>
-        
+
         <a href="#mainvisual">
-            <div class="pagetop">
-                <svg viewBox="0 0 100 100">
-                    <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
-                    <text>
-                        <textPath xlink:href="#circle">
-                            PAGETOP&thinsp;
-                            PAGETOP&thinsp;
-                            PAGETOP&thinsp;
-                           
-                        </textPath>
-                    </text>
-                </svg>
-                <div class="arrow-up"></div> <!-- 上向き矢印を追加 -->
+            <div class="pagetopwrap">
+                <div class="pagetop">
+                    <svg viewBox="0 0 100 100">
+                        <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+                        <text>
+                            <textPath xlink:href="#circle">
+                                PAGETOP&thinsp;
+                                PAGETOP&thinsp;
+                                PAGETOP&thinsp;
+
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+                <div class="arrow-upwrap">
+                    <div class="arrow-up"></div> <!-- 上向き矢印を追加 -->
+                </div>
             </div>
         </a>
-</footer>
+    </footer>
     <script>
-// hedderの表示の設定
-document.addEventListener('DOMContentLoaded', function () {
+        // hedderの表示の設定
+        document.addEventListener('DOMContentLoaded', function () {
             const header = document.querySelector('header');
             const mainVisual = document.getElementById('mainvisual');
 
@@ -281,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
 
-// ローディング画面の設定
+        // ローディング画面の設定
         document.getElementById("loading").style.display = "block";
         fetch('api/data')
             .then(response => {
@@ -302,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById("loading").style.display = "none";
             });
 
-// slider
+        // slider
         $(function () {
             // website_sliderを右から左に流す設定
             $('.website_slider').slick({
@@ -359,13 +363,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (scrollPos >= aboutOffset && scrollPos < skillsOffset) {
                     $('.scroll').fadeIn();
-                    $('.pagetop').fadeOut();
+                    $('.pagetopwrap').fadeOut();
                 } else if (scrollPos >= skillsOffset) {
                     $('.scroll').fadeOut();
-                    $('.pagetop').fadeIn();
+                    $('.pagetopwrap').fadeIn();
                 } else {
                     $('.scroll').fadeOut();
-                    $('.pagetop').fadeOut();
+                    $('.pagetopwrap').fadeOut();
                 }
             });
 
@@ -377,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 300); // アニメーションの速度
             });
         });
-// ページトップボタンの設定
+        // ページトップボタンの設定
         $('.pagetop').click(function () {
             $('html, body').animate({
                 scrollTop: 0
@@ -385,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return false;
         });
 
-// サブタイトルの動作の設定
+        // サブタイトルの動作の設定
         $(window).scroll(function () {
             $('.text').each(function () {
                 var elemPos = $(this).offset().top;
@@ -411,7 +415,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-// aboutの文章の表示動作
+        // aboutの文章の表示動作
         document.addEventListener("DOMContentLoaded", function () {
             const lines = document.querySelectorAll('.line');
             const observer = new IntersectionObserver(entries => {
@@ -431,7 +435,7 @@ document.addEventListener('DOMContentLoaded', function () {
             observer.observe(aboutText); // about-text が表示されるタイミングで観測開始
         });
 
-// skill画面の表示設定
+        // skill画面の表示設定
         document.addEventListener("DOMContentLoaded", function () {
             const skills = document.querySelectorAll('.skill');
             const observer = new IntersectionObserver(entries => {

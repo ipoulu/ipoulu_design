@@ -7,7 +7,9 @@
 /* cssリセット */
 
 /*利用するタグによってこちらの内容は増やす*/
-
+html, body {
+    overflow-x: hidden; /* 横スクロールを非表示にする */
+}
 html,
 body,
 h1,
@@ -63,7 +65,6 @@ body {
     font-family: a-otf-ud-reimin-pr6n, sans-serif;
     font-style: normal;
     font-weight: 300;
-
 }
 
 @font-face {
@@ -134,13 +135,14 @@ body {
 /* ---header--- */
 
 header {
+    display: none;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 100;
+    z-index: 300;
     background-color: rgb(255, 255, 255, 1);
     transition: top 0.3s;
     /* アニメーション効果 */
@@ -148,11 +150,13 @@ header {
 }
 
 header.hidden {
+
     top: -100px;
     /* ヘッダーが隠れる位置 */
 }
 
 .pc-nav ul {
+
     max-width: 1366px;
     margin: 0 auto;
     display: flex;
@@ -557,7 +561,7 @@ h3 {
 
 /* ----about---- */
 .about-text {
-    width: 550px;
+    /* width: 550px; */
     max-width: 550px;
     margin-left: 38%;
     text-align: left;
@@ -575,7 +579,7 @@ h3 {
 }
 
 .profile-text {
-    margin: 100vh 0;
+    margin: 100% 0;
     /* 画面下部に位置させるための余白 */
 }
 
@@ -776,11 +780,11 @@ h3 {
 
 .contactform,
 .sns {
-    width: 450px;
+    max-width: 450px;
 }
 
 .info-text {
-    width: 400px;
+    max-width: 400px;
     margin: 0 auto;
     line-height: 1.75;
 }
@@ -821,6 +825,16 @@ footer {
     height: 100px;
     margin: 0 auto;
     position: relative;
+    /* overflow: hidden; */
+}
+
+.footerwrap {
+    width: 100vw;
+    /* 画面幅全体にする */
+    margin: 0 calc(50% - 50vw);
+    /* 中央から左右に広げる */
+    height: 20px;
+    z-index: -1;
 }
 
 .footer-text {
@@ -835,7 +849,7 @@ footer {
 
 .footer-rainbow-1 {
     background-color: #f7eee3;
-    width: 100%;
+    /* width: 100vw; */
     height: 20px;
     margin: 0 auto;
     z-index: -1;
@@ -843,7 +857,7 @@ footer {
 
 .footer-rainbow-2 {
     background-color: #f2e9bf;
-    width: 100%;
+    
     height: 20px;
     margin: 0 auto;
     z-index: -1;
@@ -851,7 +865,7 @@ footer {
 
 .footer-rainbow-3 {
     background-color: #f2cac4;
-    width: 100%;
+
     height: 20px;
     margin: 0 auto;
     z-index: -1;
@@ -859,7 +873,7 @@ footer {
 
 .footer-rainbow-4 {
     background-color: #c1e4e6;
-    width: 100%;
+
     height: 20px;
     margin: 0 auto;
     z-index: -1;
@@ -867,13 +881,13 @@ footer {
 
 .footer-rainbow-5 {
     background-color: #9fd2c9;
-    width: 100%;
+
     height: 20px;
     margin: 0 auto;
     z-index: -1;
 }
 
-.scroll {
+.scroolwrap {
     display: none;
     position: fixed;
     bottom: 3%;
@@ -881,13 +895,20 @@ footer {
     width: 50px;
     height: 50px;
     margin: 20px auto;
-    font-size: 18px;
-    z-index: 300;
-    display: flex;
-    justify-content: center; /* 水平方向中央 */
-    align-items: center;    /* 垂直方向中央 */
-    flex-direction: column; /* 矢印を縦に配置 */
+    z-index: 500;
 }
+
+.scroll {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    /* 水平方向中央 */
+    align-items: center;
+    /* 垂直方向中央 */
+    flex-direction: column;
+    /* 矢印を縦に配置 */
+}
+
 .pagetopwrap {
     display: none;
     position: fixed;
@@ -896,36 +917,45 @@ footer {
     width: 50px;
     height: 50px;
     margin: 20px auto;
+    z-index: 500;
 }
+
 .pagetop {
     font-size: 18px;
-    z-index: 300;
     animation: donut-spin 10s linear infinite;
     display: flex;
-    justify-content: center; /* 水平方向中央 */
-    align-items: center;    /* 垂直方向中央 */
-    flex-direction: column; /* 矢印を縦に配置 */
+    justify-content: center;
+    /* 水平方向中央 */
+    align-items: center;
+    /* 垂直方向中央 */
+    flex-direction: column;
+    /* 矢印を縦に配置 */
 }
 
 div svg {
-
     overflow: visible;
+}
+
+.rotate-svg {
+    animation: donut-spin 10s linear infinite;
 }
 
 div path {
     fill: none;
 }
 
-.scroll text {
+.scroolwrap text {
     fill: #804e00;
+    font-weight: bold;
     font-family: 'DreamAvenue', sans-serif;
     letter-spacing: 0.02rem;
 }
+
 @keyframes donut-spin {
     to {
         transform: rotate(1turn);
-    }}
-
+    }
+}
 
 div text {
     fill: #804e00;
@@ -933,26 +963,12 @@ div text {
     font-family: 'DreamAvenue', sans-serif;
     letter-spacing: 0.13rem;
 }
+
 @keyframes donut-spin {
     to {
         transform: rotate(1turn);
     }
 }
-/* .pagetop svg {
-    overflow: visible;
-}
-
-.pagetop path {
-    fill: none;
-}
-
-.pagetop text {
-    fill: #804e00;
-    font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.02rem;
-    animation: donut-spin 10s linear infinite;
-} */
-
 
 .arrow-down {
     display: inline-block;
@@ -964,7 +980,13 @@ div text {
     height: 1em;
     background: currentColor;
     animation: arrow-bounce 1s infinite;
-    margin-top: -25px; /* 矢印を上に移動 */
+}
+
+.arrow-down {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .arrow-down::before {
@@ -972,21 +994,27 @@ div text {
     width: 0.5em;
     height: 0.5em;
     border: 1px solid currentColor;
-    border-top: 0;  /* 上のボーダーを消す */
-    border-left: 0;    /* 左のボーダーを消す */
-    transform: rotate(45deg);  /* 矢印を下向きに */
+    border-top: 0;
+    /* 上のボーダーを消す */
+    border-left: 0;
+    /* 左のボーダーを消す */
+    transform: rotate(45deg);
+    /* 矢印を下向きに */
     transform-origin: bottom right;
     position: absolute;
-    left: -8px;
-    bottom: -0.5px; /* 矢印の位置微調整 */
+    left: -7px;
+    bottom: -0.5px;
+    /* 矢印の位置微調整 */
     box-sizing: border-box;
 }
+
 .arrow-upwrap {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .arrow-up {
     display: inline-block;
     vertical-align: middle;
@@ -1004,18 +1032,24 @@ div text {
     width: 0.5em;
     height: 0.5em;
     border: 1px solid currentColor;
-    border-bottom: 0;  /* 下のボーダーを消す */
-    border-right: 0;    /* 右のボーダーを消す */
-    transform: rotate(45deg);  /* 矢印を上向きに */
+    border-bottom: 0;
+    /* 下のボーダーを消す */
+    border-right: 0;
+    /* 右のボーダーを消す */
+    transform: rotate(45deg);
+    /* 矢印を上向きに */
     transform-origin: bottom right;
     position: absolute;
-    left: -8px;
-    top: .1em; /* 矢印の位置微調整 */
+    left: -7px;
+    top: .1em;
+    /* 矢印の位置微調整 */
     box-sizing: border-box;
 }
 
 @keyframes arrow-bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
 
@@ -1024,6 +1058,7 @@ div text {
         /* 少し上に動く */
     }
 }
+
 /* ----Profile---- */
 
 .profile-img {

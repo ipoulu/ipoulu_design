@@ -198,27 +198,29 @@
     </main>
     <footer>
         <p class="footer-text">©︎Ipoulu&thinsp;Design</p>
+        <div class="footerwrap">
+            <div class="footer-rainbow-1"></div>
+            <div class="footer-rainbow-2"></div>
+            <div class="footer-rainbow-3"></div>
+            <div class="footer-rainbow-4"></div>
+            <div class="footer-rainbow-5"></div>
 
-        <div class="footer-rainbow-1"></div>
-        <div class="footer-rainbow-2"></div>
-        <div class="footer-rainbow-3"></div>
-        <div class="footer-rainbow-4"></div>
-        <div class="footer-rainbow-5"></div>
-
-
+        </div>
         <a href="#works">
-            <div class="scroll">
-                <svg viewBox="0 0 100 100">
-                    <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
-                    <text>
-                        <textPath xlink:href="#circle">
-                            SCROOL&thinsp;
-                            SCROOL&thinsp;
-                            SCROOL&thinsp;
-                            SCROOL&thinsp;
-                        </textPath>
-                    </text>
-                </svg>
+            <div class="scroolwrap">
+                <div class="scroll">
+                    <svg viewBox="0 0 100 100" class="rotate-svg">
+                        <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+                        <text>
+                            <textPath xlink:href="#circle">
+                                SCROOL&thinsp;
+                                SCROOL&thinsp;
+                                SCROOL&thinsp;
+                                SCROOL&thinsp;
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
                 <div class="arrow-down"></div>
             </div>
         </a>
@@ -244,9 +246,12 @@
             </div>
         </a>
     </footer>
+
     <script>
-        // hedderの表示の設定
-        document.addEventListener('DOMContentLoaded', function () {
+        $(function () {
+
+// headerの表示の設定
+document.addEventListener('DOMContentLoaded', function () {
             const header = document.querySelector('header');
             const mainVisual = document.getElementById('mainvisual');
 
@@ -284,113 +289,83 @@
             });
         });
 
-
-        // ローディング画面の設定
-        document.getElementById("loading").style.display = "block";
+    // ローディング画面の設定
+    const loadingElement = document.getElementById("loading");
+    if (loadingElement) {
+        loadingElement.style.display = "block";
         fetch('api/data')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
+            .then(response => response.ok ? response.json() : Promise.reject(response))
             .then(data => {
-                // データ処理
                 console.log(data);
             })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            })
+            .catch(error => console.error('Fetch error:', error))
             .finally(() => {
-                // 成功・失敗に関わらずローディングを非表示にする
-                document.getElementById("loading").style.display = "none";
+                loadingElement.style.display = "none";
             });
+    }
 
-        // slider
-        $(function () {
-            // website_sliderを右から左に流す設定
-            $('.website_slider').slick({
-                autoplay: true, // 自動でスクロール
-                autoplaySpeed: 0, // 自動再生のスライド切り替えまでの時間を設定
-                speed: 10000, // スライドが流れる速度を設定
-                cssEase: "linear", // スライドの流れ方を等速に設定
-                slidesToShow: 3, // 表示するスライドの
-                swipe: false, // 操作による切り替えはさせない
-                arrows: false, // 矢印非表示
-                variableWidth: true, // 幅を可変にする場合
-                pauseOnFocus: false, // スライダーをフォーカスした時にスライドを停止させるか
-                pauseOnHover: false, // スライダーにマウスホバーした時にスライドを停止させるか
-                responsive: [
-                    {
-                        breakpoint: 750,
-                        settings: {
-                            slidesToShow: 2, // 画面幅750px以下でスライド2枚表示
-                        }
-                    }
-                ]
-            });
+    // Slider設定
+    $('.website_slider').slick({
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 10000,
+        cssEase: "linear",
+        slidesToShow: 3,
+        swipe: false,
+        arrows: false,
+        variableWidth: true,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 750,
+            settings: { slidesToShow: 2 }
+        }]
+    });
 
-            $('.banner_slider').slick({
-                autoplay: true, // 自動でスクロール
-                autoplaySpeed: 0, // 自動再生のスライド切り替えまでの時間を設定
-                speed: 10000, // スライドが流れる速度を設定
-                cssEase: "linear", // スライドの流れ方を等速に設定
-                slidesToShow: 3, // 表示するスライドの
-                swipe: false, // 操作による切り替えはさせない
-                arrows: false, // 矢印非表示
-                variableWidth: true, // 幅を可変にする場合
-                rtl: true, // スライダーを左から右に流す（逆向き）
-                pauseOnFocus: false, // スライダーをフォーカスした時にスライドを停止させるか
-                pauseOnHover: false, // スライダーにマウスホバーした時にスライドを停止させるか
-                responsive: [
-                    {
-                        breakpoint: 750,
-                        settings: {
-                            slidesToShow: 2, // 画面幅750px以下でスライド2枚表示
-                        }
-                    }
-                ]
-            });
-        });
-        // scroll
-        $(document).ready(function () {
-            // スクロールボタンの表示/非表示を制御
-            $(window).scroll(function () {
-                var scrollPos = $(this).scrollTop();
-                var aboutOffset = $('#about').offset().top;
-                var skillsOffset = $('#skills').offset().top;
-                var worksOffset = $('#works').offset().top;
+    $('.banner_slider').slick({
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 10000,
+        cssEase: "linear",
+        slidesToShow: 3,
+        swipe: false,
+        arrows: false,
+        variableWidth: true,
+        rtl: true,
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 750,
+            settings: { slidesToShow: 2 }
+        }]
+    });
 
-                if (scrollPos >= aboutOffset && scrollPos < skillsOffset) {
-                    $('.scroll').fadeIn();
-                    $('.pagetopwrap').fadeOut();
-                } else if (scrollPos >= skillsOffset) {
-                    $('.scroll').fadeOut();
-                    $('.pagetopwrap').fadeIn();
-                } else {
-                    $('.scroll').fadeOut();
-                    $('.pagetopwrap').fadeOut();
-                }
-            });
+    // スクロールボタンの表示/非表示制御
+    $(window).scroll(function () {
+        const scrollPos = $(this).scrollTop();
+        const aboutOffset = $('#about').offset().top;
+        const skillsOffset = $('#skills').offset().top;
+        const worksOffset = $('#works').offset().top;
 
-            // スクロールボタンのクリックイベント
-            $('.scroll').click(function (e) {
-                e.preventDefault();
-                $('html, body').animate({
-                    scrollTop: '+=800px' // 700px進む
-                }, 300); // アニメーションの速度
-            });
-        });
-        // ページトップボタンの設定
-        $('.pagetop').click(function () {
-            $('html, body').animate({
-                scrollTop: 0
-            }, 0, "linear");
-            return false;
-        });
+        if (scrollPos >= aboutOffset && scrollPos < skillsOffset) {
+            $('.scroolwrap').fadeIn();
+            $('.pagetopwrap').fadeOut();
+        } else if (scrollPos >= skillsOffset) {
+            $('.scroolwrap').fadeOut();
+            $('.pagetopwrap').fadeIn();
+        } else {
+            $('.scroolwrap').fadeOut();
+            $('.pagetopwrap').fadeOut();
+        }
+    });
 
-        // サブタイトルの動作の設定
-        $(window).scroll(function () {
+    // ページトップボタンの設定
+    $('.pagetop').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 0, "linear");
+        return false;
+    });
+// サブタイトルの動作の設定
+$(window).scroll(function () {
             $('.text').each(function () {
                 var elemPos = $(this).offset().top;
                 var scroll = $(window).scrollTop();
@@ -414,81 +389,56 @@
                 }
             });
         });
-
-        // aboutの文章の表示動作
-        document.addEventListener("DOMContentLoaded", function () {
-            const lines = document.querySelectorAll('.line');
+    // aboutセクションのアニメーション
+    const lines = document.querySelectorAll('.line');
+    if (lines.length) {
+        const aboutText = document.querySelector('.about-text');
+        if (aboutText) {
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         lines.forEach((line, index) => {
                             setTimeout(() => {
                                 line.classList.add('is-animated');
-                            }, index * 500); // 各行ごとに0.5秒の時間差
+                            }, index * 500);
                         });
-                        observer.disconnect(); // アニメーションが完了したらオブザーバーを停止
+                        observer.disconnect();
                     }
                 });
             });
+            observer.observe(aboutText);
+        }
+    }
 
-            const aboutText = document.querySelector('.about-text');
-            observer.observe(aboutText); // about-text が表示されるタイミングで観測開始
-        });
-
-        // skill画面の表示設定
-        document.addEventListener("DOMContentLoaded", function () {
-            const skills = document.querySelectorAll('.skill');
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-animated');
-                    }
-                });
-            }, {
-                threshold: 0.4 // スクロールで10%見えたら発動
+    // skillセクションのアニメーション
+    const skills = document.querySelectorAll('.skill');
+    if (skills.length) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-animated');
+                    const skillIcons = entry.target.querySelectorAll('.icon-img');
+                    skillIcons.forEach((icon, index) => {
+                        setTimeout(() => {
+                            icon.classList.add('is-animated');
+                        }, index * 500);
+                    });
+                }
             });
+        }, { threshold: 0.1 });
+        skills.forEach(skill => observer.observe(skill));
+    }
 
-            skills.forEach(skill => {
-                observer.observe(skill);
-            });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            const skills = document.querySelectorAll('.skill');
-            const icons = document.querySelectorAll('.icon-img');
-
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-animated');
-                        const skillIcons = entry.target.querySelectorAll('.icon-img');
-                        skillIcons.forEach((icon, index) => {
-                            setTimeout(() => {
-                                icon.classList.add('is-animated');
-                            }, index * 500); // 300ms ずつアイコンを順番にアニメーション
-                        });
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            skills.forEach(skill => {
-                observer.observe(skill);
-            });
-        });
-
-
-        lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': true
-        })
-        $('.lb-close').on('click', function () {
-            $('.lb-close').toggleClass('open');
-            $('.lb-close').fadeToggle();
-        })
-
-    </script>
-
+    // Lightbox設定
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true
+    });
+    $('.lb-close').on('click', function () {
+        $(this).toggleClass('open').fadeToggle();
+    });
+});
+</script>
 </body>
 
 </html>

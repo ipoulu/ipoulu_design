@@ -39,7 +39,7 @@
         </p>
     </section>
 
-    <header>
+    <header class="hidden">
         <nav class="pc-nav">
             <ul>
                 <li><a href="index.html#about" class="light-pink">ABOUT</a></li>
@@ -197,11 +197,13 @@
         </div>
     </main>
     <footer>
-        <p class="footer-text">©︎Ipoulu&thinsp;Design</p>
+        
         <div class="footerwrap">
             <div class="footer-rainbow-1"></div>
             <div class="footer-rainbow-2"></div>
-            <div class="footer-rainbow-3"></div>
+            <div class="footer-rainbow-3">
+                <p class="footer-text">©︎Ipoulu&thinsp;Design</p>
+            </div>
             <div class="footer-rainbow-4"></div>
             <div class="footer-rainbow-5"></div>
 
@@ -248,10 +250,9 @@
     </footer>
 
     <script>
-        $(function () {
 
-// headerの表示の設定
-document.addEventListener('DOMContentLoaded', function () {
+        // headerの表示の設定
+        document.addEventListener('DOMContentLoaded', function () {
             const header = document.querySelector('header');
             const mainVisual = document.getElementById('mainvisual');
 
@@ -289,156 +290,158 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-    // ローディング画面の設定
-    const loadingElement = document.getElementById("loading");
-    if (loadingElement) {
-        loadingElement.style.display = "block";
-        fetch('api/data')
-            .then(response => response.ok ? response.json() : Promise.reject(response))
-            .then(data => {
-                console.log(data);
-            })
-            .catch(error => console.error('Fetch error:', error))
-            .finally(() => {
-                loadingElement.style.display = "none";
+        $(function () {
+
+            // ローディング画面の設定
+            const loadingElement = document.getElementById("loading");
+            if (loadingElement) {
+                loadingElement.style.display = "block";
+                fetch('api/data')
+                    .then(response => response.ok ? response.json() : Promise.reject(response))
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch(error => console.error('Fetch error:', error))
+                    .finally(() => {
+                        loadingElement.style.display = "none";
+                    });
+            }
+
+            // Slider設定
+            $('.website_slider').slick({
+                autoplay: true,
+                autoplaySpeed: 0,
+                speed: 10000,
+                cssEase: "linear",
+                slidesToShow: 3,
+                swipe: false,
+                arrows: false,
+                variableWidth: true,
+                pauseOnFocus: false,
+                pauseOnHover: false,
+                responsive: [{
+                    breakpoint: 750,
+                    settings: { slidesToShow: 2 }
+                }]
             });
-    }
 
-    // Slider設定
-    $('.website_slider').slick({
-        autoplay: true,
-        autoplaySpeed: 0,
-        speed: 10000,
-        cssEase: "linear",
-        slidesToShow: 3,
-        swipe: false,
-        arrows: false,
-        variableWidth: true,
-        pauseOnFocus: false,
-        pauseOnHover: false,
-        responsive: [{
-            breakpoint: 750,
-            settings: { slidesToShow: 2 }
-        }]
-    });
+            $('.banner_slider').slick({
+                autoplay: true,
+                autoplaySpeed: 0,
+                speed: 10000,
+                cssEase: "linear",
+                slidesToShow: 3,
+                swipe: false,
+                arrows: false,
+                variableWidth: true,
+                rtl: true,
+                pauseOnFocus: false,
+                pauseOnHover: false,
+                responsive: [{
+                    breakpoint: 750,
+                    settings: { slidesToShow: 2 }
+                }]
+            });
 
-    $('.banner_slider').slick({
-        autoplay: true,
-        autoplaySpeed: 0,
-        speed: 10000,
-        cssEase: "linear",
-        slidesToShow: 3,
-        swipe: false,
-        arrows: false,
-        variableWidth: true,
-        rtl: true,
-        pauseOnFocus: false,
-        pauseOnHover: false,
-        responsive: [{
-            breakpoint: 750,
-            settings: { slidesToShow: 2 }
-        }]
-    });
+            // スクロールボタンの表示/非表示制御
+            $(window).scroll(function () {
+                const scrollPos = $(this).scrollTop();
+                const aboutOffset = $('#about').offset().top;
+                const skillsOffset = $('#skills').offset().top;
+                const worksOffset = $('#works').offset().top;
 
-    // スクロールボタンの表示/非表示制御
-    $(window).scroll(function () {
-        const scrollPos = $(this).scrollTop();
-        const aboutOffset = $('#about').offset().top;
-        const skillsOffset = $('#skills').offset().top;
-        const worksOffset = $('#works').offset().top;
-
-        if (scrollPos >= aboutOffset && scrollPos < skillsOffset) {
-            $('.scroolwrap').fadeIn();
-            $('.pagetopwrap').fadeOut();
-        } else if (scrollPos >= skillsOffset) {
-            $('.scroolwrap').fadeOut();
-            $('.pagetopwrap').fadeIn();
-        } else {
-            $('.scroolwrap').fadeOut();
-            $('.pagetopwrap').fadeOut();
-        }
-    });
-
-    // ページトップボタンの設定
-    $('.pagetop').click(function () {
-        $('html, body').animate({ scrollTop: 0 }, 0, "linear");
-        return false;
-    });
-// サブタイトルの動作の設定
-$(window).scroll(function () {
-            $('.text').each(function () {
-                var elemPos = $(this).offset().top;
-                var scroll = $(window).scrollTop();
-                var windowHeight = $(window).height();
-                if (scroll > elemPos - windowHeight) {
-                    $(this).addClass('active');
+                if (scrollPos >= aboutOffset && scrollPos < skillsOffset) {
+                    $('.scroolwrap').fadeIn();
+                    $('.pagetopwrap').fadeOut();
+                } else if (scrollPos >= skillsOffset) {
+                    $('.scroolwrap').fadeOut();
+                    $('.pagetopwrap').fadeIn();
                 } else {
-                    $(this).removeClass('active');
+                    $('.scroolwrap').fadeOut();
+                    $('.pagetopwrap').fadeOut();
                 }
             });
-        });
-        $(window).scroll(function () {
-            $('.text-right').each(function () {
-                var elemPos = $(this).offset().top;
-                var scroll = $(window).scrollTop();
-                var windowHeight = $(window).height();
-                if (scroll > elemPos - windowHeight) {
-                    $(this).addClass('active');
-                } else {
-                    $(this).removeClass('active');
-                }
+
+            // ページトップボタンの設定
+            $('.pagetop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 0, "linear");
+                return false;
             });
-        });
-    // aboutセクションのアニメーション
-    const lines = document.querySelectorAll('.line');
-    if (lines.length) {
-        const aboutText = document.querySelector('.about-text');
-        if (aboutText) {
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        lines.forEach((line, index) => {
-                            setTimeout(() => {
-                                line.classList.add('is-animated');
-                            }, index * 500);
-                        });
-                        observer.disconnect();
+            // サブタイトルの動作の設定
+            $(window).scroll(function () {
+                $('.text').each(function () {
+                    var elemPos = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > elemPos - windowHeight) {
+                        $(this).addClass('active');
+                    } else {
+                        $(this).removeClass('active');
                     }
                 });
             });
-            observer.observe(aboutText);
-        }
-    }
-
-    // skillセクションのアニメーション
-    const skills = document.querySelectorAll('.skill');
-    if (skills.length) {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-animated');
-                    const skillIcons = entry.target.querySelectorAll('.icon-img');
-                    skillIcons.forEach((icon, index) => {
-                        setTimeout(() => {
-                            icon.classList.add('is-animated');
-                        }, index * 500);
-                    });
-                }
+            $(window).scroll(function () {
+                $('.text-right').each(function () {
+                    var elemPos = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > elemPos - windowHeight) {
+                        $(this).addClass('active');
+                    } else {
+                        $(this).removeClass('active');
+                    }
+                });
             });
-        }, { threshold: 0.1 });
-        skills.forEach(skill => observer.observe(skill));
-    }
+            // aboutセクションのアニメーション
+            const lines = document.querySelectorAll('.line');
+            if (lines.length) {
+                const aboutText = document.querySelector('.about-text');
+                if (aboutText) {
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                lines.forEach((line, index) => {
+                                    setTimeout(() => {
+                                        line.classList.add('is-animated');
+                                    }, index * 500);
+                                });
+                                observer.disconnect();
+                            }
+                        });
+                    });
+                    observer.observe(aboutText);
+                }
+            }
 
-    // Lightbox設定
-    lightbox.option({
-        'resizeDuration': 200,
-        'wrapAround': true
-    });
-    $('.lb-close').on('click', function () {
-        $(this).toggleClass('open').fadeToggle();
-    });
-});
-</script>
+            // skillセクションのアニメーション
+            const skills = document.querySelectorAll('.skill');
+            if (skills.length) {
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-animated');
+                            const skillIcons = entry.target.querySelectorAll('.icon-img');
+                            skillIcons.forEach((icon, index) => {
+                                setTimeout(() => {
+                                    icon.classList.add('is-animated');
+                                }, index * 500);
+                            });
+                        }
+                    });
+                }, { threshold: 0.1 });
+                skills.forEach(skill => observer.observe(skill));
+            }
+
+            // Lightbox設定
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true
+            });
+            $('.lb-close').on('click', function () {
+                $(this).toggleClass('open').fadeToggle();
+            });
+        });
+    </script>
 </body>
 
 </html>

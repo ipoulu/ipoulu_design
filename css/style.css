@@ -458,6 +458,7 @@ h3 {
     z-index: -1;
 }
 
+
 #about .link {
     width: 270px;
     height: 68px;
@@ -597,6 +598,7 @@ h3 {
     transform: translateY(0);
     /* 元の位置に戻す */
 }
+
 
 /* ----works---- */
 
@@ -885,11 +887,12 @@ left: 0;
     z-index: -1;
 }
 
+
 .scroolwrap {
     display: none;
     position: fixed;
     bottom: 3%;
-    right: 190px;
+    right: 13%;
     width: 50px;
     height: 50px;
     margin: 20px auto;
@@ -911,7 +914,7 @@ left: 0;
     display: none;
     position: fixed;
     bottom: 3%;
-    right: 190px;
+    right: 13%;
     width: 50px;
     height: 50px;
     margin: 20px auto;

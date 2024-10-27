@@ -1,15 +1,18 @@
 @charset "UTF-8";
 
-* {
+/* * {
     border: 1px solid red
-}
+} */
 
 /* cssリセット */
 
 /*利用するタグによってこちらの内容は増やす*/
-html, body {
-    overflow-x: hidden; /* 横スクロールを非表示にする */
+html,
+body {
+    overflow-x: hidden;
+    /* 横スクロールを非表示にする */
 }
+
 html,
 body,
 h1,
@@ -175,497 +178,562 @@ header.hidden {
     margin: 0 10px;
     transition: color 0.3s;
 }
-
-.pc-nav li:hover {
-    font-weight: lighter;
-    background: linear-gradient(-45deg,
-            #f7eee3,
-            #f2e9bf,
-            #f2cac4,
-            #c1e4e6,
-            #9fd2c9, #f7eee3,
-            #f2e9bf,
-            #f2cac4,
-            #c1e4e6,
-            #9fd2c9, #f7eee3,
-            #f2e9bf,
-            #f2cac4,
-            #c1e4e6,
-            #9fd2c9, #f7eee3,
-            #f2e9bf,
-            #f2cac4,
-            #c1e4e6,
-            #9fd2c9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-/* ----画面遷移---- */
-/*========= ローディング画面のためのCSS ===============*/
-#splash {
-	position: fixed;
-	width: 100%;
-	height: 100vh;
-      background-color: #fff;
-	z-index: 9999999;
-	text-align:center;
-	color:#fff;
-}
-
-#splash-logo {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-    font-size: 28px;
-    font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.1em;
- 
-    background: linear-gradient(-35deg,#804e00, #804e00,#804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00,#804e00, #804e00,#804e00, #804e00,#804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00,#804e00, #804e00,#804e00, #804e00,#804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00,#804e00, #804e00,#804e00, #804e00,#804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00,#804e00, #804e00,#804e00, #804e00,#804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00,#804e00, #804e00,#804e00, #804e00,#804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00,#804e00, #804e00,#804e00, #804e00,#804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00,#804e00, #804e00,#804e00, #804e00,#804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00,#804e00, #804e00);
-    -webkit-background-clip: text;
-    color: transparent;
-    line-height: 1.75;
-}
-/*========= 画面遷移のためのCSS ===============*/
-
-body.appear{
-    background:#fff;/*画面を開いた後の背景色を指定*/
-}
-
-/*画面遷移アニメーション*/
-.splashbg1,
-.splashbg2{
-    display: none;
-}
-
-/*bodyにappearクラスがついたら出現*/
-body.appear .splashbg1,
-body.appear .splashbg2{
-	display:block;
-}
-
-/*右に消えるエリア*/
-body.appear .splashbg1{
-	animation-name:PageAnime;
-	animation-duration:2s;
-	animation-timing-function:ease-in-out;
-	animation-fill-mode:forwards;
-    content: "";
-    position:fixed;
-	z-index: 999;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-	left:50%;
-    transform: scaleX(1);
-    background: linear-gradient(
-        to bottom, 
-        #f7eee3 0%, 
-        #f7eee3 20%, 
-        #f2e9bf 20%, 
-        #f2e9bf 40%, 
-        #f2cac4 40%, 
-        #f2cac4 60%, 
-        #c1e4e6 60%, 
-        #c1e4e6 80%, 
-        #9fd2c9 80%, 
-        #9fd2c9 100%
-      );
-      height: 100vh; /* 背景が画面全体に適用されるように高さを設定 */
-      margin: 0; /* 画面端に隙間が出ないように設定 */
-}
-
-@keyframes PageAnime{
-	0% {
-		transform-origin:left;
-		transform:scaleX(1);
-	}
-	50% {
-		transform-origin:right;
-	}
-	100% {
-		transform-origin:right;
-		transform:scaleX(0);
-	}
-}
-
-/*左に消えるエリア*/
-body.appear .splashbg2{
-	animation-name:PageAnime2;
-	animation-duration:2s;
-	animation-timing-function:ease-in-out;
-	animation-fill-mode:forwards;
-    content: "";
-    position:fixed;
-	z-index: 999;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-	right:50%;
-    transform: scaleX(1);
-    background: linear-gradient(
-        to bottom, 
-        #f7eee3 0%, 
-        #f7eee3 20%, 
-        #f2e9bf 20%, 
-        #f2e9bf 40%, 
-        #f2cac4 40%, 
-        #f2cac4 60%, 
-        #c1e4e6 60%, 
-        #c1e4e6 80%, 
-        #9fd2c9 80%, 
-        #9fd2c9 100%
-      );
-      height: 100vh; /* 背景が画面全体に適用されるように高さを設定 */
-      margin: 0; /* 画面端に隙間が出ないように設定 */
-}
-
-@keyframes PageAnime2{
-	0% {
-		transform-origin:right;
-		transform:scaleX(1);
-	}
-
-	50% {
-		transform-origin:left;
-	}
-	100% {
-		transform-origin:left;
-		transform:scaleX(0);
-	}
-}
-
-/*画面遷移の後現れるコンテンツ設定*/
-#container{
-	opacity: 0;/*はじめは透過0に*/
-}
-
-/*bodyにappearクラスがついたら出現*/
-body.appear #container{
-	animation-name:PageAnimeAppear;
-	animation-duration:0.2s;
-	animation-delay:0.2s;
-	animation-fill-mode:forwards;
-	opacity: 0;
-}
-
-@keyframes PageAnimeAppear{
-	0% {
-	opacity: 0;
-	}
-	100% {
-	opacity: 1;
-}
-}
-
-/* -----mainvisual---- */
-#mainvisual {
-    width: 100%;
-    height: 130vh;
-    background-color: #fff;
-    z-index: 2;
-
-}
-
-h1 {
-    width: 75%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* 各レインボーラインにアニメーションを適用 */
-.rainbow-1,
-.rainbow-2,
-.rainbow-3,
-.rainbow-4,
-.rainbow-5 {
-    position: absolute;
-    left: -100%;
-    /* 初期位置を画面外に */
-    width: calc(100vw - calc(100vw - 100%));
-    /* 100vwのスクロールバーの横幅をひく */
-    height: 4%;
-    animation: slideRight 5s ease-out forwards;
-    /* 右に移動するアニメーションを適用 */
-}
-
-/* レインボーの順番に少しずつ遅延させる */
-.rainbow-1 {
-    background-color: #f7eee3;
-    bottom: 25%;
-    animation-delay: 0s;
-    /* 最初は遅延なし */
-}
-
-.rainbow-2 {
-    background-color: #f2e9bf;
-    bottom: 20%;
-    animation-delay: 2s;
-    /* 0.5秒遅延 */
-}
-
-.rainbow-3 {
-    background-color: #f2cac4;
-    bottom: 15%;
-    animation-delay: 4s;
-    /* 1秒遅延 */
-}
-
-.rainbow-4 {
-    background-color: #c1e4e6;
-    bottom: 10%;
-    animation-delay: 6s;
-    /* 1.5秒遅延 */
-}
-
-.rainbow-5 {
-    background-color: #9fd2c9;
-    bottom: 5%;
-    animation-delay: 8s;
-    /* 2秒遅延 */
-}
-
-
-/* アニメーションの定義 */
-@keyframes slideRight {
-    from {
-
-        left: -100%;
-        /* 左側から開始 */
-    }
-
-    to {
-        left: 0%;
-        /* 終了後はleft: 0で画面に固定 */
-    }
-}
-
-/* ----sub title---- */
-.left-title {
-    width: auto;
-    height: 180px;
-    display: inline-block;
-    background: linear-gradient(125deg,
-            #f7eee3,
-            #f2e9bf,
-            #f2cac4,
-            #c1e4e6,
-            #9fd2c9);
-    padding: 2% 3%;
-    position: absolute;
-    top: 50px;
-    left: -6%;
-    z-index: 1;
-    background-size: 400% 400%;
-    /* アニメーションのためのサイズ */
-    animation: GradietionAnimation 10s ease infinite;
-    /* アニメーションを適用 */
-}
-
-@keyframes GradietionAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-#about,
-#works,
-#information,
-#skills,
-#profile,
-#contactform,
-#website-list,
-#banner-list,
-#website-detail-1 {
+.pc-nav {
     position: relative;
-    padding: 300px 0 200px;
 }
 
-#banner-list,
-#website-list {
-    padding: 300px 0 100px;
+.pc-nav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5% 50px;
+    list-style: none; /* デフォルトのリストスタイルを解除 */
+    margin: 0;
 }
 
-.right-title {
-    display: inline-block;
-    width: auto;
-    height: 180px;
-    background: linear-gradient(45deg,
-            #f7eee3,
-            #f2e9bf,
-            #f2cac4,
-            #c1e4e6,
-            #9fd2c9);
-    background-size: 400% 400%;
-    /* アニメーションのためのサイズ */
-    padding: 2% 3%;
+.pc-nav li {
+    position: relative;
+    overflow: hidden; /* 背景をはみ出さないように */
+    margin: 0 10px; /* 各リスト項目の間隔 */
+}
+
+/* リンクの基本設定 */
+.pc-nav li a {
+    display: block;
+    padding: 5px 15px; /* テキストのパディング */
+    text-decoration: none; /* アンダーラインを消す */
+    color: #804e00; /* テキスト色 */
+    transition: all 0.7s; /* アニメーション */
+}
+
+/* 背景アニメーション設定 */
+.pc-nav li a::after {
+    content: '';
     position: absolute;
-    top: 50px;
-    right: -6%;
-    z-index: 1;
-    animation: GradietionAnimation 10s ease infinite;
-    /* アニメーションを適用 */
+    bottom: 0;
+    left: 0;
+    width: 0; /* 初期幅 */
+    height: 100%; /* 高さは100% */
+    background: transparent; /* 初期は透明 */
+    transition: all 0.5s ease; /* アニメーション効果 */
+    z-index: -1; /* テキストの背面に配置 */
 }
 
-@keyframes GradietionAnimation {
-    0% {
-        background-position: 0% 50%;
+/* ホバー時のアニメーション設定 */
+.pc-nav li a:hover::after {
+    width: 100%; /* ホバー時に全幅に */
+    opacity: 1; /* 不透明にする */
+}
+
+/* 各色のホバー設定 */
+.light-pink a:hover::after {
+    background-color: #f7eee3;
+}
+
+.light-yellow a:hover::after {
+    background-color: #f2e9bf;
+}
+
+.light-red a:hover::after {
+    background-color: #f2cac4;
+}
+
+.light-blue a:hover::after {
+    background-color: #c1e4e6;
+}
+
+.light-teal a:hover::after {
+    background-color: #9fd2c9;
+}
+
+/* ホバー時のテキスト設定 */
+.pc-nav li a:hover {
+    color: #fff; /* ホバー時のテキスト色 */
+    z-index: 1; /* テキストを最前面に */
+}
+    /* ----画面遷移---- */
+    /*========= ローディング画面のためのCSS ===============*/
+    #splash {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        z-index: 9999999;
+        text-align: center;
+        color: #fff;
     }
 
-    50% {
-        background-position: 100% 50%;
+    #splash-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 28px;
+        font-family: 'DreamAvenue', sans-serif;
+        letter-spacing: 0.1em;
+
+        background: linear-gradient(-35deg, #804e00, #804e00, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #804e00, #804e00, #804e00, #804e00, #804e00);
+        -webkit-background-clip: text;
+        color: transparent;
+        line-height: 1.75;
     }
 
-    100% {
-        background-position: 0% 50%;
+    /*========= 画面遷移のためのCSS ===============*/
+
+    body.appear {
+        background: #fff;
+        /*画面を開いた後の背景色を指定*/
     }
-}
 
-h2 {
-    font-family: 'DreamAvenue', sans-serif;
-    font-size: 98px;
-    color: #fff;
-    align-items: center;
-    margin-bottom: 10px;
-}
+    /*画面遷移アニメーション*/
+    .splashbg1,
+    .splashbg2 {
+        display: none;
+    }
 
-/* ふわっと表示させるCSS */
-.text {
-    opacity: 0;
-}
+    /*bodyにappearクラスがついたら出現*/
+    body.appear .splashbg1,
+    body.appear .splashbg2 {
+        display: block;
+    }
 
-.text.active {
-    animation: 2s fadeup-left ease-in-out forwards;
-}
+    /*右に消えるエリア*/
+    body.appear .splashbg1 {
+        animation-name: PageAnime;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        content: "";
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 50%;
+        transform: scaleX(1);
+        background: linear-gradient(to bottom,
+                #f7eee3 0%,
+                #f7eee3 20%,
+                #f2e9bf 20%,
+                #f2e9bf 40%,
+                #f2cac4 40%,
+                #f2cac4 60%,
+                #c1e4e6 60%,
+                #c1e4e6 80%,
+                #9fd2c9 80%,
+                #9fd2c9 100%);
+        height: 100vh;
+        /* 背景が画面全体に適用されるように高さを設定 */
+        margin: 0;
+        /* 画面端に隙間が出ないように設定 */
+    }
 
-@keyframes fadeup-left {
-    0% {
+    @keyframes PageAnime {
+        0% {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        50% {
+            transform-origin: right;
+        }
+
+        100% {
+            transform-origin: right;
+            transform: scaleX(0);
+        }
+    }
+
+    /*左に消えるエリア*/
+    body.appear .splashbg2 {
+        animation-name: PageAnime2;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        content: "";
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        right: 50%;
+        transform: scaleX(1);
+        background: linear-gradient(to bottom,
+                #f7eee3 0%,
+                #f7eee3 20%,
+                #f2e9bf 20%,
+                #f2e9bf 40%,
+                #f2cac4 40%,
+                #f2cac4 60%,
+                #c1e4e6 60%,
+                #c1e4e6 80%,
+                #9fd2c9 80%,
+                #9fd2c9 100%);
+        height: 100vh;
+        /* 背景が画面全体に適用されるように高さを設定 */
+        margin: 0;
+        /* 画面端に隙間が出ないように設定 */
+    }
+
+    @keyframes PageAnime2 {
+        0% {
+            transform-origin: right;
+            transform: scaleX(1);
+        }
+
+        50% {
+            transform-origin: left;
+        }
+
+        100% {
+            transform-origin: left;
+            transform: scaleX(0);
+        }
+    }
+
+    /*画面遷移の後現れるコンテンツ設定*/
+    #container {
         opacity: 0;
-        transform: translateX(-50px);
-        /* 左から右へ */
+        /*はじめは透過0に*/
     }
 
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.text-right {
-    opacity: 0;
-}
-
-.text-right.active {
-    animation: 2s fadeup-right ease-in-out forwards;
-}
-
-@keyframes fadeup-right {
-    0% {
+    /*bodyにappearクラスがついたら出現*/
+    body.appear #container {
+        animation-name: PageAnimeAppear;
+        animation-duration: 0.2s;
+        animation-delay: 0.2s;
+        animation-fill-mode: forwards;
         opacity: 0;
-        transform: translateX(50px);
-        /* 右から左へ */
     }
 
-    100% {
-        opacity: 1;
-        transform: translateX(0);
+    @keyframes PageAnimeAppear {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
     }
-}
 
-.text_wrap:hover .text {
-    animation: 1s fadeup ease-in-out forwards;
-}
+    /* -----mainvisual---- */
+    #mainvisual {
+        width: 100%;
+        height: 130vh;
+        background-color: #fff;
+        z-index: 2;
 
-@keyframes fadeup {
-    0% {
+    }
+
+    h1 {
+        width: 75%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* 各レインボーラインにアニメーションを適用 */
+    .rainbow-1,
+    .rainbow-2,
+    .rainbow-3,
+    .rainbow-4,
+    .rainbow-5 {
+        position: absolute;
+        left: -100%;
+        /* 初期位置を画面外に */
+        width: calc(100vw - calc(100vw - 100%));
+        /* 100vwのスクロールバーの横幅をひく */
+        height: 4%;
+        animation: slideRight 5s ease-out forwards;
+        /* 右に移動するアニメーションを適用 */
+    }
+
+    /* レインボーの順番に少しずつ遅延させる */
+    .rainbow-1 {
+        background-color: #f7eee3;
+        bottom: 25%;
+        animation-delay: 0s;
+        /* 最初は遅延なし */
+    }
+
+    .rainbow-2 {
+        background-color: #f2e9bf;
+        bottom: 20%;
+        animation-delay: 2s;
+        /* 0.5秒遅延 */
+    }
+
+    .rainbow-3 {
+        background-color: #f2cac4;
+        bottom: 15%;
+        animation-delay: 4s;
+        /* 1秒遅延 */
+    }
+
+    .rainbow-4 {
+        background-color: #c1e4e6;
+        bottom: 10%;
+        animation-delay: 6s;
+        /* 1.5秒遅延 */
+    }
+
+    .rainbow-5 {
+        background-color: #9fd2c9;
+        bottom: 5%;
+        animation-delay: 8s;
+        /* 2秒遅延 */
+    }
+
+
+    /* アニメーションの定義 */
+    @keyframes slideRight {
+        from {
+
+            left: -100%;
+            /* 左側から開始 */
+        }
+
+        to {
+            left: 0%;
+            /* 終了後はleft: 0で画面に固定 */
+        }
+    }
+
+    /* ----sub title---- */
+    .left-title {
+        width: auto;
+        height: 180px;
+        display: inline-block;
+        background: linear-gradient(125deg,
+                #f7eee3,
+                #f2e9bf,
+                #f2cac4,
+                #c1e4e6,
+                #9fd2c9);
+        padding: 2% 3%;
+        position: absolute;
+        top: 50px;
+        left: -6%;
+        z-index: 1;
+        background-size: 400% 400%;
+        /* アニメーションのためのサイズ */
+        animation: GradietionAnimation 10s ease infinite;
+        /* アニメーションを適用 */
+    }
+
+    @keyframes GradietionAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    #about,
+    #works,
+    #information,
+    #skills,
+    #profile,
+    #contactform,
+    #website-list,
+    #banner-list,
+    #website-detail-1 {
+        position: relative;
+        padding: 300px 0 200px;
+    }
+
+    #banner-list,
+    #website-list {
+        padding: 300px 0 100px;
+    }
+
+    .right-title {
+        display: inline-block;
+        width: auto;
+        height: 180px;
+        background: linear-gradient(45deg,
+                #f7eee3,
+                #f2e9bf,
+                #f2cac4,
+                #c1e4e6,
+                #9fd2c9);
+        background-size: 400% 400%;
+        /* アニメーションのためのサイズ */
+        padding: 2% 3%;
+        position: absolute;
+        top: 50px;
+        right: -6%;
+        z-index: 1;
+        animation: GradietionAnimation 10s ease infinite;
+        /* アニメーションを適用 */
+    }
+
+    @keyframes GradietionAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    h2 {
+        font-family: 'DreamAvenue', sans-serif;
+        font-size: 98px;
+        color: #fff;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    /* ふわっと表示させるCSS */
+    .text {
         opacity: 0;
-        transform: translateX(30px);
     }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+    .text.active {
+        animation: 2s fadeup-left ease-in-out forwards;
     }
-}
 
-h3 {
-    font-size: 24px;
-    color: #fff;
-    text-align: center;
-}
+    @keyframes fadeup-left {
+        0% {
+            opacity: 0;
+            transform: translateX(-50px);
+            /* 左から右へ */
+        }
 
-.wrapper {
-    max-width: 1020px;
-    margin: 100px auto 30px;
-    border: 10px solid transparent;  /* 透明なボーダーを設定 */
-    border-image: linear-gradient(-45deg, #fbf7c4 0%, #804e00 50%, #b1ae8a 70%, #958d57 85%, #fbf7c4 100%) 1;  /* グラデーションをボーダーに適用 */
-    text-align: center;
-    z-index: -1;
-}
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 
-#about .link {
-    width: 270px;
-    height: 68px;
-    border: #b0923f 1px solid;
-    font-family: 'DreamAvenue', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    background: linear-gradient(-45deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
-    -webkit-background-clip: text;
-    color: transparent;
-}
+    .text-right {
+        opacity: 0;
+    }
 
-#works .link,
-#profile .link,
-#website-list .link,
-#banner-list .link,
-.detail-link,
-[type="submit"] {
-    width: 270px;
-    height: 68px;
-    border: #b0923f 1px solid;
-    font-family: 'DreamAvenue', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px auto 0;
-    background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
-    -webkit-background-clip: text;
-    color: transparent;
-}
+    .text-right.active {
+        animation: 2s fadeup-right ease-in-out forwards;
+    }
 
-#website-list .link,
-#banner-list .link {
-    width: 270px;
-    height: 44px;
-}
+    @keyframes fadeup-right {
+        0% {
+            opacity: 0;
+            transform: translateX(50px);
+            /* 右から左へ */
+        }
 
-.contactform-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 270px;
-    height: 80px;
-    margin: 50px auto;
-    text-decoration: none;
-    font-family: 'DreamAvenue', sans-serif;
-    border: #b0923f 1px solid;
-    background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
-    -webkit-background-clip: text;
-    color: transparent;
-}
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 
+    .text_wrap:hover .text {
+        animation: 1s fadeup ease-in-out forwards;
+    }
+
+    @keyframes fadeup {
+        0% {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .wrapper {
+        max-width: 1020px;
+        margin: 100px auto 30px;
+        border: 10px solid transparent;
+        /* 透明なボーダーを設定 */
+        border-image: linear-gradient(-45deg, #fbf7c4 0%, #804e00 50%, #b1ae8a 70%, #958d57 85%, #fbf7c4 100%) 1;
+        /* グラデーションをボーダーに適用 */
+        text-align: center;
+        z-index: -1;
+    }
+
+    #about .link {
+        width: 270px;
+        height: 68px;
+        border: #b0923f 1px solid;
+        font-family: 'DreamAvenue', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        background: linear-gradient(-45deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
+        -webkit-background-clip: text;
+        color: transparent;
+
+
+    }
+
+    #works .link,
+    #profile .link,
+    #website-list .link,
+    #banner-list .link,
+    .detail-link,
+    [type="submit"] {
+        width: 270px;
+        height: 68px;
+        border: #b0923f 1px solid;
+        font-family: 'DreamAvenue', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px auto 0;
+        background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
+        -webkit-background-clip: text;
+        color: transparent;
+
+
+    }
+
+    #website-list .link,
+    #banner-list .link {
+        width: 270px;
+        height: 44px;
+
+
+    }
+
+    .contactform-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 270px;
+        height: 80px;
+        margin: 50px auto;
+        text-decoration: none;
+        font-family: 'DreamAvenue', sans-serif;
+        border: #b0923f 1px solid;
+        background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
+        -webkit-background-clip: text;
+        color: transparent;
+
+
+    }
+/* ホバー時のスタイル */
 #about .link:hover,
 #works .link:hover,
 #profile .link:hover,
@@ -676,876 +744,860 @@ h3 {
 #banner-list .link:hover,
 .contactform-link:hover,
 [type="submit"]:hover {
-    font-weight: lighter;
-    background: linear-gradient(-35deg,
-            #f7eee3,
-            #f2e9bf,
-            #f2cac4,
-            #c1e4e6,
-            #9fd2c9,
-            #f7eee3,
-            #f2e9bf,
-            #f2cac4,
-            #c1e4e6,
-            #9fd2c9, #f7eee3,
-            #f2e9bf,
-            #f2cac4,
-            #c1e4e6,
-            #9fd2c9, #f7eee3,
-            #f2e9bf,
-            #f2cac4,
-            #c1e4e6,
-            #9fd2c9, #f7eee3,
-            #f2e9bf,
-            #f2cac4,
-            #c1e4e6,
-            #9fd2c9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border: 2px solid transparent;
-    border-image: linear-gradient(-35deg,
-            #f7eee3,
-            #f2e9bf,
-            #f2cac4,
-            #c1e4e6,
-            #9fd2c9) 1;
-    border-image-slice: 1;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+    position: relative; /* 擬似要素の位置を相対的に */
+
 }
 
-/* ----about---- */
-.about-text {
-    /* width: 550px; */
-    max-width: 550px;
-    margin-left: 38%;
-    text-align: left;
-}
+    /* ----about---- */
+    .about-text {
+        /* width: 550px; */
+        max-width: 550px;
+        margin-left: 38%;
+        text-align: left;
+    }
 
-.about-title {
-    font-size: 36px;
-    letter-spacing: 0.05em;
-    line-height: 1.38;
-}
+    .about-title {
+        font-size: 36px;
+        letter-spacing: 0.05em;
+        line-height: 1.38;
+    }
 
-.about-story {
-    letter-spacing: 0.05em;
-    line-height: 3.18;
-}
+    .about-story {
+        letter-spacing: 0.05em;
+        line-height: 3.18;
+    }
 
-.profile-text {
-    margin: 100% 0;
-    /* 画面下部に位置させるための余白 */
-}
+    .profile-text {
+        margin: 100% 0;
+        /* 画面下部に位置させるための余白 */
+    }
 
-.line {
-    opacity: 0;
-    /* 初期状態は透明 */
-    transform: translateY(20px);
-    /* 下にずらす */
-    transition: opacity 3s ease, transform 5s ease;
-    /* アニメーションの効果 */
-}
-
-.line.is-animated {
-    opacity: 1;
-    /* アニメーション後は不透明に */
-    transform: translateY(0);
-    /* 元の位置に戻す */
-}
-
-
-/* ----works---- */
-
-.works-title,
-.banner-title {
-    text-align: left;
-    font-family: 'DreamAvenue', sans-serif;
-    margin: 0 0 50px 5%;
-    font-size: 36px;
-    letter-spacing: .1em;
-    background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.website_slider {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 400px;
-    position: relative;
-    width: 100vw;
-    /* ビューポート全体の幅に */
-    left: 50%;
-    /* wrapperの幅によって位置を調整 */
-    margin-left: -50vw;
-    /* 中央揃えのためにマージンを調整 */
-    background-color: #fff;
-}
-
-.website_slider img {
-    max-width: 100%;
-    /* 画像がスライダー領域に収まるように調整 */
-    height: auto;
-}
-
-.website_image {
-    width: 680px;
-    margin: 0 30px;
-}
-
-.banner_slider {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    width: 100%;
-    height: 400px;
-    /* スライダー全体の高さを400pxに指定 */
-    align-items: center;
-    /* 垂直方向に画像を中央揃え */
-    overflow: hidden;
-    /* 画像がはみ出ないようにオーバーフローを非表示 */
-    position: relative;
-    width: 100vw;
-    /* ビューポート全体の幅に */
-    left: 50%;
-    /* wrapperの幅によって位置を調整 */
-    margin-left: -50vw;
-    /* 中央揃えのためにマージンを調整 */
-    margin-right: -50vw;
-    background-color: #fff;
-}
-
-.banner_image {
-    width: auto;
-    height: 400px;
-    /* 画像の高さを400pxに指定 */
-    margin: 0 30px;
-    object-fit: cover;
-    /* 画像のアスペクト比を維持しながら高さに合わせる */
-}
-
-.banner {
-    margin: 100px 0 0;
-}
-
-/* -----skills----- */
-.skill {
-    width: 300px;
-    height: 335px;
-    padding: 20px;
-    margin-bottom: 50px;
-    background: linear-gradient(125deg,
-            rgba(247, 238, 227, 0.25),
-            rgba(242, 233, 191, 0.25),
-            rgba(242, 202, 196, 0.25),
-            rgba(193, 228, 230, 0.25),
-            rgba(159, 210, 201, 0.25));
-    opacity: 0;
-    /* 初期状態で非表示 */
-    transform: translateY(50px);
-    /* 初期位置を少し下に */
-    transition: opacity 3s ease, transform 0.5s ease;
-    /* スムーズにアニメーション */
-}
-
-.skill.is-animated, .website-group-right.is-animated {
-    opacity: 1;
-    transform: translateY(0);
-    /* 元の位置に戻す */
-}
-
-.skills-garrary {
-    max-width: 800px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 0 auto;
-}
-
-.skill-title {
-    text-align: center;
-    font-family: 'DreamAvenue', sans-serif;
-    margin: 30px auto;
-    font-size: 36px;
-    letter-spacing: .1em;
-}
-
-.skill-text {
-    line-height: 1.5;
-    text-align: left;
-}
-
-@keyframes fadeup {
-    from {
+    .line {
         opacity: 0;
+        /* 初期状態は透明 */
+        transform: translateY(20px);
+        /* 下にずらす */
+        transition: opacity 3s ease, transform 5s ease;
+        /* アニメーションの効果 */
+    }
+
+    .line.is-animated {
+        opacity: 1;
+        /* アニメーション後は不透明に */
+        transform: translateY(0);
+        /* 元の位置に戻す */
+    }
+
+
+    /* ----works---- */
+
+    .works-title,
+    .banner-title {
+        text-align: left;
+        font-family: 'DreamAvenue', sans-serif;
+        margin: 0 0 50px 5%;
+        font-size: 36px;
+        letter-spacing: .1em;
+        background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .website_slider {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 400px;
+        position: relative;
+        width: 100vw;
+        /* ビューポート全体の幅に */
+        left: 50%;
+        /* wrapperの幅によって位置を調整 */
+        margin-left: -50vw;
+        /* 中央揃えのためにマージンを調整 */
+        background-color: #fff;
+    }
+
+    .website_slider img {
+        max-width: 100%;
+        /* 画像がスライダー領域に収まるように調整 */
+        height: auto;
+    }
+
+    .website_image {
+        width: 680px;
+        margin: 0 30px;
+    }
+
+    .banner_slider {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        width: 100%;
+        height: 400px;
+        /* スライダー全体の高さを400pxに指定 */
+        align-items: center;
+        /* 垂直方向に画像を中央揃え */
+        overflow: hidden;
+        /* 画像がはみ出ないようにオーバーフローを非表示 */
+        position: relative;
+        width: 100vw;
+        /* ビューポート全体の幅に */
+        left: 50%;
+        /* wrapperの幅によって位置を調整 */
+        margin-left: -50vw;
+        /* 中央揃えのためにマージンを調整 */
+        margin-right: -50vw;
+        background-color: #fff;
+    }
+
+    .banner_image {
+        width: auto;
+        height: 400px;
+        /* 画像の高さを400pxに指定 */
+        margin: 0 30px;
+        object-fit: cover;
+        /* 画像のアスペクト比を維持しながら高さに合わせる */
+    }
+
+    .banner {
+        margin: 100px 0 0;
+    }
+
+    /* -----skills----- */
+    .skill {
+        width: 300px;
+        height: 335px;
+        padding: 20px;
+        margin-bottom: 50px;
+        background: linear-gradient(125deg,
+                rgba(247, 238, 227, 0.25),
+                rgba(242, 233, 191, 0.25),
+                rgba(242, 202, 196, 0.25),
+                rgba(193, 228, 230, 0.25),
+                rgba(159, 210, 201, 0.25));
+        opacity: 0;
+        /* 初期状態で非表示 */
         transform: translateY(50px);
+        /* 初期位置を少し下に */
+        transition: opacity 3s ease, transform 0.5s ease;
+        /* スムーズにアニメーション */
     }
 
-    to {
+    .skill.is-animated,
+    .website-group-right.is-animated {
         opacity: 1;
         transform: translateY(0);
+        /* 元の位置に戻す */
     }
-}
 
-.skill.fadeup.is-animated,.website-group-right.fadeup.is-animated {
-    animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
-}
+    .skills-garrary {
+        max-width: 800px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 0 auto;
+    }
 
-.icon {
-    display: flex;
-    justify-content: space-around;
-    margin: 30px auto;
-}
+    .skill-title {
+        text-align: center;
+        font-family: 'DreamAvenue', sans-serif;
+        margin: 30px auto;
+        font-size: 36px;
+        letter-spacing: .1em;
+    }
 
-.icon-img {
-    height: 50px;
-    opacity: 0;
-}
+    .skill-text {
+        line-height: 1.5;
+        text-align: left;
+    }
 
-.icon-img.is-animated {
-    animation: icon 1.4s ease-out;
-    opacity: 1;
-}
+    @keyframes fadeup {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
 
-@keyframes icon {
-    0% {
-        transform: rotateY(0deg) translateY(40px);
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .skill.fadeup.is-animated,
+    .website-group-right.fadeup.is-animated {
+        animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+    }
+
+    .icon {
+        display: flex;
+        justify-content: space-around;
+        margin: 30px auto;
+    }
+
+    .icon-img {
+        height: 50px;
         opacity: 0;
     }
 
-    100% {
-        transform: rotateY(360deg) translateY(0);
+    .icon-img.is-animated {
+        animation: icon 1.4s ease-out;
         opacity: 1;
     }
-}
 
+    @keyframes icon {
+        0% {
+            transform: rotateY(0deg) translateY(40px);
+            opacity: 0;
+        }
 
-/* ----information---- */
-#information {
-    padding-bottom: 50px;
-}
-
-
-.info {
-    display: flex;
-    justify-content: space-around;
-    margin: 50px auto 0px;
-}
-
-.contactform,
-.sns {
-    max-width: 450px;
-}
-
-.info-text {
-    max-width: 400px;
-    margin: 0 auto;
-    line-height: 1.75;
-}
-
-.contactform-icon {
-    display: flex;
-    justify-content: center;
-    /* アイコンを中央に配置 */
-    margin: 30px auto;
-}
-
-.contactform-icon img {
-    width: auto;
-    /* 適切なサイズに設定 */
-    height: 50px;
-    margin-right: 50px;
-    /* アスペクト比を維持 */
-    opacity: 1;
-    /* 表示する */
-}
-
-.contactform-icon img[alt="X_icon"] {
-    margin-right: 0;
-    /* Xアイコンの右マージンを0にする */
-}
-
-
-.sns .icon {
-    width: 250px;
-    margin-top: 50px;
-    /* justify-content: center; */
-}
-
-/* ----footer---- */
-footer {
-    width: 100%;
-    max-width: 100vw;
-    height: 100px;
-    margin: 0 auto;
-    /* position: relative; */
-    /* overflow: hidden; */
-}
-
-.footerwrap {
-    position: absolute;
-left: 0;
-    width: 100vw;
-    /* 画面幅全体にする */
-    margin: 0 calc(50% - 50vw);
-    /* 中央から左右に広げる */
-    /* height: 20px; */
-    z-index: -1;
-}
-
-.footer-text {
-    font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: .07em;
-    line-height: 20px;
-    text-align: center;
-}
-
-.footer-rainbow-1 {
-    background-color: #f7eee3;
-    /* width: 100vw; */
-    height: 20px;
-    margin: 0 auto;
-    z-index: -1;
-}
-
-.footer-rainbow-2 {
-    background-color: #f2e9bf;
-    
-    height: 20px;
-    margin: 0 auto;
-    z-index: -1;
-}
-
-.footer-rainbow-3 {
-    background-color: #f2cac4;
-
-    height: 20px;
-    margin: 0 auto;
-    z-index: -1;
-}
-
-.footer-rainbow-4 {
-    background-color: #c1e4e6;
-
-    height: 20px;
-    margin: 0 auto;
-    z-index: -1;
-}
-
-.footer-rainbow-5 {
-    background-color: #9fd2c9;
-
-    height: 20px;
-    margin: 0 auto;
-    z-index: -1;
-}
-
-
-.scroolwrap {
-    display: none;
-    position: fixed;
-    bottom: 3%;
-    right: 13%;
-    width: 50px;
-    height: 50px;
-    margin: 20px auto;
-    z-index: 500;
-}
-
-.scroll {
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    /* 水平方向中央 */
-    align-items: center;
-    /* 垂直方向中央 */
-    flex-direction: column;
-    /* 矢印を縦に配置 */
-}
-
-.pagetopwrap {
-    display: none;
-    position: fixed;
-    bottom: 3%;
-    right: 13%;
-    width: 50px;
-    height: 50px;
-    margin: 20px auto;
-    z-index: 500;
-}
-
-.pagetop {
-    font-size: 18px;
-    animation: donut-spin 10s linear infinite;
-    display: flex;
-    justify-content: center;
-    /* 水平方向中央 */
-    align-items: center;
-    /* 垂直方向中央 */
-    flex-direction: column;
-    /* 矢印を縦に配置 */
-}
-
-div svg {
-    overflow: visible;
-}
-
-.rotate-svg {
-    animation: donut-spin 10s linear infinite;
-}
-
-div path {
-    fill: none;
-}
-
-.scroolwrap text {
-    fill: #804e00;
-    font-weight: bold;
-    font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.02rem;
-}
-
-@keyframes donut-spin {
-    to {
-        transform: rotate(1turn);
+        100% {
+            transform: rotateY(360deg) translateY(0);
+            opacity: 1;
+        }
     }
-}
 
-div text {
-    fill: #804e00;
-    font-weight: bold;
-    font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.13rem;
-}
 
-@keyframes donut-spin {
-    to {
-        transform: rotate(1turn);
+    /* ----information---- */
+    #information {
+        padding-bottom: 50px;
     }
-}
 
-.arrow-down {
-    display: inline-block;
-    vertical-align: middle;
-    color: #804e00;
-    line-height: 1;
-    position: relative;
-    width: 0.1em;
-    height: 1em;
-    background: currentColor;
-    animation: arrow-bounce 1s infinite;
-}
 
-.arrow-down {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+    .info {
+        display: flex;
+        justify-content: space-around;
+        margin: 50px auto 0px;
+    }
 
-.arrow-down::before {
-    content: '';
-    width: 0.5em;
-    height: 0.5em;
-    border: 1px solid currentColor;
-    border-top: 0;
-    /* 上のボーダーを消す */
-    border-left: 0;
-    /* 左のボーダーを消す */
-    transform: rotate(45deg);
-    /* 矢印を下向きに */
-    transform-origin: bottom right;
-    position: absolute;
-    left: -7px;
-    bottom: -0.5px;
-    /* 矢印の位置微調整 */
-    box-sizing: border-box;
-}
+    .contactform,
+    .sns {
+        max-width: 450px;
+    }
 
-.arrow-upwrap {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+    .info-text {
+        max-width: 400px;
+        margin: 0 auto;
+        line-height: 1.75;
+    }
 
-.arrow-up {
-    display: inline-block;
-    vertical-align: middle;
-    color: #804e00;
-    line-height: 1;
-    position: relative;
-    width: 0.1em;
-    height: 1em;
-    background: currentColor;
-    animation: arrow-bounce 1s infinite;
-}
+    .contactform-icon {
+        display: flex;
+        justify-content: center;
+        /* アイコンを中央に配置 */
+        margin: 30px auto;
+    }
 
-.arrow-up::before {
-    content: '';
-    width: 0.5em;
-    height: 0.5em;
-    border: 1px solid currentColor;
-    border-bottom: 0;
-    /* 下のボーダーを消す */
-    border-right: 0;
-    /* 右のボーダーを消す */
-    transform: rotate(45deg);
-    /* 矢印を上向きに */
-    transform-origin: bottom right;
-    position: absolute;
-    left: -7px;
-    top: .1em;
-    /* 矢印の位置微調整 */
-    box-sizing: border-box;
-}
+    .contactform-icon img {
+        width: auto;
+        /* 適切なサイズに設定 */
+        height: 50px;
+        margin-right: 50px;
+        /* アスペクト比を維持 */
+        opacity: 1;
+        /* 表示する */
+    }
 
-@keyframes arrow-bounce {
+    .contactform-icon img[alt="X_icon"] {
+        margin-right: 0;
+        /* Xアイコンの右マージンを0にする */
+    }
 
-    0%,
-    100% {
+
+    .sns .icon {
+        width: 250px;
+        margin-top: 50px;
+        /* justify-content: center; */
+    }
+
+    /* ----footer---- */
+    footer {
+        width: 100%;
+        max-width: 100vw;
+        height: 100px;
+        margin: 0 auto;
+        /* position: relative; */
+        /* overflow: hidden; */
+    }
+
+    .footerwrap {
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        /* 画面幅全体にする */
+        margin: 0 calc(50% - 50vw);
+        /* 中央から左右に広げる */
+        /* height: 20px; */
+        z-index: -1;
+    }
+
+    .footer-text {
+        font-family: 'DreamAvenue', sans-serif;
+        letter-spacing: .07em;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .footer-rainbow-1 {
+        background-color: #f7eee3;
+        /* width: 100vw; */
+        height: 20px;
+        margin: 0 auto;
+        z-index: -1;
+    }
+
+    .footer-rainbow-2 {
+        background-color: #f2e9bf;
+
+        height: 20px;
+        margin: 0 auto;
+        z-index: -1;
+    }
+
+    .footer-rainbow-3 {
+        background-color: #f2cac4;
+
+        height: 20px;
+        margin: 0 auto;
+        z-index: -1;
+    }
+
+    .footer-rainbow-4 {
+        background-color: #c1e4e6;
+
+        height: 20px;
+        margin: 0 auto;
+        z-index: -1;
+    }
+
+    .footer-rainbow-5 {
+        background-color: #9fd2c9;
+
+        height: 20px;
+        margin: 0 auto;
+        z-index: -1;
+    }
+
+
+    .scroolwrap {
+        display: none;
+        position: fixed;
+        bottom: 3%;
+        right: 13%;
+        width: 50px;
+        height: 50px;
+        margin: 20px auto;
+        z-index: 500;
+    }
+
+    .scroll {
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        /* 水平方向中央 */
+        align-items: center;
+        /* 垂直方向中央 */
+        flex-direction: column;
+        /* 矢印を縦に配置 */
+    }
+
+    .pagetopwrap {
+        display: none;
+        position: fixed;
+        bottom: 3%;
+        right: 13%;
+        width: 50px;
+        height: 50px;
+        margin: 20px auto;
+        z-index: 500;
+    }
+
+    .pagetop {
+        font-size: 18px;
+        animation: donut-spin 10s linear infinite;
+        display: flex;
+        justify-content: center;
+        /* 水平方向中央 */
+        align-items: center;
+        /* 垂直方向中央 */
+        flex-direction: column;
+        /* 矢印を縦に配置 */
+    }
+
+    div svg {
+        overflow: visible;
+    }
+
+    .rotate-svg {
+        animation: donut-spin 10s linear infinite;
+    }
+
+    div path {
+        fill: none;
+    }
+
+    .scroolwrap text {
+        fill: #804e00;
+        font-weight: bold;
+        font-family: 'DreamAvenue', sans-serif;
+        letter-spacing: 0.02rem;
+    }
+
+    @keyframes donut-spin {
+        to {
+            transform: rotate(1turn);
+        }
+    }
+
+    div text {
+        fill: #804e00;
+        font-weight: bold;
+        font-family: 'DreamAvenue', sans-serif;
+        letter-spacing: 0.13rem;
+    }
+
+    @keyframes donut-spin {
+        to {
+            transform: rotate(1turn);
+        }
+    }
+
+    .arrow-down {
+        display: inline-block;
+        vertical-align: middle;
+        color: #804e00;
+        line-height: 1;
+        position: relative;
+        width: 0.1em;
+        height: 1em;
+        background: currentColor;
+        animation: arrow-bounce 1s infinite;
+    }
+
+    .arrow-down {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .arrow-down::before {
+        content: '';
+        width: 0.5em;
+        height: 0.5em;
+        border: 1px solid currentColor;
+        border-top: 0;
+        /* 上のボーダーを消す */
+        border-left: 0;
+        /* 左のボーダーを消す */
+        transform: rotate(45deg);
+        /* 矢印を下向きに */
+        transform-origin: bottom right;
+        position: absolute;
+        left: -7px;
+        bottom: -0.5px;
+        /* 矢印の位置微調整 */
+        box-sizing: border-box;
+    }
+
+    .arrow-upwrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .arrow-up {
+        display: inline-block;
+        vertical-align: middle;
+        color: #804e00;
+        line-height: 1;
+        position: relative;
+        width: 0.1em;
+        height: 1em;
+        background: currentColor;
+        animation: arrow-bounce 1s infinite;
+    }
+
+    .arrow-up::before {
+        content: '';
+        width: 0.5em;
+        height: 0.5em;
+        border: 1px solid currentColor;
+        border-bottom: 0;
+        /* 下のボーダーを消す */
+        border-right: 0;
+        /* 右のボーダーを消す */
+        transform: rotate(45deg);
+        /* 矢印を上向きに */
+        transform-origin: bottom right;
+        position: absolute;
+        left: -7px;
+        top: .1em;
+        /* 矢印の位置微調整 */
+        box-sizing: border-box;
+    }
+
+    @keyframes arrow-bounce {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-6px);
+            /* 少し上に動く */
+        }
+    }
+
+    /* ----Profile---- */
+
+    .profile-img {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    .profile-text {
+        width: 450px;
+        margin: 50px auto 100px;
+    }
+
+    .my-title {
+        font-size: 24px;
+        font-family: 'DreamAvenue', sans-serif;
+        background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .my-name {
+        font-size: 36px;
+        font-family: 'DreamAvenue', sans-serif;
+        letter-spacing: 0.1em;
+        background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
+        -webkit-background-clip: text;
+        color: transparent;
+        margin: 20px 0 50px;
+    }
+
+    .profile-story {
+        width: 450px;
+        margin: 0 auto;
+        letter-spacing: 0.05em;
+        line-height: 3.18;
+        text-align: left;
+    }
+
+    /* ----website list / banner list---- */
+    .website-performance {
+        margin-bottom: 50px;
+    }
+
+    .website-group-right,
+    .website-group-left {
+        width: 650px;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+        background: linear-gradient(125deg,
+                rgba(247, 238, 227, 0.25),
+                rgba(242, 233, 191, 0.25),
+                rgba(242, 202, 196, 0.25),
+                rgba(193, 228, 230, 0.25),
+                rgba(159, 210, 201, 0.25));
+    }
+
+    .website-performance-img {
+        width: 580px;
+    }
+
+    .performance-name {
+        font-size: 28px;
+    }
+
+    .website-group-right {
+        margin: 0 0 50px auto;
+    }
+
+    .website-group-left {
+        margin-left: -20px;
+    }
+
+    .Banner-performance-img {
+        width: auto;
+        height: 300px;
+        margin: 50px;
+    }
+
+    .website-group-left,
+    .website-group-right,
+    .banner-detail-img,
+    .detail-img {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .is-animated {
+        opacity: 1;
         transform: translateY(0);
     }
 
-    50% {
-        transform: translateY(-6px);
-        /* 少し上に動く */
+    .rightAnime {
+        margin-right: -30px;
     }
-}
 
-/* ----Profile---- */
-
-.profile-img {
-    width: 250px;
-    height: 250px;
-    margin: 0 auto;
-}
-
-.profile-text {
-    width: 450px;
-    margin: 50px auto 100px;
-}
-
-.my-title {
-    font-size: 24px;
-    font-family: 'DreamAvenue', sans-serif;
-    background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.my-name {
-    font-size: 36px;
-    font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.1em;
-    background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
-    -webkit-background-clip: text;
-    color: transparent;
-    margin: 20px 0 50px;
-}
-
-.profile-story {
-    width: 450px;
-    margin: 0 auto;
-    letter-spacing: 0.05em;
-    line-height: 3.18;
-    text-align: left;
-}
-
-/* ----website list / banner list---- */
-.website-performance {
-    margin-bottom: 50px;
-}
-
-.website-group-right,
-.website-group-left {
-    width: 650px;
-    padding-bottom: 50px;
-    margin-bottom: 50px;
-    background: linear-gradient(125deg,
-            rgba(247, 238, 227, 0.25),
-            rgba(242, 233, 191, 0.25),
-            rgba(242, 202, 196, 0.25),
-            rgba(193, 228, 230, 0.25),
-            rgba(159, 210, 201, 0.25));
-}
-
-.website-performance-img {
-    width: 580px;
-}
-
-.performance-name {
-    font-size: 28px;
-}
-
-.website-group-right {
-    margin: 0 0 50px auto;
-}
-.website-group-left {
-    margin-left: -20px;
-}
-
-.Banner-performance-img {
-    width: auto;
-    height: 300px;
-    margin: 50px;
-}
-.website-group-left, .website-group-right,.banner-detail-img,.detail-img {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.is-animated {
-    opacity: 1;
-    transform: translateY(0);
-}
-.rightAnime {
-    margin-right: -30px;
-}
-.leftAnime {
-    margin-left: -30px;
-}
+    .leftAnime {
+        margin-left: -30px;
+    }
 
 
-.website-group-right, .website-group-left,.banner-detail-img,.detail-img {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
+    .website-group-right,
+    .website-group-left,
+    .banner-detail-img,
+    .detail-img {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
 
-.slideAnimeRightLeft {
-    opacity: 1;
-    transform: translateY(0);
-}
+    .slideAnimeRightLeft {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-.slideAnimeLeftRight {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* 右から左に移動するアニメーション */
-.slideAnimeRightLeft {
-    opacity: 1;
-    transform: translateX(-20px); /* 右から左に移動 */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    .slideAnimeLeftRight {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-}
+    /* 右から左に移動するアニメーション */
+    .slideAnimeRightLeft {
+        opacity: 1;
+        transform: translateX(-20px);
+        /* 右から左に移動 */
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 
-/* 左から右に移動するアニメーション */
-.slideAnimeLeftRight {
-    opacity: 1;
-    transform: translateX(20px); /* 左から右に移動 */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
+    }
 
-/* ----website detail / banner detail---- */
+    /* 左から右に移動するアニメーション */
+    .slideAnimeLeftRight {
+        opacity: 1;
+        transform: translateX(20px);
+        /* 左から右に移動 */
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
 
-.detail-img {
-    width: 680px;
-    margin: 0 0 0 -20px;
-    border:1px  solid blue ;
-}
+    /* ----website detail / banner detail---- */
 
-.detail-pc-img {
-    width: 780px;
-}
+    .detail-img {
+        width: 680px;
+        margin: 0 0 0 -20px;
+        border: 1px solid blue;
+    }
 
-.detail-sentence {
-    width: 500px;
-    text-align: left;
-    margin: 50px auto;
-}
+    .detail-pc-img {
+        width: 780px;
+    }
 
-.detail {
-    display: flex;
-    padding: 15px 0;
-    border-bottom: 1px solid #b0923f;
+    .detail-sentence {
+        width: 500px;
+        text-align: left;
+        margin: 50px auto;
+    }
 
-}
+    .detail {
+        display: flex;
+        padding: 15px 0;
+        border-bottom: 1px solid #b0923f;
 
-.detail:last-child {
-    border-bottom: none;
-}
+    }
 
-.detail-taitle {
-    width: 30%;
-    line-height: 1.75;
+    .detail:last-child {
+        border-bottom: none;
+    }
 
-}
+    .detail-taitle {
+        width: 30%;
+        line-height: 1.75;
 
-.detail-text {
-    width: 70%;
-    line-height: 1.75;
-}
+    }
 
-.banner-detail-img {
-    display: inline-block;
-    width: auto;
-    height: 350px;
-  margin: 0 0 50px -20px;
-border: 1px solid blue;
-}
+    .detail-text {
+        width: 70%;
+        line-height: 1.75;
+    }
 
-/* ----contactform---- */
+    .banner-detail-img {
+        display: inline-block;
+        width: auto;
+        height: 350px;
+        margin: 0 0 50px -20px;
+        border: 1px solid blue;
+    }
 
-.contactform-text {
-    width: 450px;
-    margin: 50px auto;
-    text-align: left;
-    line-height: 1.75em;
-}
+    /* ----contactform---- */
 
-.Form {
+    .contactform-text {
+        width: 450px;
+        margin: 50px auto;
+        text-align: left;
+        line-height: 1.75em;
+    }
 
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 600px;
-}
-
-.Form-Item {
-    border-top: 1px solid #b0923f;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    text-align: left;
-}
-
-.Form-Item:nth-child(5) {
-    border-bottom: 1px solid #b0923f;
-}
-
-.Form-Item-Label {
-    font-family: 'DreamAvenue', sans-serif;
-    width: 100%;
-    max-width: 20%;
-    letter-spacing: 0.05em;
-    /* font-weight: bold; */
-    font-size: 18px;
-}
-
-.Form-Item-Label.isMsg {
-    margin-top: 8px;
-    margin-bottom: auto;
-}
-
-
-.Form-Item-Input {
-    border: 1px solid #b0923f;
-    border-radius: 6px;
-    margin-left: 40px;
-    padding-left: 1em;
-    padding-right: 1em;
-    height: 48px;
-    flex: 1;
-    width: 100%;
-    max-width: 70%;
-    background: linear-gradient(60deg,
-            rgba(247, 238, 227, 0.3),
-            rgba(242, 233, 191, 0.3),
-            rgba(242, 202, 196, 0.3),
-            rgba(193, 228, 230, 0.3),
-            rgba(159, 210, 201, 0.3));
-    font-size: 18px;
-    color: #804e00;
-}
-
-.Form-Item-Textarea {
-    color: #804e00;
-    border: 1px solid #b0923f;
-    border-radius: 6px;
-    margin-left: 40px;
-    padding-left: 1em;
-    padding-right: 1em;
-    height: 250px;
-    flex: 1;
-    width: 100%;
-    max-width: 70%;
-    background: linear-gradient(60deg,
-            rgba(247, 238, 227, 0.3),
-            rgba(242, 233, 191, 0.3),
-            rgba(242, 202, 196, 0.3),
-            rgba(193, 228, 230, 0.3),
-            rgba(159, 210, 201, 0.3));
-    font-size: 18px;
-}
-
-.Form-Btn {
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 270px;
-    display: block;
-    letter-spacing: 0.05em;
-    background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
-    -webkit-background-clip: text;
-    color: transparent;
-    font-size: 20px;
-}
-
-/* slick */
-
-.slick-next {
-    display: none;
-}
-
-.slick-next:before,
-.slick-prev:before {
-    display: none;
-}
-
-
-@media screen and (max-width: 480px) {
     .Form {
-        margin-top: 40px;
+
+        margin-top: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 600px;
     }
 
     .Form-Item {
-        padding-left: 14px;
-        padding-right: 14px;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        flex-wrap: wrap;
+        border-top: 1px solid #b0923f;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-align: left;
+    }
+
+    .Form-Item:nth-child(5) {
+        border-bottom: 1px solid #b0923f;
     }
 
     .Form-Item-Label {
-        max-width: inherit;
-        display: flex;
-        align-items: center;
-        font-size: 15px;
+        font-family: 'DreamAvenue', sans-serif;
+        width: 100%;
+        max-width: 20%;
+        letter-spacing: 0.05em;
+        /* font-weight: bold; */
+        font-size: 18px;
     }
 
     .Form-Item-Label.isMsg {
-        margin-top: 0;
+        margin-top: 8px;
+        margin-bottom: auto;
     }
 
+
     .Form-Item-Input {
-        margin-left: 0;
-        margin-top: 18px;
-        height: 40px;
-        flex: inherit;
-        font-size: 15px;
+        border: 1px solid #b0923f;
+        border-radius: 6px;
+        margin-left: 40px;
+        padding-left: 1em;
+        padding-right: 1em;
+        height: 48px;
+        flex: 1;
+        width: 100%;
+        max-width: 70%;
+        background: linear-gradient(60deg,
+                rgba(247, 238, 227, 0.3),
+                rgba(242, 233, 191, 0.3),
+                rgba(242, 202, 196, 0.3),
+                rgba(193, 228, 230, 0.3),
+                rgba(159, 210, 201, 0.3));
+        font-size: 18px;
+        color: #804e00;
     }
 
     .Form-Item-Textarea {
-        margin-top: 18px;
-        margin-left: 0;
-        height: 200px;
-        flex: inherit;
-        font-size: 15px;
+        color: #804e00;
+        border: 1px solid #b0923f;
+        border-radius: 6px;
+        margin-left: 40px;
+        padding-left: 1em;
+        padding-right: 1em;
+        height: 250px;
+        flex: 1;
+        width: 100%;
+        max-width: 70%;
+        background: linear-gradient(60deg,
+                rgba(247, 238, 227, 0.3),
+                rgba(242, 233, 191, 0.3),
+                rgba(242, 202, 196, 0.3),
+                rgba(193, 228, 230, 0.3),
+                rgba(159, 210, 201, 0.3));
+        font-size: 18px;
     }
 
     .Form-Btn {
-        margin-top: 24px;
-        padding-top: 8px;
-        padding-bottom: 8px;
-        width: 160px;
-        font-size: 16px;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 270px;
+        display: block;
+        letter-spacing: 0.05em;
+        background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 20px;
+    }
+
+    /* slick */
+
+    .slick-next {
+        display: none;
+    }
+
+    .slick-next:before,
+    .slick-prev:before {
+        display: none;
     }
 
 
-}
+    @media screen and (max-width: 480px) {
+        .Form {
+            margin-top: 40px;
+        }
+
+        .Form-Item {
+            padding-left: 14px;
+            padding-right: 14px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .Form-Item-Label {
+            max-width: inherit;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .Form-Item-Label.isMsg {
+            margin-top: 0;
+        }
+
+        .Form-Item-Input {
+            margin-left: 0;
+            margin-top: 18px;
+            height: 40px;
+            flex: inherit;
+            font-size: 15px;
+        }
+
+        .Form-Item-Textarea {
+            margin-top: 18px;
+            margin-left: 0;
+            height: 200px;
+            flex: inherit;
+            font-size: 15px;
+        }
+
+        .Form-Btn {
+            margin-top: 24px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            width: 160px;
+            font-size: 16px;
+        }
+
+
+    }

@@ -52,6 +52,14 @@
     </header>
 
     <section id="mainvisual">
+        <div id="splash">
+            <div id="splash-logo">portfolio by <br>FUHSHIMI AYUMI</div>
+            <!--/splash--></div>
+            <div class="splashbg1"></div>
+            <div class="splashbg2"></div>
+            <!-- -画面遷移用-->
+            <div id="container">
+
         <h1><img src="./images/text.svg" alt="mainvisual-img"></h1>
 
         <div class="rainbow-1"></div>
@@ -59,6 +67,8 @@
         <div class="rainbow-3"></div>
         <div class="rainbow-4"></div>
         <div class="rainbow-5"></div>
+        <!--/container--></div>
+
     </section>
     <main>
         <div class="wrapper">
@@ -194,7 +204,6 @@
                 </div>
             </section>
         </div>
-        </div>
     </main>
     <footer>
         
@@ -208,8 +217,8 @@
             <div class="footer-rainbow-5"></div>
 
         </div>
-        
-        <a href="#works">
+
+        <button class="scroolbtn">
             <div class="scroolwrap">
                 <div class="scroll">
                     <svg viewBox="0 0 100 100" class="rotate-svg">
@@ -226,7 +235,7 @@
                 </div>
                 <div class="arrow-down"></div>
             </div>
-        </a>
+        </button>
 
         <a href="#mainvisual">
             <div class="pagetopwrap">
@@ -249,9 +258,10 @@
             </div>
         </a>
     </footer>
-
-    <script>
-
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/main.js"> -->
+<script>
         // headerの表示の設定
         document.addEventListener('DOMContentLoaded', function () {
             const header = document.querySelector('header');
@@ -291,22 +301,39 @@
             });
         });
 
-        $(function () {
+$(window).on('load',function(){
+$("#splash-logo").delay(1800).fadeOut('slow');//ロゴを1.2秒でフェードアウトする記述
 
+//=====ここからローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
+$("#splash").delay(2000).fadeOut('slow',function(){//ローディングエリア（splashエリア）を1.5秒でフェードアウトする記述
+
+$('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
+
+});
+//=====ここまでローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
+
+//=====ここから背景が伸びた後に動かしたいJSをまとめたい場合は
+$('.splashbg1').on('animationend', function() { 
+//この中に動かしたいJSを記載
+});
+});
+
+
+$(function () {
             // ローディング画面の設定
             const loadingElement = document.getElementById("loading");
             if (loadingElement) {
-                loadingElement.style.display = "block";
-                fetch('api/data')
-                    .then(response => response.ok ? response.json() : Promise.reject(response))
-                    .then(data => {
-                        console.log(data);
-                    })
-                    .catch(error => console.error('Fetch error:', error))
-                    .finally(() => {
-                        loadingElement.style.display = "none";
-                    });
-            }
+    loadingElement.style.display = "block";
+
+    // ダミーデータを使う
+    const data = [
+        { id: 1, title: "Sample Post 1", body: "This is a sample post" },
+        { id: 2, title: "Sample Post 2", body: "Another sample post" }
+    ];
+
+    console.log(data);
+    loadingElement.style.display = "none";
+}
 
             // Slider設定
             $('.website_slider').slick({
@@ -343,14 +370,12 @@
                     settings: { slidesToShow: 2 }
                 }]
             });
-
-            // スクロールボタンの表示/非表示制御
-            $(window).scroll(function () {
+            window.addEventListener('scroll', function () {
                 const scrollPos = $(this).scrollTop();
                 const aboutOffset = $('#about').offset().top;
                 const skillsOffset = $('#skills').offset().top;
                 const worksOffset = $('#works').offset().top;
-
+                
                 if (scrollPos >= aboutOffset && scrollPos < skillsOffset) {
                     $('.scroolwrap').fadeIn();
                     $('.pagetopwrap').fadeOut();
@@ -363,11 +388,17 @@
                 }
             });
 
-            // ページトップボタンの設定
-            $('.pagetop').click(function () {
-                $('html, body').animate({ scrollTop: 0 }, 0, "linear");
-                return false;
-            });
+// スクロールボタンのクリックで700px下に移動
+$('.scroolwrap').click(function () {
+    $('html, body').animate({ scrollTop: $(window).scrollTop() + 700 }, 'smooth');
+    return false;
+});
+
+// ページトップボタンのクリックでページの最上部に移動
+$('.pagetopwrap').click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 'smooth');
+    return false;
+});
             // サブタイトルの動作の設定
             $(window).scroll(function () {
                 $('.text').each(function () {
@@ -432,15 +463,7 @@
                 }, { threshold: 0.1 });
                 skills.forEach(skill => observer.observe(skill));
             }
-
-            // Lightbox設定
-            lightbox.option({
-                'resizeDuration': 200,
-                'wrapAround': true
-            });
-            $('.lb-close').on('click', function () {
-                $(this).toggleClass('open').fadeToggle();
-            });
+            
         });
     </script>
 </body>

@@ -5,75 +5,294 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ipoulu&thinsp;design</title>
-
+    <!-- lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css"
+        integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <!-- reset-->
     <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">
+    <!-- css -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- j Query -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- slick -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"
+        integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+    <section id="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <p class="loading-text">
+            LOADING...
+        </p>
+    </section>
+
     <header>
         <nav class="pc-nav">
             <ul>
-                <li><a href="index.html#about">ABOUT</a></li>
-                <li><a href="index.html#works">WORKS</a></li>
-                <li><a href="index.html#skills">SKILLS</a></li>
-                <li><a href="profile.html">PROFILE</a></li>
-                <li><a href="index.html#information">INFORMATION</a></li>
+                <li><a href="index.html#about" class="light-pink">ABOUT</a></li>
+                <li><a href="index.html#works" class="light-yellow">WORKS</a></li>
+                <li><a href="index.html#skills" class="light-red">SKILLS</a></li>
+                <li><a href="profile.html" class="light-blue">PROFILE</a></li>
+                <li><a href="index.html#information" class="light-teal">INFORMATION</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <div class="wrapper">
             <section id="website-detail-1">
                 <div class="right-title">
-                    <h2>WORKS</h2>
+                    <h2 class="text-right active">WORKS</h2>
                     <h3>制作について</h3>
                 </div>
                 <p class="works-title">BANNER</p>
                 <div class="website-performance">
 
                     <img src="images/Banner-1.jpg" alt="Banner-1" class="banner-detail-img">
-                    <p class="performance-name">キャンペーン告知バナー</p>
+                    <p class="performance-name slide-in leftAnime"><span
+                            class="slide-in_inner leftAnimeInner">キャンペーン告知バナー</span></p>
                     <a class="detail-link" href="">VISIT&thinsp;BANNER</a>
+
                     <dl class="detail-sentence">
-                        <div class="detail">
-                            <dt class="detail-taitle">カテゴリ</dt>
-                            <dd class="detail-text">トレース</dd>
-                        </div>
-                        <div class="detail">
-                            <dt class="detail-taitle">担当範囲</dt>
-                            <dd class="detail-text">デザイン</dd>
-                        </div>
-                        <div class="detail">
-                            <dt class="detail-taitle">ツール&thinsp;/&thinsp;言語</dt>
-                            <dd class="detail-text">Illustrator</dd>
-                        </div>
-                        <div class="detail">
-                            <dt class="detail-taitle">ポイント</dt>
-                            <dd class="detail-text">キャンペーン用バナーのサンプルデザインです。<br>
-                                初めてスマホを持つ新入生向けのキャンペーンのため、花飾りをモチーフにするなど柔らかくポップな印象に仕上げています。<br>
-                                キャンペーン期間の視認性を高くし、有効期限が意識されやすいようにすることで、購買行動を促すようにデザインしました。</dd>
-                        </div>
+                                <div class="detail">
+                                    <dt class="detail-taitle">カテゴリ</dt>
+                                    <dd class="detail-text">トレース</dd>
+                                </div>
+                                <div class="detail">
+                                    <dt class="detail-taitle">担当範囲</dt>
+                                    <dd class="detail-text">デザイン</dd>
+                                </div>
+                                <div class="detail">
+                                    <dt class="detail-taitle">ツール&thinsp;/&thinsp;言語</dt>
+                                    <dd class="detail-text">Illustrator</dd>
+                                </div>
+                                <div class="detail">
+                                    <dt class="detail-taitle">ポイント</dt>
+                                    <dd class="detail-text">キャンペーン用バナーのサンプルデザインです。<br>
+                                        初めてスマホを持つ新入生向けのキャンペーンのため、花飾りをモチーフにするなど柔らかくポップな印象に仕上げています。<br>
+                                        キャンペーン期間の視認性を高くし、有効期限が意識されやすいようにすることで、購買行動を促すようにデザインしました。</dd>
+                                </div>
 
                     </dl>
                 </div>
+        <a class="detail-link" href="index.html#information">INFORMATION</a>
 
-                <a class="detail-link" href="index.html#information">INFORMATION</a>
-
-            </section>
+        </section>
 
         </div>
     </main>
     <footer>
-        <div class="rainbow">
+
+        <div class="footerwrap">
             <div class="footer-rainbow-1"></div>
             <div class="footer-rainbow-2"></div>
-            <div class="footer-rainbow-3"></div>
+            <div class="footer-rainbow-3">
+                <p class="footer-text">©︎Ipoulu&thinsp;Design</p>
+            </div>
             <div class="footer-rainbow-4"></div>
             <div class="footer-rainbow-5"></div>
+
         </div>
-        <p class="footer-text">©︎Ipoulu&thinsp;Design</p>
+
+        <button class="scroolbtn">
+            <div class="scroolwrap">
+                <div class="scroll">
+                    <svg viewBox="0 0 100 100" class="rotate-svg">
+                        <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+                        <text>
+                            <textPath xlink:href="#circle">
+                                SCROOL&thinsp;
+                                SCROOL&thinsp;
+                                SCROOL&thinsp;
+                                SCROOL&thinsp;
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+        </button>
+
+        <a href="#mainvisual">
+            <div class="pagetopwrap">
+                <div class="pagetop">
+                    <svg viewBox="0 0 100 100">
+                        <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+                        <text>
+                            <textPath xlink:href="#circle">
+                                MAINTOP&thinsp;
+                                MAINTOP&thinsp;
+                                MAINTOP&thinsp;
+
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+                <div class="arrow-upwrap">
+                    <div class="arrow-up"></div>
+                </div>
+            </div>
+        </a>
     </footer>
+
+    <script>
+
+        $(function () {
+            const loadingElement = document.getElementById("loading");
+            if (loadingElement) {
+                loadingElement.style.display = "block";
+
+                // ダミーデータを使う
+                const data = [
+                    { id: 1, title: "Sample Post 1", body: "This is a sample post" },
+                    { id: 2, title: "Sample Post 2", body: "Another sample post" }
+                ];
+                console.log(data);
+                loadingElement.style.display = "none";
+            }
+
+            window.addEventListener('scroll', function () {
+                const scrollPos = $(window).scrollTop();
+
+                // 上から1000px未満のときに「スクロールボタン」を表示し、他の位置では「ページトップボタン」を表示
+                if (scrollPos < 1000) {
+                    $('.scroolwrap').fadeIn(); // スクロールボタンを表示
+                    $('.pagetopwrap').fadeOut(); // ページトップボタンは非表示
+                } else {
+                    $('.scroolwrap').fadeOut(); // スクロールボタンを非表示
+                    $('.pagetopwrap').fadeIn(); // ページトップボタンを表示
+                }
+            });
+
+            // スクロールボタンのクリックで700px下に移動
+            $('.scroolwrap').click(function () {
+                $('html, body').animate({ scrollTop: $(window).scrollTop() + 700 }, 'smooth');
+                return false;
+            });
+
+            // ページトップボタンのクリックでページの最上部に移動
+            $('.pagetopwrap').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'smooth');
+                return false;
+            });
+            // サブタイトルの動作の設定
+            $(window).scroll(function () {
+                $('.text').each(function () {
+                    var elemPos = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > elemPos - windowHeight) {
+                        $(this).addClass('active');
+                    } else {
+                        $(this).removeClass('active');
+                    }
+                });
+            });
+            $(window).scroll(function () {
+                $('.text-right').each(function () {
+                    var elemPos = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > elemPos - windowHeight) {
+                        $(this).addClass('active');
+                    } else {
+                        $(this).removeClass('active');
+                    }
+                });
+            });
+
+            function slideAnime() {
+                //==== 右に動くアニメーション ===
+                $('.rightAnime').each(function () {
+                    var elemPos = $(this).offset().top - 50;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll >= elemPos - windowHeight) {
+                        $(this).addClass("slideAnimeRightLeft");
+                        $(this).children(".rightAnimeInner").addClass("slideAnimeLeftRight");
+                    } else {
+                        $(this).removeClass("slideAnimeRightLeft");
+                        $(this).children(".rightAnimeInner").removeClass("slideAnimeLeftRight");
+                    }
+                });
+
+                //==== 左に動くアニメーション ===
+                $('.leftAnime').each(function () {
+                    var elemPos = $(this).offset().top - 50;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll >= elemPos - windowHeight) {
+                        $(this).addClass("slideAnimeLeftRight");
+                        $(this).children(".leftAnimeInner").addClass("slideAnimeRightLeft");
+                    } else {
+                        $(this).removeClass("slideAnimeLeftRight");
+                        $(this).children(".leftAnimeInner").removeClass("slideAnimeRightLeft");
+                    }
+                });
+
+                //==== website-group-rightのアニメーション ===
+                $('.website-group-right').each(function () {
+                    var elemPos = $(this).offset().top - 50;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll >= elemPos - windowHeight) {
+                        $(this).addClass("slideAnimeRightLeft");
+                    } else {
+                        $(this).removeClass("slideAnimeRightLeft");
+                    }
+                });
+
+                //==== website-group-leftのアニメーション ===
+                $('.website-group-left,.banner-detail-img').each(function () {
+                    var elemPos = $(this).offset().top - 50;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll >= elemPos - windowHeight) {
+                        $(this).addClass("slideAnimeLeftRight");
+                    } else {
+                        $(this).removeClass("slideAnimeLeftRight");
+                    }
+                });
+            }
+
+            // 画面をスクロールしたらアニメーションを実行
+            $(window).scroll(function () {
+                slideAnime();
+            });
+            const websiteGroups = document.querySelectorAll('.website-group-left, .website-group-right');
+
+            if (websiteGroups.length) {
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-animated');
+                            const images = entry.target.querySelectorAll('img');
+                            images.forEach((img, index) => {
+                                setTimeout(() => {
+                                    img.classList.add('is-animated');
+                                }, index * 500);
+                            });
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                websiteGroups.forEach(group => observer.observe(group));
+            }
+        });
+    </script>
 </body>
 
 </html>

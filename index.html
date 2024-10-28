@@ -21,6 +21,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- slick -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <!-- lightbox -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"
         integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ=="
@@ -42,32 +43,69 @@
     <header class="hidden">
         <nav class="pc-nav">
             <ul>
-                <li class="light-pink"><a href="index.html#about" >ABOUT</a></li>
-                <li class="light-yellow"><a href="index.html#works" >WORKS</a></li>
-                <li class="light-red"><a href="index.html#skills" >SKILLS</a></li>
-                <li class="light-blue"><a href="profile.html" >PROFILE</a></li>
-                <li class="light-teal"><a href="index.html#information" >INFORMATION</a></li>
+                <li class="light-pink"><a href="index.html#about">ABOUT</a></li>
+                <li class="light-yellow"><a href="index.html#works">WORKS</a></li>
+                <li class="light-red"><a href="index.html#skills">SKILLS</a></li>
+                <li class="light-blue"><a href="profile.html">PROFILE</a></li>
+                <li class="light-teal"><a href="index.html#information">INFORMATION</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="mainvisual">
-        <div id="splash">
-            <div id="splash-logo">portfolio by <br>FUHSHIMI AYUMI</div>
-            <!--/splash--></div>
-            <div class="splashbg1"></div>
-            <div class="splashbg2"></div>
-            <!-- -画面遷移用-->
-            <div id="container">
+        <div id="spl">
+            <div id="spl-logo">portfolio by <br>FUHSHIMI AYUMI</div>
+            <!--/splash-->
+        </div>
+        <div class="splbg1"></div>
+        <div class="splbg2"></div>
+        <!-- -画面遷移用-->
+        <div id="container">
 
-        <h1><img src="./images/text.svg" alt="mainvisual-img"></h1>
+            <h1>
+                <div id="splash">
+                    <div id="splash_logo">
+                        <!-- ベースにするsvgタグを入れる。記述の一部を後程解説する自作のsvgタグと差し替えます。-->
+                        <svg id="mask" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 867.97 167.24">
+                            <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/text.svg" width="739"
+                                height="258.9" mask="url(#clipmask)"></image>
+                            <mask id="clipmask" maskUnits="objectBoundingBox">
 
-        <div class="rainbow-1"></div>
-        <div class="rainbow-2"></div>
-        <div class="rainbow-3"></div>
-        <div class="rainbow-4"></div>
-        <div class="rainbow-5"></div>
-        <!--/container--></div>
+                                <line class="st0" x1="8.5" y1="8.5" x2="8.5" y2="124.09" />
+                                <line class="st0" x1="36.6" y1="46.57" x2="36.6" y2="158.74" />
+                                <path class="st0" d="M41.7,83.45s62.77-83.75,55.23,0-55.23,30.03-55.23,30.03" />
+                                <path class="cls-1"
+                                    d="M116.1,93.05s14.76-91.74,66.48-26.13c6.72,91.82-66.48,26.13-66.48,26.13Z" />
+                                <path class="st0" d="M207.21,45.55s9.43,179.18,50.9,1.02v73.14" />
+                                <line class="st0" x1="283.5" y1="10.01" x2="283.5" y2="120.5" />
+                                <path class="st0" d="M309.01,46.57s8.48,166.83,52.78,5.65c1.5-15.96,0,67.49,0,67.49" />
+                                <line class="st0" x1="422.12" y1="11.19" x2="422.12" y2="120.5" />
+                                <path class="st0" d="M430.97,35.93s67.99-76.46,75.04,38.25-75.04,47.51-75.04,47.51" />
+                                <path class="st0"
+                                    d="M532.64,85.51l60.95-14.79c-5.27-14.61-18.97-23.15-42.62-24.55-21.09,11.29-25.24,32.33-24.23,56.34,36.48,25.3,58.72,21.38,65.67-13.94" />
+                                <path class="st0"
+                                    d="M659.65,56.93c-5.66-32.19-30.39-26.86-46.15,0,1.89,32.82,32.35,9.49,46.15,40.02.08,31.91-31.35,44.64-47.88,4.11" />
+                                <line class="st0" x1="685.45" y1="46.57" x2="685.45" y2="122.09" />
+                                <line class="st0" x1="680.03" y1="19.37" x2="690.87" y2="30.09" />
+                                <path class="st0"
+                                    d="M764.4,49.85l24.96-7.68c-34.74-1.8-65.3,1.03-80.24,21.12l5.28,46.42,33.6,12.3,31.7-25.07-5.27-37.68,10.58,51.39-67.33,20.08,3.76,17.36,46.04-21.57,19.8-3.47.24,17.68-13.52,5.76-21.99-5.24" />
+                                <path class="st0"
+                                    d="M807.63,43.87v78.22c7.98-58.79,21.57-90.74,45.17-74.79l6.67,68.52" />
+                            </mask>
+                        </svg><!--ベースにするタグここまで-->
+                        <!--/splash_logo-->
+                    </div>
+                    <!--/splash-->
+                </div>
+            </h1>
+
+            <div class="rainbow-1"></div>
+            <div class="rainbow-2"></div>
+            <div class="rainbow-3"></div>
+            <div class="rainbow-4"></div>
+            <div class="rainbow-5"></div>
+            <!--/container-->
+        </div>
 
     </section>
     <main>
@@ -206,7 +244,7 @@
         </div>
     </main>
     <footer>
-        
+
         <div class="footerwrap">
             <div class="footer-rainbow-1"></div>
             <div class="footer-rainbow-2"></div>
@@ -253,219 +291,235 @@
                     </svg>
                 </div>
                 <div class="arrow-upwrap">
-                    <div class="arrow-up"></div> 
+                    <div class="arrow-up"></div>
                 </div>
             </div>
         </a>
     </footer>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="js/main.js"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script>
+
+</body>
+
 <script>
-        // headerの表示の設定
-        document.addEventListener('DOMContentLoaded', function () {
-            const header = document.querySelector('header');
-            const mainVisual = document.getElementById('mainvisual');
+    // headerの表示の設定
+    document.addEventListener('DOMContentLoaded', function () {
+        const header = document.querySelector('header');
+        const mainVisual = document.getElementById('mainvisual');
 
-            // mainvisualの高さを取得
-            const mainVisualHeight = mainVisual.offsetHeight;
+        // mainvisualの高さを取得
+        const mainVisualHeight = mainVisual.offsetHeight;
 
-            window.addEventListener('scroll', function () {
-                if (window.scrollY < mainVisualHeight) {
-                    header.classList.add('hidden'); // ヘッダーを隠す
-                } else {
-                    header.classList.remove('hidden'); // ヘッダーを表示
-                }
-            });
-
-            const headerHeight = header.offsetHeight; // ヘッダーの高さを取得
-
-            // 各リンクにクリックイベントを追加
-            document.querySelectorAll('a[href="#about"], a[href="#works"], a[href="#skills"], a[href="#information"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault(); // デフォルトのリンク動作を無効化
-
-                    const targetId = this.getAttribute('href'); // クリックされたリンクのhrefを取得
-                    const targetElement = document.querySelector(targetId); // 対応するセクションを取得
-
-                    if (targetElement) {
-                        const targetPosition = targetElement.offsetTop - headerHeight; // ヘッダーの高さを考慮したスクロール位置
-
-                        // スムーズスクロールを実行
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
+        window.addEventListener('scroll', function () {
+            if (window.scrollY < mainVisualHeight) {
+                header.classList.add('hidden'); // ヘッダーを隠す
+            } else {
+                header.classList.remove('hidden'); // ヘッダーを表示
+            }
         });
 
-$(window).on('load',function(){
-$("#splash-logo").delay(1800).fadeOut('slow');//ロゴを1.2秒でフェードアウトする記述
+        const headerHeight = header.offsetHeight; // ヘッダーの高さを取得
 
-//=====ここからローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
-$("#splash").delay(2000).fadeOut('slow',function(){//ローディングエリア（splashエリア）を1.5秒でフェードアウトする記述
+        // 各リンクにクリックイベントを追加
+        document.querySelectorAll('a[href="#about"], a[href="#works"], a[href="#skills"], a[href="#information"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); // デフォルトのリンク動作を無効化
 
-$('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
+                const targetId = this.getAttribute('href'); // クリックされたリンクのhrefを取得
+                const targetElement = document.querySelector(targetId); // 対応するセクションを取得
 
-});
-//=====ここまでローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
+                if (targetElement) {
+                    const targetPosition = targetElement.offsetTop - headerHeight; // ヘッダーの高さを考慮したスクロール位置
 
-//=====ここから背景が伸びた後に動かしたいJSをまとめたい場合は
-$('.splashbg1').on('animationend', function() { 
-//この中に動かしたいJSを記載
-});
-});
-
-
-$(function () {
-            // ローディング画面の設定
-            const loadingElement = document.getElementById("loading");
-            if (loadingElement) {
-    loadingElement.style.display = "block";
-
-    // ダミーデータを使う
-    const data = [
-        { id: 1, title: "Sample Post 1", body: "This is a sample post" },
-        { id: 2, title: "Sample Post 2", body: "Another sample post" }
-    ];
-
-    console.log(data);
-    loadingElement.style.display = "none";
-}
-
-            // Slider設定
-            $('.website_slider').slick({
-                autoplay: true,
-                autoplaySpeed: 0,
-                speed: 10000,
-                cssEase: "linear",
-                slidesToShow: 3,
-                swipe: false,
-                arrows: false,
-                variableWidth: true,
-                pauseOnFocus: false,
-                pauseOnHover: false,
-                responsive: [{
-                    breakpoint: 750,
-                    settings: { slidesToShow: 2 }
-                }]
-            });
-
-            $('.banner_slider').slick({
-                autoplay: true,
-                autoplaySpeed: 0,
-                speed: 10000,
-                cssEase: "linear",
-                slidesToShow: 3,
-                swipe: false,
-                arrows: false,
-                variableWidth: true,
-                rtl: true,
-                pauseOnFocus: false,
-                pauseOnHover: false,
-                responsive: [{
-                    breakpoint: 750,
-                    settings: { slidesToShow: 2 }
-                }]
-            });
-            window.addEventListener('scroll', function () {
-                const scrollPos = $(this).scrollTop();
-                const aboutOffset = $('#about').offset().top;
-                const skillsOffset = $('#skills').offset().top;
-                const worksOffset = $('#works').offset().top;
-                
-                if (scrollPos >= aboutOffset && scrollPos < skillsOffset) {
-                    $('.scroolwrap').fadeIn();
-                    $('.pagetopwrap').fadeOut();
-                } else if (scrollPos >= skillsOffset) {
-                    $('.scroolwrap').fadeOut();
-                    $('.pagetopwrap').fadeIn();
-                } else {
-                    $('.scroolwrap').fadeOut();
-                    $('.pagetopwrap').fadeOut();
-                }
-            });
-
-// スクロールボタンのクリックで700px下に移動
-$('.scroolwrap').click(function () {
-    $('html, body').animate({ scrollTop: $(window).scrollTop() + 700 }, 'smooth');
-    return false;
-});
-
-// ページトップボタンのクリックでページの最上部に移動
-$('.pagetopwrap').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 'smooth');
-    return false;
-});
-            // サブタイトルの動作の設定
-            $(window).scroll(function () {
-                $('.text').each(function () {
-                    var elemPos = $(this).offset().top;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll > elemPos - windowHeight) {
-                        $(this).addClass('active');
-                    } else {
-                        $(this).removeClass('active');
-                    }
-                });
-            });
-            $(window).scroll(function () {
-                $('.text-right').each(function () {
-                    var elemPos = $(this).offset().top;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll > elemPos - windowHeight) {
-                        $(this).addClass('active');
-                    } else {
-                        $(this).removeClass('active');
-                    }
-                });
-            });
-            // aboutセクションのアニメーション
-            const lines = document.querySelectorAll('.line');
-            if (lines.length) {
-                const aboutText = document.querySelector('.about-text');
-                if (aboutText) {
-                    const observer = new IntersectionObserver(entries => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                lines.forEach((line, index) => {
-                                    setTimeout(() => {
-                                        line.classList.add('is-animated');
-                                    }, index * 500);
-                                });
-                                observer.disconnect();
-                            }
-                        });
+                    // スムーズスクロールを実行
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
-                    observer.observe(aboutText);
                 }
-            }
+            });
+        });
+    });
 
-            // skillセクションのアニメーション
-            const skills = document.querySelectorAll('.skill');
-            if (skills.length) {
+    $(window).on('load', function () {
+        $("#spl-logo").delay(1800).fadeOut('slow');//ロゴを1.2秒でフェードアウトする記述
+
+        //=====ここからローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
+        $("#spl").delay(2000).fadeOut('slow', function () {//ローディングエリア（splashエリア）を1.5秒でフェードアウトする記述
+
+            $('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
+
+        });
+        //=====ここまでローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
+
+        //=====ここから背景が伸びた後に動かしたいJSをまとめたい場合は
+        $('.splbg1').on('animationend', function () {
+            //この中に動かしたいJSを記載
+        });
+    });
+
+
+    $(function () {
+        // ローディング画面の設定
+        const loadingElement = document.getElementById("loading");
+        if (loadingElement) {
+            loadingElement.style.display = "block";
+
+            // ダミーデータを使う
+            const data = [
+                { id: 1, title: "Sample Post 1", body: "This is a sample post" },
+                { id: 2, title: "Sample Post 2", body: "Another sample post" }
+            ];
+
+            console.log(data);
+            loadingElement.style.display = "none";
+        }
+
+        // Slider設定
+        $('.website_slider').slick({
+            autoplay: true,
+            autoplaySpeed: 0,
+            speed: 10000,
+            cssEase: "linear",
+            slidesToShow: 3,
+            swipe: false,
+            arrows: false,
+            variableWidth: true,
+            pauseOnFocus: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 750,
+                settings: { slidesToShow: 2 }
+            }]
+        });
+
+        $('.banner_slider').slick({
+            autoplay: true,
+            autoplaySpeed: 0,
+            speed: 10000,
+            cssEase: "linear",
+            slidesToShow: 3,
+            swipe: false,
+            arrows: false,
+            variableWidth: true,
+            rtl: true,
+            pauseOnFocus: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 750,
+                settings: { slidesToShow: 2 }
+            }]
+        });
+        window.addEventListener('scroll', function () {
+            const scrollPos = $(this).scrollTop();
+            const aboutOffset = $('#about').offset().top;
+            const skillsOffset = $('#skills').offset().top;
+            const worksOffset = $('#works').offset().top;
+
+            if (scrollPos >= aboutOffset && scrollPos < skillsOffset) {
+                $('.scroolwrap').fadeIn();
+                $('.pagetopwrap').fadeOut();
+            } else if (scrollPos >= skillsOffset) {
+                $('.scroolwrap').fadeOut();
+                $('.pagetopwrap').fadeIn();
+            } else {
+                $('.scroolwrap').fadeOut();
+                $('.pagetopwrap').fadeOut();
+            }
+        });
+
+        // スクロールボタンのクリックで700px下に移動
+        $('.scroolwrap').click(function () {
+            $('html, body').animate({ scrollTop: $(window).scrollTop() + 700 }, 'smooth');
+            return false;
+        });
+        //SVGアニメーションの描画
+        var stroke;
+        stroke = new Vivus('mask', {//アニメーションをするIDの指定
+            start: 'manual',//自動再生をせずスタートをマニュアルに
+            type: 'scenario-sync',// アニメーションのタイプを設定
+            duration: 50,//アニメーションの時間設定。数字が小さくなるほど速い
+            forceRender: false,//パスが更新された場合に再レンダリングさせない
+            animTimingFunction: Vivus.EASE,//動きの加速減速設定
+        }
+        );
+
+        $(window).on('load', function () {
+            $("#splash").delay(1500).fadeOut('slow');//ローディング画面を1.5秒（1500ms）待機してからフェイドアウト
+            $("#splash_logo").delay(1500).fadeOut('slow');//ロゴを1.5秒（1500ms）待機してからフェイドアウト
+            stroke.play();//SVGアニメーションの実行
+        });
+        // ページトップボタンのクリックでページの最上部に移動
+        $('.pagetopwrap').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 'smooth');
+            return false;
+        });
+        // サブタイトルの動作の設定
+        $(window).scroll(function () {
+            $('.text').each(function () {
+                var elemPos = $(this).offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll > elemPos - windowHeight) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+            });
+        });
+        $(window).scroll(function () {
+            $('.text-right').each(function () {
+                var elemPos = $(this).offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll > elemPos - windowHeight) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+            });
+        });
+        // aboutセクションのアニメーション
+        const lines = document.querySelectorAll('.line');
+        if (lines.length) {
+            const aboutText = document.querySelector('.about-text');
+            if (aboutText) {
                 const observer = new IntersectionObserver(entries => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            entry.target.classList.add('is-animated');
-                            const skillIcons = entry.target.querySelectorAll('.icon-img');
-                            skillIcons.forEach((icon, index) => {
+                            lines.forEach((line, index) => {
                                 setTimeout(() => {
-                                    icon.classList.add('is-animated');
+                                    line.classList.add('is-animated');
                                 }, index * 500);
                             });
+                            observer.disconnect();
                         }
                     });
-                }, { threshold: 0.1 });
-                skills.forEach(skill => observer.observe(skill));
+                });
+                observer.observe(aboutText);
             }
-            
-        });
-    </script>
+        }
+
+        // skillセクションのアニメーション
+        const skills = document.querySelectorAll('.skill');
+        if (skills.length) {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-animated');
+                        const skillIcons = entry.target.querySelectorAll('.icon-img');
+                        skillIcons.forEach((icon, index) => {
+                            setTimeout(() => {
+                                icon.classList.add('is-animated');
+                            }, index * 500);
+                        });
+                    }
+                });
+            }, { threshold: 0.1 });
+            skills.forEach(skill => observer.observe(skill));
+        }
+
+    });
+</script>
 </body>
 
 </html>

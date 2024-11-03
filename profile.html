@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ipoulu&thinsp;design</title>
+    <title>profile</title>
     <!-- lightbox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css"
         integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA=="
@@ -42,11 +42,11 @@
     <header>
         <nav class="pc-nav">
             <ul>
-                <li><a href="index.html#about" class="light-pink">ABOUT</a></li>
-                <li><a href="index.html#works" class="light-yellow">WORKS</a></li>
-                <li><a href="index.html#skills" class="light-red">SKILLS</a></li>
-                <li><a href="profile.html" class="light-blue">PROFILE</a></li>
-                <li><a href="index.html#information" class="light-teal">INFORMATION</a></li>
+                <li class="light-pink"><a href="index.html#about">ABOUT</a></li>
+                <li class="light-yellow"><a href="index.html#works">WORKS</a></li>
+                <li class="light-red"><a href="index.html#skills">SKILLS</a></li>
+                <li class="light-blue"><a href="profile.html">PROFILE</a></li>
+                <li class="light-teal"><a href="index.html#information">INFORMATION</a></li>
             </ul>
         </nav>
     </header>
@@ -114,7 +114,7 @@
             </div>
         </button>
 
-        <a href="#mainvisual">
+        <a href="index.html#mainvisual">
             <div class="pagetopwrap">
                 <div class="pagetop">
                     <svg viewBox="0 0 100 100">
@@ -135,6 +135,8 @@
             </div>
         </a>
     </footer>
+
+
     <script>
 
         $(function () {
@@ -172,7 +174,7 @@
 
             // ページトップボタンのクリックでページの最上部に移動
             $('.pagetopwrap').click(function () {
-                $('html, body').animate({ scrollTop: 0 }, 'smooth');
+                $('html, body').animate({ scrollTop: $('/index.html#mainvisual').offset().top }, 'smooth');
                 return false;
             });
             // サブタイトルの動作の設定

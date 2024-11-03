@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ipoulu&thinsp;design</title>
+    <title>website1</title>
     <!-- lightbox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css"
         integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA=="
@@ -42,11 +42,11 @@
     <header>
         <nav class="pc-nav">
             <ul>
-                <li><a href="index.html#about">ABOUT</a></li>
-                <li><a href="index.html#works">WORKS</a></li>
-                <li><a href="index.html#skills">SKILLS</a></li>
-                <li><a href="profile.html">PROFILE</a></li>
-                <li><a href="index.html#information">INFORMATION</a></li>
+                <li class="light-pink"><a href="index.html#about">ABOUT</a></li>
+                <li class="light-yellow"><a href="index.html#works">WORKS</a></li>
+                <li class="light-red"><a href="index.html#skills">SKILLS</a></li>
+                <li class="light-blue"><a href="profile.html">PROFILE</a></li>
+                <li class="light-teal"><a href="index.html#information">INFORMATION</a></li>
             </ul>
         </nav>
     </header>
@@ -63,7 +63,10 @@
                     <img src="images/Website1.png" alt="Website1" class="detail-img">
                     <p class="performance-name slide-in leftAnime"><span
                         class="slide-in_inner leftAnimeInner">架空&emsp;美容院ホームページ </span></p>
+
+                    
                     <a class="detail-link" href="">VISIT&thinsp;WEBSITE</a>
+
                     <dl class="detail-sentence">
                         <div class="detail">
                             <dt class="detail-taitle">カテゴリ</dt>
@@ -128,23 +131,24 @@
             </div>
         </button>
 
-        <a href="#mainvisual">
+       <a href="./website-list.html">
             <div class="pagetopwrap">
                 <div class="pagetop">
                     <svg viewBox="0 0 100 100">
                         <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
                         <text>
                             <textPath xlink:href="#circle">
-                                MAINTOP&thinsp;
-                                MAINTOP&thinsp;
-                                MAINTOP&thinsp;
+                                &thinsp;WEBSITE&thinsp;TOP&thinsp;&thinsp;
+                                
+                                WEBSITE&thinsp;TOP&thinsp;
+                                
 
                             </textPath>
                         </text>
                     </svg>
                 </div>
                 <div class="arrow-upwrap">
-                    <div class="arrow-up"></div>
+                    <div class="arrow-up"></div> 
                 </div>
             </div>
         </a>
@@ -185,11 +189,11 @@
                 return false;
             });
 
-            // ページトップボタンのクリックでページの最上部に移動
-            $('.pagetopwrap').click(function () {
-                $('html, body').animate({ scrollTop: 0 }, 'smooth');
-                return false;
-            });
+                       // ページトップボタンのクリックで#WORKSに移動
+$('.pagetopwrap').click(function () {
+    $('html, body').animate({ scrollTop: $('./website-list.html').offset().top }, 'smooth');
+    return false;
+});
             // サブタイトルの動作の設定
             $(window).scroll(function () {
                 $('.text').each(function () {

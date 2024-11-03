@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ipoulu&thinsp;design</title>
+    <title>contactform</title>
     <!-- lightbox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css"
         integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA=="
@@ -43,11 +43,11 @@
     <header>
         <nav class="pc-nav">
             <ul>
-                <li><a href="index.html#about">ABOUT</a></li>
-                <li><a href="index.html#works">WORKS</a></li>
-                <li><a href="index.html#skills">SKILLS</a></li>
-                <li><a href="profile.html">PROFILE</a></li>
-                <li><a href="index.html#information">INFORMATION</a></li>
+                <li class="light-pink"><a href="index.html#about">ABOUT</a></li>
+                <li class="light-yellow"><a href="index.html#works">WORKS</a></li>
+                <li class="light-red"><a href="index.html#skills">SKILLS</a></li>
+                <li class="light-blue"><a href="profile.html">PROFILE</a></li>
+                <li class="light-teal"><a href="index.html#information">INFORMATION</a></li>
             </ul>
         </nav>
     </header>
@@ -63,20 +63,33 @@
                     ご依頼やご質問などがございましたら、以下のフォームに必要事項をご記入の上、お送りください。
                 </p>
                 <div class="Form">
-
+                    <form
+                    　 action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScR-wlW0NNXBVX8yEBT9LrNBXQfUoQ4oNy9G0TvvrRsBsQzpQ/formResponse"
+                      method="POST"
+                    >
                     <div class="Form-Item">
                         <p class="Form-Item-Label">NAME</p>
-                        <input type="text" class="Form-Item-Input">
+                        <!-- <input type="text" class="Form-Item-Input"> -->
+                        <input
+                        name="entry.1231227046"
+                        type="text" class="Form-Item-Input"
+                    />
                     </div>
 
                     <div class="Form-Item">
                         <p class="Form-Item-Label">TEL</p>
-                        <input type="text" class="Form-Item-Input">
+                        <!-- <input type="text" class="Form-Item-Input"> -->
+                        <input 
+                        name="entry.104582659"
+                        type="text" class="Form-Item-Input">
                     </div>
 
                     <div class="Form-Item">
                         <p class="Form-Item-Label">E-MAIL</p>
-                        <input type="email" class="Form-Item-Input">
+                        <!-- <input type="email" class="Form-Item-Input"> -->
+                        <input 
+                        name="entry.151562524"
+                        type="email" class="Form-Item-Input">
                     </div>
 
                     <div class="Form-Item">
@@ -84,7 +97,12 @@
                         <textarea class="Form-Item-Textarea"></textarea>
                     </div>
 
-                    <input type="submit" class="Form-Btn" value="SEND">
+                    <!-- <input type="submit" class="Form-Btn" value="SEND"> -->
+                    <input 
+                    name="entry.952874431"
+                    type="submit" class="Form-Btn" value="SEND">
+
+                    </form>
                 </div>
 
 
@@ -124,7 +142,7 @@
             </div>
         </button>
 
-        <a href="#mainvisual">
+        <a href="index.html#mainvisual">
             <div class="pagetopwrap">
                 <div class="pagetop">
                     <svg viewBox="0 0 100 100">
@@ -166,7 +184,7 @@
                 const scrollPos = $(window).scrollTop();
 
                 // 上から1000px未満のときに「スクロールボタン」を表示し、他の位置では「ページトップボタン」を表示
-                if (scrollPos < 1000) {
+                if (scrollPos < 300) {
                     $('.scroolwrap').fadeIn(); // スクロールボタンを表示
                     $('.pagetopwrap').fadeOut(); // ページトップボタンは非表示
                 } else {
@@ -183,7 +201,7 @@
 
             // ページトップボタンのクリックでページの最上部に移動
             $('.pagetopwrap').click(function () {
-                $('html, body').animate({ scrollTop: 0 }, 'smooth');
+                $('html, body').animate({ scrollTop: $('/index.html#mainvisual').offset().top }, 'smooth');
                 return false;
             });
             // サブタイトルの動作の設定
@@ -211,6 +229,26 @@
                     }
                 });
             });
+            // aboutセクションのアニメーション
+            const lines = document.querySelectorAll('.line');
+            if (lines.length) {
+                const aboutText = document.querySelector('.profile-text');
+                if (aboutText) {
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                lines.forEach((line, index) => {
+                                    setTimeout(() => {
+                                        line.classList.add('is-animated');
+                                    }, index * 500);
+                                });
+                                observer.disconnect();
+                            }
+                        });
+                    });
+                    observer.observe(aboutText);
+                }
+            }
 
             function slideAnime() {
                 //==== 右に動くアニメーション ===
@@ -254,7 +292,7 @@
                 });
 
                 //==== website-group-leftのアニメーション ===
-                $('.website-group-left,.banner-detail-img,.detail-img').each(function () {
+                $('.website-group-left').each(function () {
                     var elemPos = $(this).offset().top - 50;
                     var scroll = $(window).scrollTop();
                     var windowHeight = $(window).height();
@@ -289,6 +327,7 @@
 
                 websiteGroups.forEach(group => observer.observe(group));
             }
+
         });
     </script>
 </body>

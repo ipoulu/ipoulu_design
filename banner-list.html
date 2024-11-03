@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ipoulu&thinsp;design</title>
+    <title>banner-list</title>
     <!-- lightbox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css"
         integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA=="
@@ -42,11 +42,11 @@
     <header>
         <nav class="pc-nav">
             <ul>
-                <li><a href="index.html#about">ABOUT</a></li>
-                <li><a href="index.html#works">WORKS</a></li>
-                <li><a href="index.html#skills">SKILLS</a></li>
-                <li><a href="profile.html">PROFILE</a></li>
-                <li><a href="index.html#information">INFORMATION</a></li>
+                <li class="light-pink"><a href="index.html#about">ABOUT</a></li>
+                <li class="light-yellow"><a href="index.html#works">WORKS</a></li>
+                <li class="light-red"><a href="index.html#skills">SKILLS</a></li>
+                <li class="light-blue"><a href="profile.html">PROFILE</a></li>
+                <li class="light-teal"><a href="index.html#information">INFORMATION</a></li>
             </ul>
         </nav>
     </header>
@@ -125,16 +125,17 @@
             </div>
         </button>
 
-        <a href="#mainvisual">
+        <a href="./index.html#works">
             <div class="pagetopwrap">
                 <div class="pagetop">
                     <svg viewBox="0 0 100 100">
                         <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
                         <text>
                             <textPath xlink:href="#circle">
-                                MAINTOP&thinsp;
-                                MAINTOP&thinsp;
-                                MAINTOP&thinsp;
+                                WORKS&thinsp;
+                                WORKS&thinsp;
+                                WORKS&thinsp;
+                                WORKS&thinsp;
 
                             </textPath>
                         </text>
@@ -182,9 +183,9 @@ $('.scroolwrap').click(function () {
     return false;
 });
 
-// ページトップボタンのクリックでページの最上部に移動
+// ページトップボタンのクリックで#WORKSに移動
 $('.pagetopwrap').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 'smooth');
+    $('html, body').animate({ scrollTop: $('/index.html#works').offset().top }, 'smooth');
     return false;
 });
             // サブタイトルの動作の設定

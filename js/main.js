@@ -36,45 +36,58 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
 var stroke;
-    stroke = new Vivus('mask', {//アニメーションをするIDの指定
-        start: 'manual',//自動再生をせずスタートをマニュアルに
-        type: 'scenario-sync',// アニメーションのタイプを設定
-        duration:12,//アニメーションの時間設定。数字が小さくなるほど速い
-        forceRender: false,//パスが更新された場合に再レンダリングさせない
-        animTimingFunction:Vivus.EASE,//動きの加速減速設定
-    }
-    );
+stroke = new Vivus('mask', { // アニメーションをするIDの指定
+    start: 'manual', // 自動再生をせずスタートをマニュアルに
+    type: 'scenario-sync', // アニメーションのタイプを設定
+    duration: 12, // アニメーションの時間設定。数字が小さくなるほど速い
+    forceRender: false, // パスが更新された場合に再レンダリングさせない
+    animTimingFunction: Vivus.EASE, // 動きの加速減速設定
+});
+
+// ページが読み込まれた時の処理
 $(window).on('load', function () {
-    var scrollY=$(window).scrollTop()
-    var mvHeight=$('#mainvisual').height() -100
-    console.log(mvHeight)
-    if(scrollY>mvHeight){
-        $('.splbg1').hide()
-        $('.splbg2').hide()
+    const currentURL = window.location.href;
+
+    // URLに"#"が含まれていない場合にのみ処理を実行
+    if (!currentURL.includes('#')) {
+        var scrollY = $(window).scrollTop();
+        var mvHeight = $('#mainvisual').height() - 100;
+        console.log(mvHeight);
+
+        if (scrollY > mvHeight) {
+            $('.splbg1').hide();
+            $('.splbg2').hide();
+        }
+        $("#spl-logo").delay(1800).fadeOut('slow'); // ロゴを1.2秒でフェードアウトする記述
+
+        // ローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
+        $("#spl").delay(2000).fadeOut('slow', function () {
+            $('body').addClass('appear'); // フェードアウト後bodyにappearクラス付与
+            stroke.play();
+            
+            // <div id="container">を表示
+            $('#container').fadeIn('slow'); // フェードインで表示する処理
+        });
+
+    } else {
+        // URLに"#"が含まれている場合は、#splを非表示にし、#containerのアニメーションを実行
+        $('#spl').hide(); // スプラッシュエリアを非表示にする
+        $('body').addClass('appear'); // bodyにappearクラス付与
+        stroke.play(); // アニメーションを実行
+        $('#container').fadeIn('slow'); // <div id="container">をフェードインで表示
     }
-    $("#spl-logo").delay(1800).fadeOut('slow');//ロゴを1.2秒でフェードアウトする記述
 
-    //=====ここからローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
-    $("#spl").delay(2000).fadeOut('slow', function () {//ローディングエリア（splashエリア）を1.5秒でフェードアウトする記述
-
-        $('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
-        stroke.play();
-    });
-    //=====ここまでローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
-
-    //=====ここから背景が伸びた後に動かしたいJSをまとめたい場合は
+    // 背景が伸びた後に動かしたいJSをまとめたい場合
     $('.splbg1').on('animationend', function () {
-        //この中に動かしたいJSを記載
-        
-   
-    stroke.play();//SVGアニメーションの実行
-    setTimeout(function(){
-        stroke.play();
-    },30000)
+        // この中に動かしたいJSを記載
+        stroke.play(); // SVGアニメーションの実行
+        setTimeout(function () {
+            stroke.play();
+        }, 30000);
+    });
 });
-});
-
 
 $(function () {
     // ローディング画面の設定
@@ -91,7 +104,7 @@ $(function () {
         console.log(data);
         loadingElement.style.display = "none";
     }
-
+    
     // Slider設定
     $('.website_slider').slick({
         autoplay: true,
@@ -105,7 +118,7 @@ $(function () {
         pauseOnFocus: false,
         pauseOnHover: false,
         responsive: [{
-            breakpoint: 750,
+            breakpoint: 768,
             settings: { slidesToShow: 2 }
         }]
     });
@@ -123,7 +136,7 @@ $(function () {
         pauseOnFocus: false,
         pauseOnHover: false,
         responsive: [{
-            breakpoint: 750,
+            breakpoint: 768,
             settings: { slidesToShow: 2 }
         }]
     });
@@ -150,11 +163,7 @@ $(function () {
         $('html, body').animate({ scrollTop: $(window).scrollTop() + 700 }, 'smooth');
         return false;
     });
-    //SVGアニメーションの描画
     
-
-//     $(window).on('load', function () {
-// console.log("stroke")
       
 //     });
     // ページトップボタンのクリックでページの最上部に移動
@@ -226,5 +235,10 @@ $(function () {
         }, { threshold: 0.1 });
         skills.forEach(skill => observer.observe(skill));
     }
+    $(document).ready(function() {
+        $(".openbtn").click(function() {
+            $(".sp-nav").toggleClass("active");
+        });
+    });
 
 });

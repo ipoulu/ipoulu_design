@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ipoulu&thinsp;design</title>
+    <title>banner2</title>
     <!-- lightbox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css"
         integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA=="
@@ -42,14 +42,15 @@
     <header>
         <nav class="pc-nav">
             <ul>
-                <li><a href="index.html#about">ABOUT</a></li>
-                <li><a href="index.html#works">WORKS</a></li>
-                <li><a href="index.html#skills">SKILLS</a></li>
-                <li><a href="profile.html">PROFILE</a></li>
-                <li><a href="index.html#information">INFORMATION</a></li>
+                <li class="light-pink"><a href="index.html#about">ABOUT</a></li>
+                <li class="light-yellow"><a href="index.html#works">WORKS</a></li>
+                <li class="light-red"><a href="index.html#skills">SKILLS</a></li>
+                <li class="light-blue"><a href="profile.html">PROFILE</a></li>
+                <li class="light-teal"><a href="index.html#information">INFORMATION</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <div class="wrapper">
             <section id="website-detail-1">
@@ -63,7 +64,9 @@
                     <img src="images/Banner-2.jpg" alt="Banner-2" class="banner-detail-img">
                     <p class="performance-name slide-in leftAnime"><span
                         class="slide-in_inner leftAnimeInner">旅行アプリ用バナー</span></p>
-                        <a class="detail-link" href="">VISIT&thinsp;BANNER</a>
+
+                        <a class="detail-link" href="images/Banner-2.jpg" data-lightbox="image-2" data-title="My caption" data-alt="Banner-2">VISIT&thinsp;BANNER</a>
+                       
                     <dl class="detail-sentence">
                         <div class="detail">
                             <dt class="detail-taitle">カテゴリ</dt>
@@ -87,6 +90,7 @@
                     </dl>
                 </div>
 
+                
                 <a class="detail-link" href="index.html#information">INFORMATION</a>
 
             </section>
@@ -125,173 +129,198 @@
             </div>
         </button>
 
-        <a href="#mainvisual">
+        <a href="./banner-list.html">
             <div class="pagetopwrap">
                 <div class="pagetop">
                     <svg viewBox="0 0 100 100">
                         <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
                         <text>
                             <textPath xlink:href="#circle">
-                                MAINTOP&thinsp;
-                                MAINTOP&thinsp;
-                                MAINTOP&thinsp;
+                              BANNER&thinsp;&thinsp;TOP&thinsp;&thinsp;
+                                BANNER&thinsp;&thinsp;TOP&thinsp;&thinsp;
+                                
 
                             </textPath>
                         </text>
                     </svg>
                 </div>
                 <div class="arrow-upwrap">
-                    <div class="arrow-up"></div>
+                    <div class="arrow-up"></div> 
                 </div>
             </div>
         </a>
     </footer>
+<script>
+    $(function () {
+        const loadingElement = document.getElementById("loading");
+        if (loadingElement) {
+            loadingElement.style.display = "block";
 
-    <script>
+            // ダミーデータを使う
+            const data = [
+                { id: 1, title: "Sample Post 1", body: "This is a sample post" },
+                { id: 2, title: "Sample Post 2", body: "Another sample post" }
+            ];
+            console.log(data);
+            loadingElement.style.display = "none";
+        }
 
-        $(function () {
-            const loadingElement = document.getElementById("loading");
-            if (loadingElement) {
-                loadingElement.style.display = "block";
+        window.addEventListener('scroll', function () {
+            const scrollPos = $(window).scrollTop();
 
-                // ダミーデータを使う
-                const data = [
-                    { id: 1, title: "Sample Post 1", body: "This is a sample post" },
-                    { id: 2, title: "Sample Post 2", body: "Another sample post" }
-                ];
-                console.log(data);
-                loadingElement.style.display = "none";
+            // 上から1000px未満のときに「スクロールボタン」を表示し、他の位置では「ページトップボタン」を表示
+            if (scrollPos < 1000) {
+                $('.scroolwrap').fadeIn(); // スクロールボタンを表示
+                $('.pagetopwrap').fadeOut(); // ページトップボタンは非表示
+            } else {
+                $('.scroolwrap').fadeOut(); // スクロールボタンを非表示
+                $('.pagetopwrap').fadeIn(); // ページトップボタンを表示
             }
+        });
 
-            window.addEventListener('scroll', function () {
-                const scrollPos = $(window).scrollTop();
+        // スクロールボタンのクリックで700px下に移動
+        $('.scroolwrap').click(function () {
+            $('html, body').animate({ scrollTop: $(window).scrollTop() + 700 }, 'smooth');
+            return false;
+        });
 
-                // 上から1000px未満のときに「スクロールボタン」を表示し、他の位置では「ページトップボタン」を表示
-                if (scrollPos < 1000) {
-                    $('.scroolwrap').fadeIn(); // スクロールボタンを表示
-                    $('.pagetopwrap').fadeOut(); // ページトップボタンは非表示
+       // ページトップボタンのクリックで#WORKSに移動
+$('.pagetopwrap').click(function () {
+$('html, body').animate({ scrollTop: $('/banner-list.html').offset().top }, 'smooth');
+return false;
+});
+        // サブタイトルの動作の設定
+        $(window).scroll(function () {
+            $('.text').each(function () {
+                var elemPos = $(this).offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll > elemPos - windowHeight) {
+                    $(this).addClass('active');
                 } else {
-                    $('.scroolwrap').fadeOut(); // スクロールボタンを非表示
-                    $('.pagetopwrap').fadeIn(); // ページトップボタンを表示
+                    $(this).removeClass('active');
+                }
+            });
+        });
+        $(window).scroll(function () {
+            $('.text-right').each(function () {
+                var elemPos = $(this).offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll > elemPos - windowHeight) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+            });
+        });
+
+        function slideAnime() {
+            //==== 右に動くアニメーション ===
+            $('.rightAnime').each(function () {
+                var elemPos = $(this).offset().top - 50;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll >= elemPos - windowHeight) {
+                    $(this).addClass("slideAnimeRightLeft");
+                    $(this).children(".rightAnimeInner").addClass("slideAnimeLeftRight");
+                } else {
+                    $(this).removeClass("slideAnimeRightLeft");
+                    $(this).children(".rightAnimeInner").removeClass("slideAnimeLeftRight");
                 }
             });
 
-            // スクロールボタンのクリックで700px下に移動
-            $('.scroolwrap').click(function () {
-                $('html, body').animate({ scrollTop: $(window).scrollTop() + 700 }, 'smooth');
-                return false;
+            //==== 左に動くアニメーション ===
+            $('.leftAnime').each(function () {
+                var elemPos = $(this).offset().top - 50;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll >= elemPos - windowHeight) {
+                    $(this).addClass("slideAnimeLeftRight");
+                    $(this).children(".leftAnimeInner").addClass("slideAnimeRightLeft");
+                } else {
+                    $(this).removeClass("slideAnimeLeftRight");
+                    $(this).children(".leftAnimeInner").removeClass("slideAnimeRightLeft");
+                }
             });
 
-            // ページトップボタンのクリックでページの最上部に移動
-            $('.pagetopwrap').click(function () {
-                $('html, body').animate({ scrollTop: 0 }, 'smooth');
-                return false;
-            });
-            // サブタイトルの動作の設定
-            $(window).scroll(function () {
-                $('.text').each(function () {
-                    var elemPos = $(this).offset().top;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll > elemPos - windowHeight) {
-                        $(this).addClass('active');
-                    } else {
-                        $(this).removeClass('active');
-                    }
-                });
-            });
-            $(window).scroll(function () {
-                $('.text-right').each(function () {
-                    var elemPos = $(this).offset().top;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll > elemPos - windowHeight) {
-                        $(this).addClass('active');
-                    } else {
-                        $(this).removeClass('active');
-                    }
-                });
+            //==== website-group-rightのアニメーション ===
+            $('.website-group-right').each(function () {
+                var elemPos = $(this).offset().top - 50;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll >= elemPos - windowHeight) {
+                    $(this).addClass("slideAnimeRightLeft");
+                } else {
+                    $(this).removeClass("slideAnimeRightLeft");
+                }
             });
 
-            function slideAnime() {
-                //==== 右に動くアニメーション ===
-                $('.rightAnime').each(function () {
-                    var elemPos = $(this).offset().top - 50;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll >= elemPos - windowHeight) {
-                        $(this).addClass("slideAnimeRightLeft");
-                        $(this).children(".rightAnimeInner").addClass("slideAnimeLeftRight");
-                    } else {
-                        $(this).removeClass("slideAnimeRightLeft");
-                        $(this).children(".rightAnimeInner").removeClass("slideAnimeLeftRight");
-                    }
-                });
-
-                //==== 左に動くアニメーション ===
-                $('.leftAnime').each(function () {
-                    var elemPos = $(this).offset().top - 50;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll >= elemPos - windowHeight) {
-                        $(this).addClass("slideAnimeLeftRight");
-                        $(this).children(".leftAnimeInner").addClass("slideAnimeRightLeft");
-                    } else {
-                        $(this).removeClass("slideAnimeLeftRight");
-                        $(this).children(".leftAnimeInner").removeClass("slideAnimeRightLeft");
-                    }
-                });
-
-                //==== website-group-rightのアニメーション ===
-                $('.website-group-right').each(function () {
-                    var elemPos = $(this).offset().top - 50;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll >= elemPos - windowHeight) {
-                        $(this).addClass("slideAnimeRightLeft");
-                    } else {
-                        $(this).removeClass("slideAnimeRightLeft");
-                    }
-                });
-
-                //==== website-group-leftのアニメーション ===
-                $('.website-group-left,.banner-detail-img').each(function () {
-                    var elemPos = $(this).offset().top - 50;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll >= elemPos - windowHeight) {
-                        $(this).addClass("slideAnimeLeftRight");
-                    } else {
-                        $(this).removeClass("slideAnimeLeftRight");
-                    }
-                });
-            }
-
-            // 画面をスクロールしたらアニメーションを実行
-            $(window).scroll(function () {
-                slideAnime();
+            //==== website-group-leftのアニメーション ===
+            $('.website-group-left,.banner-detail-img').each(function () {
+                var elemPos = $(this).offset().top - 50;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll >= elemPos - windowHeight) {
+                    $(this).addClass("slideAnimeLeftRight");
+                } else {
+                    $(this).removeClass("slideAnimeLeftRight");
+                }
             });
-            const websiteGroups = document.querySelectorAll('.website-group-left, .website-group-right');
+        }
 
-            if (websiteGroups.length) {
-                const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-animated');
-                            const images = entry.target.querySelectorAll('img');
-                            images.forEach((img, index) => {
-                                setTimeout(() => {
-                                    img.classList.add('is-animated');
-                                }, index * 500);
-                            });
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                websiteGroups.forEach(group => observer.observe(group));
-            }
+        // 画面をスクロールしたらアニメーションを実行
+        $(window).scroll(function () {
+            slideAnime();
         });
-    </script>
+        const websiteGroups = document.querySelectorAll('.website-group-left, .website-group-right');
+
+        if (websiteGroups.length) {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-animated');
+                        const images = entry.target.querySelectorAll('img');
+                        images.forEach((img, index) => {
+                            setTimeout(() => {
+                                img.classList.add('is-animated');
+                            }, index * 500);
+                        });
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            websiteGroups.forEach(group => observer.observe(group));
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+const details = document.querySelectorAll('.detail');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-border'); // クラスを追加
+            observer.unobserve(entry.target); // 一度表示されたら監視を停止
+        }
+    });
+}, { threshold: 0.1 }); // 10%表示されたら発火
+
+details.forEach(detail => {
+    observer.observe(detail);
+});
+});
+
+lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+        $('.lb-close').on('click', function () {
+            $('.lb-close').toggleClass('open');
+            $('.lb-close').fadeToggle();
+        })
+
+</script>
 </body>
 
 </html>

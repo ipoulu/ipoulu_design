@@ -235,10 +235,17 @@ $(function () {
         }, { threshold: 0.1 });
         skills.forEach(skill => observer.observe(skill));
     }
-    $(document).ready(function() {
-        $(".openbtn").click(function() {
-            $(".sp-nav").toggleClass("active");
+        $(document).ready(function() {
+            $(".openbtn").click(function () {
+                $(this).toggleClass('active');
+                $(".sp-nav").toggleClass('active', $(this).hasClass('active')); // openbtnがactiveの時にsp-navを表示
+            });
+        
+            // sp-nav内のリンクがクリックされた時にsp-navを非表示にする
+            $(".sp-nav a").click(function () {
+                $(".openbtn").removeClass('active'); // openbtnのactiveを解除
+                $(".sp-nav").removeClass('active');  // sp-navのactiveを解除
+            });
         });
-    });
 
-});
+}); // ここ

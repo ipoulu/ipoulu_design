@@ -50,7 +50,18 @@
             </ul>
         </nav>
     </header>
-
+    <div class="openbtn"><span></span><span>Menu</span><span></span></div>
+    <section id="sp-menu">
+        <nav class="sp-nav">
+            <ul>
+                <li class="light-pink"><a href="index.html#about">ABOUT</a></li>
+                <li class="light-yellow"><a href="index.html#works">WORKS</a></li>
+                <li class="light-red"><a href="index.html#skills">SKILLS</a></li>
+                <li class="light-blue"><a href="profile.html">PROFILE</a></li>
+                <li class="light-teal"><a href="index.html#information">INFORMATION</a></li>
+            </ul>
+        </nav>
+    </section>
     <main>
         <div class="wrapper">
             <section id="website-detail-1">
@@ -310,6 +321,18 @@
             details.forEach(detail => {
                 observer.observe(detail);
             });
+            $(document).ready(function() {
+            $(".openbtn").click(function () {
+                $(this).toggleClass('active');
+                $(".sp-nav").toggleClass('active', $(this).hasClass('active')); // openbtnがactiveの時にsp-navを表示
+            });
+        
+            // sp-nav内のリンクがクリックされた時にsp-navを非表示にする
+            $(".sp-nav a").click(function () {
+                $(".openbtn").removeClass('active'); // openbtnのactiveを解除
+                $(".sp-nav").removeClass('active');  // sp-navのactiveを解除
+            });
+        });
         });
 
         lightbox.option({

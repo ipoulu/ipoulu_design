@@ -60,7 +60,8 @@ img {
 
 body {
     color: #804e00;
-    font-size: 16px;
+    font-size: 1.17vw;
+line-height: 3.18;
     font-feature-settings: "palt";
     width: 100%;
     max-width: 1366px;
@@ -703,8 +704,8 @@ h3 {
 }
 
 #about .link {
-    width: 270px;
-    height: 68px;
+    width: 19.76vw;
+    height: 4.98vw;
     border: #b0923f 1px solid;
     font-family: 'DreamAvenue', sans-serif;
     display: flex;
@@ -724,8 +725,8 @@ h3 {
 #banner-list .link,
 .detail-link,
 [type="submit"] {
-    width: 270px;
-    height: 68px;
+    width: 19.76vw;
+    height: 4.98vw;
     border: #b0923f 1px solid;
     font-family: 'DreamAvenue', sans-serif;
     display: flex;
@@ -741,8 +742,8 @@ h3 {
 
 #website-list .link,
 #banner-list .link {
-    width: 270px;
-    height: 44px;
+    width: 19.76vw;
+    height: 4.98vw;
 
 
 }
@@ -1619,6 +1620,11 @@ div text {
 }
 
 @media screen and (max-width: 768px) {
+
+.body {
+    font-size: 3.65vw;
+}
+
     header.hidden {
         top: 0;
     }
@@ -1780,7 +1786,7 @@ h2 {
     margin-bottom: 10px;
 }
 h3 {
-    font-size: 48px;
+    font-size: 6.25vw;
     
 }
 #about,
@@ -1916,6 +1922,33 @@ h3 {
     font-size: 28px;
     
 }
+/* ----Profile---- */
+
+.profile-img {
+    width: 55vw;
+    height:auto;
+}
+
+.profile-text {
+   width: 78.12vw;
+}
+.smooth {
+    width: 78.12vw;
+    margin: 0 auto;
+}
+.my-title {
+    font-size: 6.25vw;
+}
+.my-name {
+    font-size: 8.07vw;
+    
+}
+
+.profile-story {
+    width: 78.12vw;
+    
+}
+
 } 
     @media screen and (max-width: 480px) {
         .Form {

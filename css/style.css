@@ -1003,17 +1003,17 @@ h3 {
 
 .info {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin: 50px auto 0px;
 }
 
 .contactform,
 .sns {
-    max-width: 450px;
+    width: 50%;
 }
 
 .info-text {
-    max-width: 400px;
+    max-width: 95%;
     margin: 0 auto;
     line-height: 1.75;
 }
@@ -1613,123 +1613,129 @@ div text {
     display: none;
 }
 
+.openbtn,
+.sp-nav {
+    display: none;
+}
 
+@media screen and (max-width: 768px) {
+    header.hidden {
+        top: 0;
+    }
 
-/* メディアクエリで768px以下のスタイル */
+    .pc-nav {
+        display: none;
+    }
 
-    @media screen and (max-width: 768px) {
+    /* ---ハンバーガーメニュー--- */
+    /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+    .openbtn {
+        display: block;
+        position: fixed;
+        /* 画面に固定する */
+        top: 20px;
+        /* 画面上端からの距離を設定 */
+        right: 20px;
+        /* 画面右端からの距離を設定 */
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #fff;
+        z-index: 200;
+    }
 
+    /*ボタン内側*/
+    .openbtn span {
+        display: inline-block;
+        transition: all .4s;
+        /*アニメーションの設定*/
+        position: absolute;
+    }
 
-        header.hidden {
-            top: 0;
-        }
-    
-      .pc-nav {
-            display: none;
-        }
-    
-        /* ---ハンバーガーメニュー--- */
-    
-        /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
-        .openbtn {
-            position: fixed; /* 画面に固定する */
-            top: 20px;       /* 画面上端からの距離を設定 */
-            right: 20px;     /* 画面右端からの距離を設定 */
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            border-radius: 5px;
-            background-color: #fff;
-            z-index: 200;
-        }
-    
-        /*ボタン内側*/
-        .openbtn span {
-            display: inline-block;
-            transition: all .4s;
-            /*アニメーションの設定*/
-            position: absolute;
-        }
-    
-        .openbtn span:nth-of-type(1),
-        .openbtn span:nth-of-type(3) {
-            height: 2px;
-            background: #804e00;
-            width: 62%;
-            right: 10px;
-        }
-    
-        .openbtn span:nth-of-type(1) {
-            top: 13px;
-        }
-    
-        .openbtn span:nth-of-type(2) {
-            top: 19px;
-            right: 8px;
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            color: #804e00;
-        }
-    
-        .openbtn span:nth-of-type(3) {
-            top: 36px;
-        }
-    
-        /*activeクラスが付与されると線が回転して×になり、Menu表記をしている2つ目の要素が透過して消える*/
-        .openbtn.active span:nth-of-type(1) {
-            top: 18px;
-            right: 18px;
-            transform: translateY(6px) rotate(-45deg);
-            width: 30%;
-        }
-    
-        .openbtn.active span:nth-of-type(2) {
-            opacity: 0;
-        }
-    
-        .openbtn.active span:nth-of-type(3) {
-            top: 30px;
-            right: 18px;
-            transform: translateY(-6px) rotate(45deg);
-            width: 30%;
-        }
-        .openbtn.active {
-            background-color: transparent;
-        }
-        
-          /* menu */
-          /* sp-menuの基本スタイル */
+    .openbtn span:nth-of-type(1),
+    .openbtn span:nth-of-type(3) {
+        height: 2px;
+        background: #804e00;
+        width: 62%;
+        right: 10px;
+    }
+
+    .openbtn span:nth-of-type(1) {
+        top: 13px;
+    }
+
+    .openbtn span:nth-of-type(2) {
+        top: 19px;
+        right: 8px;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        color: #804e00;
+    }
+
+    .openbtn span:nth-of-type(3) {
+        top: 36px;
+    }
+
+    /*activeクラスが付与されると線が回転して×になり、Menu表記をしている2つ目の要素が透過して消える*/
+    .openbtn.active span:nth-of-type(1) {
+        top: 18px;
+        right: 18px;
+        transform: translateY(6px) rotate(-45deg);
+        width: 30%;
+    }
+
+    .openbtn.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    .openbtn.active span:nth-of-type(3) {
+        top: 30px;
+        right: 18px;
+        transform: translateY(-6px) rotate(45deg);
+        width: 30%;
+    }
+
+    .openbtn.active {
+        background-color: transparent;
+    }
+
+    /* menu */
+    /* sp-menuの基本スタイル */
     .sp-nav {
-        display: none; /* 初期状態で非表示 */
-        position:relative;
+        display: none;
+        /* 初期状態で非表示 */
+        position: relative;
         display: none;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
-        background: linear-gradient(-35deg, #f7eee3, #f2e9bf, #f2cac4, #c1e4e6, #9fd2c9 );
-        z-index:199;
-        overflow: hidden; /* 画面幅以上の表示を防ぐ */
+        background: linear-gradient(-35deg, #f7eee3, #f2e9bf, #f2cac4, #c1e4e6, #9fd2c9);
+        z-index: 199;
+        overflow: hidden;
+        /* 画面幅以上の表示を防ぐ */
         background-color: rgba(0, 0, 0, 0.9);
         color: white;
         text-align: center;
         padding-top: 50px;
     }
-    
+
     /* sp-menuがactiveの時 */
     .sp-nav.active {
         display: block;
     }
+
     .sp-nav ul {
         list-style-type: none;
         padding: 50px;
     }
-    
+
     .sp-nav ul li {
         margin: 50px auto;
     }
-    
+
     .sp-nav ul li a {
         font-family: 'DreamAvenue', sans-serif;
         background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
@@ -1738,56 +1744,226 @@ div text {
         font-size: 32px;
         text-decoration: none;
     }
-    
-
-
-@media screen and (max-width: 480px) {
-    .Form {
-        margin-top: 40px;
-    }
-
-    .Form-Item {
-        padding-left: 14px;
-        padding-right: 14px;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        flex-wrap: wrap;
-    }
-
-    .Form-Item-Label {
-        max-width: inherit;
-        display: flex;
-        align-items: center;
-        font-size: 15px;
-    }
-
-    .Form-Item-Label.isMsg {
-        margin-top: 0;
-    }
-
-    .Form-Item-Input {
-        margin-left: 0;
-        margin-top: 18px;
-        height: 40px;
-        flex: inherit;
-        font-size: 15px;
-    }
-
-    .Form-Item-Textarea {
-        margin-top: 18px;
-        margin-left: 0;
-        height: 200px;
-        flex: inherit;
-        font-size: 15px;
-    }
-
-    .Form-Btn {
-        margin-top: 24px;
-        padding-top: 8px;
-        padding-bottom: 8px;
-        width: 160px;
-        font-size: 16px;
-    }
+/* -----mainvisual---- */
+#mainvisual {
+    height: 100vh;
 }
+
+h1 {
+    width: 80%;
+}
+
+/* ----sub title---- */
+.left-title {
+    width: 100%;
+    height: auto;
+    padding: 3%;
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%, -3%);
+    z-index: 1;
+}
+.right-title {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    padding: 3%;
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%, -3%);
+    z-index: 1;
+}
+h2 {
+    font-size: 20vw;
+    margin-bottom: 10px;
+}
+h3 {
+    font-size: 48px;
+    
+}
+#about,
+#works,
+#information,
+#skills,
+#profile,
+#contactform,
+#website-list,
+#banner-list,
+#website-detail-1 {
+    position: relative;
+    padding: 350px 0 200px;
+}
+
+#banner-list,
+#website-list {
+    padding: 350px 0 100px;
+}
+
+.wrapper {
+
+    border: 5px solid transparent;
+    border-image: linear-gradient(-45deg, #fbf7c4 0%, #804e00 50%, #b1ae8a 70%, #958d57 85%, #fbf7c4 100%) 1;
+}
+
+#about .link,#works .link,
+#profile .link,
+#website-list .link,
+#banner-list .link,
+.detail-link,
+[type="submit"],.contactform-link {
+    width: 80%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 0;
+}
+/* ----about---- */
+.about-text {
+    /* width: 550px; */
+    max-width: 90%;
+    margin: 50px auto 0;
+
+}
+
+.about-title {
+    font-size: 48px;
+}
+
+.about-story {
+    margin-top:50px;
+    font-size: 28px;
+
+}
+.profile-text {
+    margin: 50px  auto;
+    /* 画面下部に位置させるための余白 */
+}
+/* -----skills----- */
+.skill {
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    margin: 25px auto;
+    
+}
+
+.skills-garrary {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.skill-title {
+    font-size: 48px;
+    letter-spacing: .1em;
+}
+.skill-text {
+    font-size: 28px;
+    line-height: 1.5;
+    text-align: left;
+}
+.icon-img {
+    height: 100px;
+
+}
+
+/* ----information---- */
+.info {
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactform,
+.sns {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.info-text {
+    width: 100%;
+    margin: 50px auto;
+    line-height: 1.75;
+}
+
+.contactform-icon {
+    display: flex;
+    /* アイコンを中央に配置 */
+    margin: 30px auto;
+}
+
+.contactform-icon img {
+    width: auto;
+    height: 100px;
+   
+}
+
+.sns .icon {
+    width: 250px;
+    margin-top: 50px;
+}
+.contactform-link  {
+    width: 100%;
+    margin: 0 auto;
+}
+#information h2.text-right{
+  font-size: 14.29vw;
+   ;
+}
+.info-text {
+    max-width:  100%;
+    font-size: 28px;
+    
+}
+} 
+    @media screen and (max-width: 480px) {
+        .Form {
+            margin-top: 40px;
+        }
+
+        .Form-Item {
+            padding-left: 14px;
+            padding-right: 14px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .Form-Item-Label {
+            max-width: inherit;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .Form-Item-Label.isMsg {
+            margin-top: 0;
+        }
+
+        .Form-Item-Input {
+            margin-left: 0;
+            margin-top: 18px;
+            height: 40px;
+            flex: inherit;
+            font-size: 15px;
+        }
+
+        .Form-Item-Textarea {
+            margin-top: 18px;
+            margin-left: 0;
+            height: 200px;
+            flex: inherit;
+            font-size: 15px;
+        }
+
+        .Form-Btn {
+            margin-top: 24px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            width: 160px;
+            font-size: 16px;
+        }
+    }
 
 }

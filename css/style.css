@@ -1621,9 +1621,6 @@ div text {
 
 @media screen and (max-width: 768px) {
 
-.body {
-    font-size: 3.65vw;
-}
 
     header.hidden {
         top: 0;

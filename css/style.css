@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-* {
+/* * {
     border: 1px solid red
-}
+} */
 
 /* cssリセット */
 
@@ -829,7 +829,7 @@ h3 {
     text-align: left;
     font-family: 'DreamAvenue', sans-serif;
     margin: 0 0 50px 5%;
-    font-size: 36px;
+    font-size: 2.63vw;
     letter-spacing: .1em;
     background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
     -webkit-background-clip: text;
@@ -968,6 +968,7 @@ h3 {
 
 .icon {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin: 30px auto;
 }
@@ -1220,8 +1221,8 @@ div text {
 
 .arrow-down::before {
     content: '';
-    width: 0.5em;
-    height: 0.5em;
+    width: 0.6em;
+    height: 0.6em;
     border: 1px solid currentColor;
     border-top: 0;
     /* 上のボーダーを消す */
@@ -1231,7 +1232,7 @@ div text {
     /* 矢印を下向きに */
     transform-origin: bottom right;
     position: absolute;
-    left: -7px;
+    left: -11px;
     bottom: -0.5px;
     /* 矢印の位置微調整 */
     box-sizing: border-box;
@@ -1258,8 +1259,8 @@ div text {
 
 .arrow-up::before {
     content: '';
-    width: 0.5em;
-    height: 0.5em;
+    width: 0.6em;
+    height: 0.6em;
     border: 1px solid currentColor;
     border-bottom: 0;
     /* 下のボーダーを消す */
@@ -1269,8 +1270,8 @@ div text {
     /* 矢印を上向きに */
     transform-origin: bottom right;
     position: absolute;
-    left: -7px;
-    top: .1em;
+    left: -.55em;
+    top: .2em;
     /* 矢印の位置微調整 */
     box-sizing: border-box;
 }
@@ -1415,6 +1416,7 @@ div text {
     transform: translateX(-20px);
     /* 右から左に移動 */
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    line-height: 1.5em;
 
 }
 
@@ -1424,8 +1426,12 @@ div text {
     transform: translateX(20px);
     /* 左から右に移動 */
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    line-height: 1.5em;
 }
 
+.spbr {
+    display: none;
+}
 /* ----website detail / banner detail---- */
 
 .detail-img {
@@ -1601,6 +1607,14 @@ div text {
     font-size: 36px;
     margin: 10px auto;
 }
+.lightboxOverlay {
+   background: linear-gradient(-35deg,
+    #f7eee3,
+    #f2e9bf,
+    #f2cac4,
+    #c1e4e6,
+    #9fd2c9) !important;
+}
 
 /* slick */
 
@@ -1638,15 +1652,16 @@ div text {
         display: block;
         position: fixed;
         /* 画面に固定する */
-        top: 20px;
+        top: 1.5%;
         /* 画面上端からの距離を設定 */
-        right: 20px;
+        right: 2%;
         /* 画面右端からの距離を設定 */
         cursor: pointer;
-        width: 50px;
-        height: 50px;
+        width: 80px;
+        height: 80px;
         border-radius: 5px;
         background-color: #fff;
+        opacity: 0.8;
         z-index: 200;
     }
 
@@ -1662,32 +1677,39 @@ div text {
     .openbtn span:nth-of-type(3) {
         height: 2px;
         background: #804e00;
-        width: 62%;
+        width: 90%;
         right: 10px;
     }
 
     .openbtn span:nth-of-type(1) {
-        top: 13px;
+        top: 10%;
+        right: 5%;
     }
 
     .openbtn span:nth-of-type(2) {
-        top: 19px;
-        right: 8px;
-        font-size: 0.6rem;
+        top: 50%;
+        right: 0%;
+        transform: translate(-0%, -50%);
+        font-size: .9rem;
+        font-family: 'DreamAvenue', sans-serif;
+        font-weight: bold;
+        letter-spacing: 8px;
+        text-align: center;
         text-transform: uppercase;
         color: #804e00;
     }
 
     .openbtn span:nth-of-type(3) {
-        top: 36px;
+        bottom: 10%;
+        right: 5%;
     }
 
     /*activeクラスが付与されると線が回転して×になり、Menu表記をしている2つ目の要素が透過して消える*/
     .openbtn.active span:nth-of-type(1) {
-        top: 18px;
-        right: 18px;
-        transform: translateY(6px) rotate(-45deg);
-        width: 30%;
+        top: 50%;
+        right: 5%;
+        transform: translateY(5%) rotate(-45deg);
+        width: 80%;
     }
 
     .openbtn.active span:nth-of-type(2) {
@@ -1695,10 +1717,10 @@ div text {
     }
 
     .openbtn.active span:nth-of-type(3) {
-        top: 30px;
-        right: 18px;
-        transform: translateY(-6px) rotate(45deg);
-        width: 30%;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-5%) rotate(45deg);
+        width: 80%;
     }
 
     .openbtn.active {
@@ -1756,7 +1778,7 @@ div text {
     }
 
     h1 {
-        width: 80%;
+        width: 95vw;
     }
 
     /* ----sub title---- */
@@ -1784,7 +1806,7 @@ div text {
     }
 
     h2 {
-        font-size: 20vw;
+        font-size: 18.22vw;
         margin-bottom: 10px;
     }
 
@@ -1812,7 +1834,7 @@ div text {
     }
 
     .wrapper {
-
+        margin: 30px 15px;
         border: 5px solid transparent;
         border-image: linear-gradient(-45deg, #fbf7c4 0%, #804e00 50%, #b1ae8a 70%, #958d57 85%, #fbf7c4 100%) 1;
     }
@@ -1826,7 +1848,7 @@ div text {
     [type="submit"],
     .contactform-link {
         width: 80%;
-        height: 100px;
+        height: 13vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1856,10 +1878,32 @@ div text {
         margin: 50px auto;
         /* 画面下部に位置させるための余白 */
     }
+/* ----works---- */
 
+.works-title,
+.banner-title {
+    font-size: 6.25vw;
+
+}
+
+.website_slider {
+    height: auto;
+
+}
+
+.banner_slider {
+    height: auto;
+}
+
+.banner {
+    margin: 100px 0 0;
+}
+.lb-caption {
+    display: none !important;
+}
     /* -----skills----- */
     .skill {
-        width: 80%;
+        width: 90%;
         height: auto;
         padding: 20px;
         margin: 25px auto;
@@ -1873,18 +1917,17 @@ div text {
     }
 
     .skill-title {
-        font-size: 48px;
-        letter-spacing: .1em;
+        font-size: 6.25vw;
+
     }
 
     .skill-text {
-        font-size: 28px;
-        line-height: 1.5;
-        text-align: left;
+        font-size: 3.64vw;
     }
 
     .icon-img {
-        height: 100px;
+        width:10vh ;
+        height: auto;
 
     }
 
@@ -1892,6 +1935,7 @@ div text {
     .info {
         flex-direction: column;
         align-items: center;
+        text-align: left;
     }
 
     .contactform,
@@ -1908,19 +1952,17 @@ div text {
 
     .contactform-icon {
         display: flex;
-        /* アイコンを中央に配置 */
         margin: 30px auto;
     }
 
     .contactform-icon img {
-        width: auto;
-        height: 100px;
-
+        width:10vh ;
+        height: auto;
     }
 
     .sns .icon {
-        width: 250px;
-        margin-top: 50px;
+        width: 32.55vw;
+
     }
 
     .contactform-link {
@@ -1969,8 +2011,107 @@ div text {
 
     }
 
+/* ----website list / banner list---- */
+.website-performance {
+    margin-bottom: 50px;
 }
 
+.website-group-right,
+.website-group-left {
+    width: 100%;
+    margin-bottom: 50px;
+    
+}
+
+.website-performance-img {
+    width: 580px;
+}
+
+.performance-name {
+    font-size: 6.25vw;
+}
+
+.website-group-right {
+    margin: 0  auto 50px;
+}
+
+.website-group-left {
+    margin-right: auto;
+}
+.Banner-performance-img {
+    width: auto;
+    height: 58.99vw;
+}
+.rightAnime {
+    margin-right: -60px;
+}
+.leftAnime {
+    margin-left: -30px;
+}
+.spbr {
+    display:block;
+}
+/* ----website detail / banner detail---- */
+
+.detail-img {
+    width: 100%;
+    margin: 0 0 0 -50px;
+    /* border: 1px solid blue; */
+}
+
+.detail-pc-img {
+    width: 90%;
+}
+
+.detail-sentence {
+    width: 100%;
+    text-align: left;
+    margin: 50px auto;
+}
+.detail {
+    position: relative;
+    flex-direction: column;
+    margin: 5%;
+}
+
+.detail-taitle {
+    width: 100%;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.detail-text {
+    width: 100%;
+    /* padding-left: 15px; ボーダーとの間に少しスペースを作る */
+}
+
+/* dtとddの間にボーダーを引く */
+.detail-taitle::after {
+    content: "";
+    position: absolute;
+    top: 90%;
+    left: 0; /* left: 0; にして幅の開始位置をテキスト下部に調整 */
+    transform: translateY(0); /* 中央に配置 */
+    width: 0;
+    height: 1px;
+    background-color: #b0923f;
+    animation: border-expand 1s ease forwards;
+}
+
+/* 最後の .detail 要素のボーダーを非表示 */
+.detail:last-of-type .detail-taitle::after {
+    display: none;
+}
+
+/* ボーダーが左から右に広がるアニメーション */
+@keyframes border-expand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
 @media screen and (max-width: 480px) {
     .Form {
         margin-top: 40px;

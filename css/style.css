@@ -171,7 +171,7 @@ header.hidden {
 .pc-nav li {
     font-family: 'DreamAvenue', sans-serif;
     font-weight: bolder;
-    background: linear-gradient(-75deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
+    background: linear-gradient(-75deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, );
     color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1657,12 +1657,12 @@ div text {
         right: 2%;
         /* 画面右端からの距離を設定 */
         cursor: pointer;
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
         border-radius: 5px;
         background-color: #fff;
         opacity: 0.8;
-        z-index: 200;
+        z-index: 180;
     }
 
     /*ボタン内側*/
@@ -1690,10 +1690,10 @@ div text {
         top: 50%;
         right: 0%;
         transform: translate(-0%, -50%);
-        font-size: .9rem;
+        font-size: .6rem;
         font-family: 'DreamAvenue', sans-serif;
         font-weight: bold;
-        letter-spacing: 8px;
+        letter-spacing: .4rem;
         text-align: center;
         text-transform: uppercase;
         color: #804e00;

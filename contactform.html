@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -7,13 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contactform</title>
     <!-- lightbox -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css"
-        integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css" integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- slick -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <!-- reset-->
     <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">
     <!-- css -->
@@ -23,10 +19,13 @@
     <!-- slick -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- lightbox -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"
-        integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
+<script type="text/javascript">
+    let submitted = false;
+</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){window.location='thankspage.html';}"></iframe>
 
 <body>
     <section id="loading">
@@ -64,6 +63,7 @@
             </ul>
         </nav>
     </section>
+
     <main>
         <div class="wrapper">
             <section id="contactform">
@@ -77,54 +77,38 @@
                 </p>
                 <div class="Form">
                     <form
-                    　 action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScR-wlW0NNXBVX8yEBT9LrNBXQfUoQ4oNy9G0TvvrRsBsQzpQ/formResponse"
-                      method="POST"
-                    >
-                    <div class="Form-Item">
-                        <p class="Form-Item-Label">NAME</p>
-                        <!-- <input type="text" class="Form-Item-Input"> -->
-                        <input
-                        name="entry.1231227046"
-                        type="text" class="Form-Item-Input"
-                    />
-                    </div>
+                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScR-wlW0NNXBVX8yEBT9LrNBXQfUoQ4oNy9G0TvvrRsBsQzpQ/formResponse"
+                        method="POST"
+                        target="hidden_iframe"
+                        onsubmit="submitted=true;">
+                        <div class="Form-Item">
+                            <p class="Form-Item-Label">NAME</p>
+                            <input name="entry.1231227046" type="text" class="Form-Item-Input" required />
+                        </div>
 
-                    <div class="Form-Item">
-                        <p class="Form-Item-Label">TEL</p>
-                        <!-- <input type="text" class="Form-Item-Input"> -->
-                        <input 
-                        name="entry.104582659"
-                        type="text" class="Form-Item-Input">
-                    </div>
+                        <div class="Form-Item">
+                            <p class="Form-Item-Label">TEL</p>
+                            <input name="entry.569448333" type="text" class="Form-Item-Input" required>
+                        </div>
 
-                    <div class="Form-Item">
-                        <p class="Form-Item-Label">E-MAIL</p>
-                        <!-- <input type="email" class="Form-Item-Input"> -->
-                        <input 
-                        name="entry.151562524"
-                        type="email" class="Form-Item-Input">
-                    </div>
+                        <div class="Form-Item">
+                            <p class="Form-Item-Label">E-MAIL</p>
+                            <input name="entry.472602049" type="email" class="Form-Item-Input" required>
+                        </div>
 
-                    <div class="Form-Item">
-                        <p class="Form-Item-Label isMsg">MESSAGE</p>
-                        <textarea class="Form-Item-Textarea"></textarea>
-                    </div>
+                        <div class="Form-Item">
+                            <p class="Form-Item-Label isMsg">MESSAGE</p>
+                            <textarea class="Form-Item-Textarea" name="entry.559883926" required></textarea>
+                        </div>
 
-                    <!-- <input type="submit" class="Form-Btn" value="SEND"> -->
-                    <input 
-                    name="entry.952874431"
-                    type="submit" class="Form-Btn" value="SEND">
-
+                        <input type="submit" class="Form-Btn" value="SEND">
                     </form>
                 </div>
-
-
             </section>
-
         </div>
     </main>
-    <footer>
 
+    <footer>
         <div class="footerwrap">
             <div class="footer-rainbow-1"></div>
             <div class="footer-rainbow-2"></div>
@@ -133,7 +117,6 @@
             </div>
             <div class="footer-rainbow-4"></div>
             <div class="footer-rainbow-5"></div>
-
         </div>
 
         <button class="scroolbtn">
@@ -143,10 +126,7 @@
                         <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
                         <text>
                             <textPath xlink:href="#circle">
-                                SCROOL&thinsp;
-                                SCROOL&thinsp;
-                                SCROOL&thinsp;
-                                SCROOL&thinsp;
+                                SCROOL&thinsp;SCROOL&thinsp;SCROOL&thinsp;SCROOL&thinsp;
                             </textPath>
                         </text>
                     </svg>
@@ -162,10 +142,7 @@
                         <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
                         <text>
                             <textPath xlink:href="#circle">
-                                MAINTOP&thinsp;
-                                MAINTOP&thinsp;
-                                MAINTOP&thinsp;
-
+                                MAINTOP&thinsp;MAINTOP&thinsp;MAINTOP&thinsp;
                             </textPath>
                         </text>
                     </svg>
@@ -178,180 +155,34 @@
     </footer>
 
     <script>
-
         $(function () {
             const loadingElement = document.getElementById("loading");
             if (loadingElement) {
                 loadingElement.style.display = "block";
-
-                // ダミーデータを使う
-                const data = [
-                    { id: 1, title: "Sample Post 1", body: "This is a sample post" },
-                    { id: 2, title: "Sample Post 2", body: "Another sample post" }
-                ];
-                console.log(data);
                 loadingElement.style.display = "none";
             }
 
             window.addEventListener('scroll', function () {
                 const scrollPos = $(window).scrollTop();
 
-                // 上から1000px未満のときに「スクロールボタン」を表示し、他の位置では「ページトップボタン」を表示
                 if (scrollPos < 300) {
-                    $('.scroolwrap').fadeIn(); // スクロールボタンを表示
-                    $('.pagetopwrap').fadeOut(); // ページトップボタンは非表示
+                    $('.scroolwrap').fadeIn();
+                    $('.pagetopwrap').fadeOut();
                 } else {
-                    $('.scroolwrap').fadeOut(); // スクロールボタンを非表示
-                    $('.pagetopwrap').fadeIn(); // ページトップボタンを表示
+                    $('.scroolwrap').fadeOut();
+                    $('.pagetopwrap').fadeIn();
                 }
             });
 
-            // スクロールボタンのクリックで700px下に移動
             $('.scroolwrap').click(function () {
-                $('html, body').animate({ scrollTop: $(window).scrollTop() + 700 }, 'smooth');
+                $('html, body').animate({ scrollTop: $(window).height() }, 500);
                 return false;
             });
 
-            // ページトップボタンのクリックでページの最上部に移動
             $('.pagetopwrap').click(function () {
-                $('html, body').animate({ scrollTop: $('/index.html#mainvisual').offset().top }, 'smooth');
+                $('html, body').animate({ scrollTop: 0 }, 500);
                 return false;
             });
-            // サブタイトルの動作の設定
-            $(window).scroll(function () {
-                $('.text').each(function () {
-                    var elemPos = $(this).offset().top;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll > elemPos - windowHeight) {
-                        $(this).addClass('active');
-                    } else {
-                        $(this).removeClass('active');
-                    }
-                });
-            });
-            $(window).scroll(function () {
-                $('.text-right').each(function () {
-                    var elemPos = $(this).offset().top;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll > elemPos - windowHeight) {
-                        $(this).addClass('active');
-                    } else {
-                        $(this).removeClass('active');
-                    }
-                });
-            });
-            // aboutセクションのアニメーション
-            const lines = document.querySelectorAll('.line');
-            if (lines.length) {
-                const aboutText = document.querySelector('.profile-text');
-                if (aboutText) {
-                    const observer = new IntersectionObserver(entries => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                lines.forEach((line, index) => {
-                                    setTimeout(() => {
-                                        line.classList.add('is-animated');
-                                    }, index * 500);
-                                });
-                                observer.disconnect();
-                            }
-                        });
-                    });
-                    observer.observe(aboutText);
-                }
-            }
-
-            function slideAnime() {
-                //==== 右に動くアニメーション ===
-                $('.rightAnime').each(function () {
-                    var elemPos = $(this).offset().top - 50;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll >= elemPos - windowHeight) {
-                        $(this).addClass("slideAnimeRightLeft");
-                        $(this).children(".rightAnimeInner").addClass("slideAnimeLeftRight");
-                    } else {
-                        $(this).removeClass("slideAnimeRightLeft");
-                        $(this).children(".rightAnimeInner").removeClass("slideAnimeLeftRight");
-                    }
-                });
-
-                //==== 左に動くアニメーション ===
-                $('.leftAnime').each(function () {
-                    var elemPos = $(this).offset().top - 50;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll >= elemPos - windowHeight) {
-                        $(this).addClass("slideAnimeLeftRight");
-                        $(this).children(".leftAnimeInner").addClass("slideAnimeRightLeft");
-                    } else {
-                        $(this).removeClass("slideAnimeLeftRight");
-                        $(this).children(".leftAnimeInner").removeClass("slideAnimeRightLeft");
-                    }
-                });
-
-                //==== website-group-rightのアニメーション ===
-                $('.website-group-right').each(function () {
-                    var elemPos = $(this).offset().top - 50;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll >= elemPos - windowHeight) {
-                        $(this).addClass("slideAnimeRightLeft");
-                    } else {
-                        $(this).removeClass("slideAnimeRightLeft");
-                    }
-                });
-
-                //==== website-group-leftのアニメーション ===
-                $('.website-group-left').each(function () {
-                    var elemPos = $(this).offset().top - 50;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll >= elemPos - windowHeight) {
-                        $(this).addClass("slideAnimeLeftRight");
-                    } else {
-                        $(this).removeClass("slideAnimeLeftRight");
-                    }
-                });
-            }
-
-            // 画面をスクロールしたらアニメーションを実行
-            $(window).scroll(function () {
-                slideAnime();
-            });
-            const websiteGroups = document.querySelectorAll('.website-group-left, .website-group-right');
-
-            if (websiteGroups.length) {
-                const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-animated');
-                            const images = entry.target.querySelectorAll('img');
-                            images.forEach((img, index) => {
-                                setTimeout(() => {
-                                    img.classList.add('is-animated');
-                                }, index * 500);
-                            });
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                websiteGroups.forEach(group => observer.observe(group));
-            }
-            $(document).ready(function() {
-            $(".openbtn").click(function () {
-                $(this).toggleClass('active');
-                $(".sp-nav").toggleClass('active', $(this).hasClass('active')); // openbtnがactiveの時にsp-navを表示
-            });
-        
-            // sp-nav内のリンクがクリックされた時にsp-navを非表示にする
-            $(".sp-nav a").click(function () {
-                $(".openbtn").removeClass('active'); // openbtnのactiveを解除
-                $(".sp-nav").removeClass('active');  // sp-navのactiveを解除
-            });
-        });
         });
     </script>
 </body>

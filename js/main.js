@@ -69,7 +69,13 @@ $(window).on('load', function () {
             
             // <div id="container">を表示
             $('#container').fadeIn('slow'); // フェードインで表示する処理
+
+            if($(window).width()<768){
+                $('.openbtn').fadeIn();
+            }
         });
+
+
 
     } else {
         // URLに"#"が含まれている場合は、#splを非表示にし、#containerのアニメーションを実行
@@ -171,6 +177,15 @@ $(function () {
         $('html, body').animate({ scrollTop: 0 }, 'smooth');
         return false;
     });
+    $(window).resize(function(){
+        if($(window).width()>=768){
+            $('.openbtn').fadeOut()
+        }else{$('.openbtn').fadeIn()
+        }
+    });
+    }
+
+)
     // サブタイトルの動作の設定
     $(window).scroll(function () {
         $('.text').each(function () {
@@ -246,6 +261,8 @@ $(function () {
                 $(".openbtn").removeClass('active'); // openbtnのactiveを解除
                 $(".sp-nav").removeClass('active');  // sp-navのactiveを解除
             });
-        });
 
-}); // ここ
+        });
+       
+
+

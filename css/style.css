@@ -136,8 +136,6 @@ body {
     font-family: 'DreamAvenue', sans-serif;
 }
 
-/* ---header--- */
-
 header {
     width: 100%;
     max-width: 100%;
@@ -274,6 +272,8 @@ header.hidden {
 /*========= ローディング画面のためのCSS ===============*/
 #spl {
     position: fixed;
+    top:0;
+    left:0;
     width: 100%;
     height: 100vh;
     background-color: #fff;
@@ -430,6 +430,11 @@ body.appear #container {
     100% {
         opacity: 1;
     }
+}
+
+.openbtn,
+.sp-nav {
+    display: none;
 }
 
 /* -----mainvisual---- */
@@ -1137,6 +1142,7 @@ footer {
     /* 垂直方向中央 */
     flex-direction: column;
     /* 矢印を縦に配置 */
+    height: 50px;
 }
 
 .pagetopwrap {
@@ -1649,7 +1655,7 @@ div text {
     /* ---ハンバーガーメニュー--- */
     /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
     .openbtn {
-        display: block;
+        display: none;
         position: fixed;
         /* 画面に固定する */
         top: 1.5%;
@@ -1662,7 +1668,7 @@ div text {
         border-radius: 5px;
         background-color: #fff;
         opacity: 0.8;
-        z-index: 180;
+        z-index: 201;
     }
 
     /*ボタン内側*/
@@ -1733,7 +1739,6 @@ div text {
         display: none;
         /* 初期状態で非表示 */
         position: relative;
-        display: none;
         position: fixed;
         top: 0;
         left: 0;
@@ -1747,12 +1752,12 @@ div text {
         color: white;
         text-align: center;
         padding-top: 50px;
-    }
-
-    /* sp-menuがactiveの時 */
-    .sp-nav.active {
-        display: block;
-    }
+           
+        }
+        
+        .sp-nav.active {
+            display: block;
+        }
 
     .sp-nav ul {
         list-style-type: none;

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -27,6 +27,11 @@
         integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+<script type="text/javascript">
+    let submitted = false;
+</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
+    onload="if(submitted){window.location='https://docs.google.com/forms/u/0/d/e/1FAIpQLScR-wlW0NNXBVX8yEBT9LrNBXQfUoQ4oNy9G0TvvrRsBsQzpQ/formResponse';}"></iframe>
 
 <body>
     <section id="loading">
@@ -71,7 +76,7 @@
                     <h2 class="text-right active">contactform</h2>
                     <h3>お問い合わせ</h3>
                 </div>
-            
+
                 <div class="profile-text">
                     <div class="smooth">
                         <span class="line">
@@ -82,9 +87,13 @@
                         </span>
                         <p class="profile-story">
                             <span class="line">送信完了いたしました。<br></span>
-                            <span class="line">ご記入いただいた情報は厳重に管理し、プライバシーを尊重しておりますので、ご安心ください。<br>お返事まで少々お待ちいただく場合がございますが、できる限り迅速に対応させていただきます。<br></span>
-            
+                            <span
+                                class="line">ご記入いただいた情報は厳重に管理し、プライバシーを尊重しておりますので、ご安心ください。<br>お返事まで少々お待ちいただく場合がございますが、できる限り迅速に対応させていただきます。<br></span>
+
                         </p>
+                        <form
+                            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScR-wlW0NNXBVX8yEBT9LrNBXQfUoQ4oNy9G0TvvrRsBsQzpQ/formResponse"
+                            method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="c-form"></form>
                     </div>
                 </div>
 
@@ -145,6 +154,8 @@
             </div>
         </a>
     </footer>
+
+
     <script>
 
         $(function () {
@@ -308,18 +319,19 @@
 
                 websiteGroups.forEach(group => observer.observe(group));
             }
-            $(document).ready(function() {
-            $(".openbtn").click(function () {
-                $(this).toggleClass('active');
-                $(".sp-nav").toggleClass('active', $(this).hasClass('active')); // openbtnがactiveの時にsp-navを表示
+            $(document).ready(function () {
+                $(".openbtn").click(function () {
+                    $(this).toggleClass('active');
+                    $(".sp-nav").toggleClass('active', $(this).hasClass('active')); // openbtnがactiveの時にsp-navを表示
+                });
+
+                // sp-nav内のリンクがクリックされた時にsp-navを非表示にする
+                $(".sp-nav a").click(function () {
+                    $(".openbtn").removeClass('active'); // openbtnのactiveを解除
+                    $(".sp-nav").removeClass('active');  // sp-navのactiveを解除
+                });
             });
-        
-            // sp-nav内のリンクがクリックされた時にsp-navを非表示にする
-            $(".sp-nav a").click(function () {
-                $(".openbtn").removeClass('active'); // openbtnのactiveを解除
-                $(".sp-nav").removeClass('active');  // sp-navのactiveを解除
-            });
-        });
+
         });
     </script>
 </body>

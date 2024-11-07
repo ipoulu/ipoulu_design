@@ -708,6 +708,8 @@ h3 {
     z-index: -1;
 }
 
+
+
 #about .link {
     width: 19.76vw;
     height: 4.98vw;
@@ -1122,11 +1124,11 @@ footer {
 }
 
 
-.scroolwrap {
+.scroolwrap{
     display: none;
     position: fixed;
     bottom: 3%;
-    right: 13%;
+    right:  13%;
     width: 50px;
     height: 50px;
     margin: 20px auto;
@@ -1145,7 +1147,7 @@ footer {
     height: 50px;
 }
 
-.pagetopwrap {
+.pagetopwrap{
     display: none;
     position: fixed;
     bottom: 3%;
@@ -1185,7 +1187,7 @@ div path {
     fill: #804e00;
     font-weight: bold;
     font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.02rem;
+    /* letter-spacing: 0rem; */
 }
 
 @keyframes donut-spin {
@@ -1196,9 +1198,9 @@ div path {
 
 div text {
     fill: #804e00;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.13rem;
+    /* letter-spacing: 0.13rem; */
 }
 
 @keyframes donut-spin {
@@ -1294,6 +1296,15 @@ div text {
         transform: translateY(-6px);
         /* 少し上に動く */
     }
+}
+.scroll textPath, .pagetop textPath {
+    background-color: white; /* 背景色 */
+    padding: 2px 5px; /* 背景の内側余白 */
+    border-radius: 5px; /* 背景の角丸をつける（必要に応じて調整） */
+}
+
+.rotate-svg text {
+    background-color: white; /* 白背景 */
 }
 
 /* ----Profile---- */
@@ -2105,6 +2116,19 @@ div text {
 .detail:last-of-type .detail-taitle::after {
     display: none;
 }
+
+
+
+.scroolwrap{
+    right:  5%;
+ 
+}
+
+.pagetopwrap{
+    right: 5%;
+ 
+}
+
 
 /* ボーダーが左から右に広がるアニメーション */
 @keyframes border-expand {

@@ -169,7 +169,7 @@ header.hidden {
 .pc-nav li {
     font-family: 'DreamAvenue', sans-serif;
     font-weight: bolder;
-    background: linear-gradient(-75deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, );
+    background: linear-gradient(-75deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00);
     color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1165,6 +1165,7 @@ footer {
     align-items: center;
     /* 垂直方向中央 */
     flex-direction: column;
+    height: 50px;
     /* 矢印を縦に配置 */
 }
 
@@ -1220,7 +1221,7 @@ div text {
 
 .arrow-down {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -1238,8 +1239,8 @@ div text {
     /* 矢印を下向きに */
     transform-origin: bottom right;
     position: absolute;
-    left: -11px;
-    bottom: -0.5px;
+    left: -.53em;
+    bottom: -0.05em;
     /* 矢印の位置微調整 */
     box-sizing: border-box;
 }

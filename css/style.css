@@ -1185,9 +1185,9 @@ div path {
 
 .scroolwrap text {
     fill: #804e00;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-family: 'DreamAvenue', sans-serif;
-    /* letter-spacing: 0rem; */
+    letter-spacing: -0.01rem;
 }
 
 @keyframes donut-spin {
@@ -1200,7 +1200,7 @@ div text {
     fill: #804e00;
     /* font-weight: bold; */
     font-family: 'DreamAvenue', sans-serif;
-    /* letter-spacing: 0.13rem; */
+    letter-spacing: 0.15rem;
 }
 
 @keyframes donut-spin {
@@ -1241,7 +1241,7 @@ div text {
     /* 矢印を下向きに */
     transform-origin: bottom right;
     position: absolute;
-    left: -.53em;
+    left: -.55em;
     bottom: -0.05em;
     /* 矢印の位置微調整 */
     box-sizing: border-box;

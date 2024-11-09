@@ -1132,10 +1132,10 @@ footer {
 .scroolwrap{
     display: none;
     position: fixed;
-    bottom: 3%;
+    bottom: 0%;
     right:  14%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     margin: 20px auto;
     z-index: 500;
 }
@@ -1150,15 +1150,18 @@ footer {
     flex-direction: column;
     /* 矢印を縦に配置 */
     height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    padding: 6px;
 }
 
 .pagetopwrap{
     display: none;
     position: fixed;
-    bottom: 3%;
+    bottom: 0%;
     right: 14%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     margin: 20px auto;
     z-index: 500;
 }
@@ -1174,6 +1177,9 @@ footer {
     flex-direction: column;
     height: 50px;
     /* 矢印を縦に配置 */
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    padding: 6px;
 }
 
 div svg {
@@ -2142,12 +2148,12 @@ div text {
 }
 
 .scroolwrap{
-    right:  5%;
+    right:  2%;
  
 }
 
 .pagetopwrap{
-    right: 5%;
+    right: 2%;
  
 }
 

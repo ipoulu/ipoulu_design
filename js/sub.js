@@ -1,5 +1,5 @@
 
-$(function () {
+    $(function () {
     const loadingElement = document.getElementById("loading");
     if (loadingElement) {
         loadingElement.style.display = "block";
@@ -37,6 +37,8 @@ $('.pagetopwrap').click(function () {
 $('html, body').animate({ scrollTop: $('/banner-list.html').offset().top }, 'smooth');
 return false;
 });
+
+
     // サブタイトルの動作の設定
     $(window).scroll(function () {
         $('.text').each(function () {
@@ -136,12 +138,13 @@ return false;
                     });
                 }
             });
-        }, { threshold: 0.1 });
-
+        },
+         { threshold: 0.1 });
         websiteGroups.forEach(group => observer.observe(group));
     }
 });
 
+    
 document.addEventListener("DOMContentLoaded", function() {
 const details = document.querySelectorAll('.detail,.detail-taitle ');
 
@@ -157,19 +160,6 @@ entries.forEach(entry => {
 details.forEach(detail => {
 observer.observe(detail);
 });
-$(document).ready(function() {
-    $(".openbtn").click(function () {
-        $(this).toggleClass('active');
-        $(".sp-nav").toggleClass('active', $(this).hasClass('active')); // openbtnがactiveの時にsp-navを表示
-    });
-
-    // sp-nav内のリンクがクリックされた時にsp-navを非表示にする
-    $(".sp-nav a").click(function () {
-        $(".openbtn").removeClass('active'); // openbtnのactiveを解除
-        $(".sp-nav").removeClass('active');  // sp-navのactiveを解除
-    });
-});
-});
 
 lightbox.option({
         'resizeDuration': 200,
@@ -179,3 +169,17 @@ lightbox.option({
         $('.lb-close').toggleClass('open');
         $('.lb-close').fadeToggle();
     })
+});
+$(window).resize(function () {
+    if ($(window).width() >= 768) {
+        $('.openbtn').fadeOut();
+    } else {
+        $('.openbtn').fadeIn();
+    }
+});
+
+// メニューボタンのクリックでメニューを開閉
+$('.openbtn').click(function () {
+    $('.sp-nav').toggleClass('active'); // メニューの開閉クラスを切り替え
+    $('.openbtn').toggleClass('active'); // メニューの開閉クラスを切り替え
+});

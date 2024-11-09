@@ -66,16 +66,13 @@ $(window).on('load', function () {
         $("#spl").delay(2000).fadeOut('slow', function () {
             $('body').addClass('appear'); // フェードアウト後bodyにappearクラス付与
             stroke.play();
-            
+
             // <div id="container">を表示
             $('#container').fadeIn('slow'); // フェードインで表示する処理
-
             if($(window).width()<768){
                 $('.openbtn').fadeIn();
             }
         });
-
-
 
     } else {
         // URLに"#"が含まれている場合は、#splを非表示にし、#containerのアニメーションを実行
@@ -110,7 +107,7 @@ $(function () {
         console.log(data);
         loadingElement.style.display = "none";
     }
-    
+
     // Slider設定
     $('.website_slider').slick({
         autoplay: true,
@@ -169,8 +166,8 @@ $(function () {
         $('html, body').animate({ scrollTop: $(window).scrollTop() + 700 }, 'smooth');
         return false;
     });
-    
-      
+
+
 //     });
     // ページトップボタンのクリックでページの最上部に移動
     $('.pagetopwrap').click(function () {
@@ -184,7 +181,6 @@ $(function () {
         }
     });
     }
-
 )
     // サブタイトルの動作の設定
     $(window).scroll(function () {
@@ -255,14 +251,11 @@ $(function () {
                 $(this).toggleClass('active');
                 $(".sp-nav").toggleClass('active', $(this).hasClass('active')); // openbtnがactiveの時にsp-navを表示
             });
-        
+
             // sp-nav内のリンクがクリックされた時にsp-navを非表示にする
             $(".sp-nav a").click(function () {
                 $(".openbtn").removeClass('active'); // openbtnのactiveを解除
                 $(".sp-nav").removeClass('active');  // sp-navのactiveを解除
             });
-
         });
        
-
-

@@ -11,6 +11,7 @@ html,
 body {
     overflow-x: hidden;
     /* 横スクロールを非表示にする */
+
 }
 
 html,
@@ -78,8 +79,10 @@ body {
     font-style: normal;
 }
 
+
 /* ----LOADING---- */
 #loading {
+    background-color: #fff;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -290,7 +293,7 @@ header.hidden {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 28px;
-    font-family: 'DreamAvenue', sans-serif;
+    /* font-family: 'DreamAvenue', sans-serif; */
     letter-spacing: 0.1em;
     color: #804e00;
     line-height: 1.75;
@@ -583,12 +586,12 @@ h1 {
 #banner-list,
 #website-detail-1 {
     position: relative;
-    padding: 300px 0 200px;
+    padding: 10% 0 5%;
 }
 
 #banner-list,
 #website-list {
-    padding: 300px 0 100px;
+    padding: 30px 0 50px;
 }
 
 .right-title {
@@ -707,7 +710,7 @@ h3 {
     border-image: linear-gradient(-45deg, #fbf7c4 0%, #804e00 50%, #b1ae8a 70%, #958d57 85%, #fbf7c4 100%) 1;
     /* グラデーションをボーダーに適用 */
     text-align: center;
-    z-index: -1;
+    z-index: -5;
     border-radius: 10px;
 }
 
@@ -742,7 +745,7 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px auto 0;
+    margin: 0 auto;
     background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
     -webkit-background-clip: text;
     color: transparent;
@@ -756,6 +759,7 @@ h3 {
     height: 4.98vw;
     font-weight:bolder;
     letter-spacing: 0.1em;
+    margin: 5% auto;
 }
 
 .contactform-link {
@@ -774,6 +778,7 @@ h3 {
     font-weight:bolder;
     letter-spacing: 0.1em;
 }
+margin: 25% 0 5% 5%;
 
 /* ホバー時のスタイル */
 #about .link:hover,
@@ -795,6 +800,7 @@ h3 {
 /* ----about---- */
 .about-text {
     max-width: 550px;
+    margin-top: 26%;
     margin-left: 38%;
     text-align: left;
 }
@@ -839,7 +845,7 @@ h3 {
     font-weight:bolder;
     text-align: left;
     font-family: 'DreamAvenue', sans-serif;
-    margin: 0 0 8% 5%;
+    margin: 25% 0 5% 5%;
     font-size: 2.63vw;
     letter-spacing: .1em;
     background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
@@ -912,6 +918,10 @@ h3 {
     display: none !important;
 }
 
+#works a.link {
+    margin: 5% auto;
+}
+
 /* -----skills----- */
 .skill {
     width: 300px;
@@ -944,7 +954,7 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 0 auto;
+    margin: 27% auto;
 }
 
 .skill-title {
@@ -1017,7 +1027,7 @@ h3 {
 .info {
     display: flex;
     justify-content: center;
-    margin: 50px auto 0px;
+    margin: 27% auto 0px;
 }
 
 .contactform,
@@ -1133,9 +1143,9 @@ footer {
     display: none;
     position: fixed;
     bottom: 0%;
-    right:  14%;
+    right:  13%;
     width: 60px;
-    height: 60px;
+    height:60px;
     margin: 20px auto;
     z-index: 500;
 }
@@ -1319,7 +1329,9 @@ div text {
 }
 
 /* ----Profile---- */
-
+.profile-ditail {
+    margin: 30% auto 0;
+}
 .profile-img {
     width: 250px;
     height: 250px;
@@ -1328,7 +1340,7 @@ div text {
 
 .profile-text {
     width: 450px;
-    margin: 50px auto 100px;
+    margin: 50px auto;
 }
 
 .my-title {
@@ -1346,7 +1358,7 @@ div text {
     background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
     -webkit-background-clip: text;
     color: transparent;
-    margin: 20px 0 50px;
+    margin: 20px 0 ;
 }
 
 .profile-story {
@@ -1539,16 +1551,16 @@ div text {
 
 .contactform-text {
     max-width: 600px;
-    margin: -1rem auto 0;
+    margin: 0 auto ;
     text-align: left;
     line-height: 1.75em;
 }
+.contact {
+    margin: 25% auto 0;
+}
 
 .Form {
-    /* margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto; */
-    margin: 80px auto 0;
+    margin: 50px auto 0;
     max-width: 600px;
 }
 
@@ -1664,6 +1676,23 @@ div text {
 .sp-nav {
     display: none;
 }
+
+/* @media screen and (max-width: 1250px) {
+    .scroolwrap{
+        right:  9%;
+    }} */
+@media screen and (max-width: 1150px) {
+    .scroolwrap,.pagetopwrap{
+        right:  9%;
+    }}
+@media screen and (max-width: 1050px) {
+    .scroolwrap,.pagetopwrap{
+        right:  2%;
+    }}
+@media screen and (max-width:950px) {
+    .scroolwrap,.pagetopwrap{
+        right:  1%;
+    }}
 
 @media screen and (max-width: 768px) {
 
@@ -1858,13 +1887,13 @@ div text {
     #banner-list,
     #website-detail-1 {
         position: relative;
-        /* padding: 200px 0 100px; */
+        padding: 10% 0 30%;
     }
 
-    #banner-list,
+    /* #banner-list,
     #website-list {
-        padding: 350px 0 100px;
-    }
+        padding: 450px 0 100px;
+    } */
 
     .wrapper {
         margin: 30px 15px;
@@ -1886,17 +1915,22 @@ div text {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 50px auto 0;
+        margin: 20% auto 0;
         font-size: 4.68vw;
         font-weight:bolder;
     }
 
     /* ----about---- */
+#about {
+    padding: 5% 0 0 0;
+}
+
+
     .about-text {
         width: 85vw;
         max-width: 100%;
         margin-left: 0;
-        margin: 0 auto;
+        margin: 50% auto 30%;
 
     }
 
@@ -1909,16 +1943,20 @@ div text {
 
     }
 
-    .profile-text {
-        margin: 50px auto;
-        /* 画面下部に位置させるための余白 */
-    }
-/* ----works---- */
 
-.works-title,
+/* ----works---- */
+#works {
+    padding: 20% 0 10%;
+}
+
+.works-title {
+    font-size: 6.25vw;
+    margin: 50% 0 5% 5%;
+}
+
 .banner-title {
     font-size: 6.25vw;
-
+    margin: 5% 0 5% 5%;
 }
 
 .website_slider {
@@ -1941,7 +1979,7 @@ div text {
         width: 90%;
         height: auto;
         padding: 20px;
-        margin: 25px auto;
+        margin: 15px auto;
 
     }
 
@@ -1949,12 +1987,11 @@ div text {
         width: 100%;
         flex-direction: column;
         align-items: center;
-        margin-top:80px;
+        margin: 55% auto 0%;
     }
 
     .skill-title {
-        font-size: 6.25vw;
-
+      margin: 0 auto;
     }
 
     .skill-text {
@@ -1964,6 +2001,7 @@ div text {
     .icon-img {
         width:10vh ;
         height: auto;
+        padding: 10px;
 
     }
 
@@ -1972,13 +2010,13 @@ div text {
         flex-direction: column;
         align-items: center;
         text-align: left;
-  
+        margin: 30% auto 0px;
     }
 
     .contactform,
     .sns {
         width: 80%;
-        margin: 0 auto;
+        margin: 5% auto 0;
     }
 
     .info-text {
@@ -2016,7 +2054,9 @@ div text {
 
 
     /* ----Profile---- */
-
+    .profile-ditail {
+        margin: 50% auto 0;
+    }
     .profile-img {
         width: 55vw;
         height: auto;
@@ -2028,7 +2068,7 @@ div text {
 
     .smooth {
         width: 85vw;
-        margin: 0 auto;
+        margin: 0% auto;
     }
 
     .my-title {
@@ -2149,14 +2189,17 @@ div text {
 
 .scroolwrap{
     right:  2%;
- 
+    width: 60px;
+    height: 60px;
 }
 
 .pagetopwrap{
     right: 2%;
  
 }
-
+.contact {
+    margin :30% auto 10%;
+} 
 .detail.show-border::after {
     display:none;
     /* アニメーションが完了した後の幅 */
@@ -2171,12 +2214,12 @@ div text {
     }
 }
 
-#contactform {
+/* #contactform {
     padding: 300px 0 200px;
-}
+} */
 
 .Form {
-    margin: 80px 5% 0 3%;
+    margin: 5% 5% 0 3%;
     max-width: 90%;
 }
 
@@ -2226,4 +2269,9 @@ div text {
     padding: 2%;
 }
 }
+@media screen and (max-width: 370px) {
+    #contactform h2.text-right, #information h2.text-right {
+        font-size: 12vw;
+    }
 
+}

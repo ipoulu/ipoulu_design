@@ -258,4 +258,3 @@ $(function () {
                 $(".sp-nav").removeClass('active');  // sp-navのactiveを解除
             });
         });
-       

@@ -1198,7 +1198,7 @@ footer {
     flex-direction: column;
     /* 矢印を縦に配置 */
     height: 80px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     padding: 9px;
 }
@@ -1225,7 +1225,7 @@ footer {
     flex-direction: column;
     height: 80px;
     /* 矢印を縦に配置 */
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     padding: 9px;
 }
@@ -1793,10 +1793,10 @@ div text {
         top: 50%;
         right: 0%;
         transform: translate(-0%, -50%);
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-family: 'DreamAvenue', sans-serif;
         font-weight:bolder;
-        letter-spacing: .18rem;
+        letter-spacing: .3rem;
         text-align: center;
         text-transform: uppercase;
         color: #804e00;

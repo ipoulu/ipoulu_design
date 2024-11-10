@@ -67,7 +67,7 @@ body {
     width: 100%;
     max-width: 1366px;
     margin: 0 auto;
-    font-family: a-otf-ud-reimin-pr6n, sans-serif;
+    font-family: sans-serif;
     font-style: normal;
     font-weight: 300;
 }
@@ -292,8 +292,8 @@ header.hidden {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 28px;
-    /* font-family: 'DreamAvenue', sans-serif; */
+    font-size: 3.65vw;
+    font-family: "Noto Serif", serif !important;
     letter-spacing: 0.1em;
     color: #804e00;
     line-height: 1.75;
@@ -778,7 +778,7 @@ h3 {
     font-weight:bolder;
     letter-spacing: 0.1em;
 }
-margin: 25% 0 5% 5%;
+
 
 /* ホバー時のスタイル */
 #about .link:hover,
@@ -837,7 +837,20 @@ margin: 25% 0 5% 5%;
     /* 元の位置に戻す */
 }
 
-
+.line-color {
+    font-weight: bold;
+background: -webkit-linear-gradient(left, rgba(247, 238, 227, 0.5) 0%, rgba(242, 233, 191, 0.5) 5%, rgba(242, 202, 196, 0.5) 45%, rgba(193, 228, 230, 0.5) 60%, rgba(159, 210, 201, 0.5) 80%, transparent 100%);
+background: -moz-linear-gradient(left, rgba(247, 238, 227, 0.5) 0%, rgba(242, 233, 191, 0.5) 5%, rgba(242, 202, 196, 0.5) 45%, rgba(193, 228, 230, 0.5) 60%, rgba(159, 210, 201, 0.5) 80%, transparent 100%);
+background: linear-gradient(to left, rgba(247, 238, 227, 0.5) 0%, rgba(242, 233, 191, 0.5) 5%, rgba(242, 202, 196, 0.5) 45%, rgba(193, 228, 230, 0.5) 60%, rgba(159, 210, 201, 0.5) 80%, transparent 100%);
+background-repeat: no-repeat;
+background-size: 200% .8em; 
+background-position: 100% .5em;
+transition: background-position 2s ease;
+    }
+    .line-color.is-active{
+        background-position: 0% .5em;
+    }
+  
 /* ----works---- */
 
 .works-title,
@@ -1244,7 +1257,7 @@ div text {
 
 .arrow-down {
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -1921,9 +1934,9 @@ div text {
     }
 
     /* ----about---- */
-#about {
+/* #about {
     padding: 5% 0 0 0;
-}
+} */
 
 
     .about-text {
@@ -2067,8 +2080,8 @@ div text {
     }
 
     .smooth {
-        width: 85vw;
-        margin: 0% auto;
+        /* width: 85vw; */
+        margin: 0% 5%;
     }
 
     .my-title {
@@ -2268,6 +2281,10 @@ div text {
 .contactform-text {
     padding: 2%;
 }
+}
+@media screen and (max-width:500px) {
+    
+
 }
 @media screen and (max-width: 370px) {
     #contactform h2.text-right, #information h2.text-right {

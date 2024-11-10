@@ -16,8 +16,8 @@
     window.addEventListener('scroll', function () {
         const scrollPos = $(window).scrollTop();
 
-        // 上から1000px未満のときに「スクロールボタン」を表示し、他の位置では「ページトップボタン」を表示
-        if (scrollPos < 1000) {
+        // 上から1000px未満のときに「スクロールボタン」を表示し、他の位置では「ページトップボタン」を表示0
+        if (scrollPos < 500) {
             $('.scroolwrap').fadeIn(); // スクロールボタンを表示
             $('.pagetopwrap').fadeOut(); // ページトップボタンは非表示
         } else {

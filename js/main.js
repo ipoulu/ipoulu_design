@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 var stroke;
 stroke = new Vivus('mask', { // アニメーションをするIDの指定
-    start: 'manual', // 自動再生をせずスタートをマニュアルに
+    start: 'manual', // 自動再生をせずスタートをマニュルに
     type: 'scenario-sync', // アニメーションのタイプを設定
     duration: 12, // アニメーションの時間設定。数字が小さくなるほど速い
     forceRender: false, // パスが更新された場合に再レンダリングさせない

@@ -292,7 +292,7 @@ header.hidden {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3.65vw;
+    font-size: 2vw;
     font-family: "Noto Serif", serif !important;
     letter-spacing: 0.1em;
     color: #804e00;
@@ -1156,9 +1156,9 @@ footer {
     display: none;
     position: fixed;
     bottom: 0%;
-    right:  13%;
-    width: 60px;
-    height:60px;
+    right:  14%;
+    width: 80px;
+    height:80px;
     margin: 20px auto;
     z-index: 500;
 }
@@ -1172,10 +1172,10 @@ footer {
     /* 垂直方向中央 */
     flex-direction: column;
     /* 矢印を縦に配置 */
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.5);
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
-    padding: 6px;
+    padding: 9px;
 }
 
 .pagetopwrap{
@@ -1183,8 +1183,8 @@ footer {
     position: fixed;
     bottom: 0%;
     right: 14%;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     margin: 20px auto;
     z-index: 500;
 }
@@ -1198,11 +1198,11 @@ footer {
     align-items: center;
     /* 垂直方向中央 */
     flex-direction: column;
-    height: 50px;
+    height: 80px;
     /* 矢印を縦に配置 */
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
-    padding: 6px;
+    padding: 9px;
 }
 
 div svg {
@@ -1720,7 +1720,9 @@ div text {
     .pc-nav {
         display: none;
     }
-
+    #spl-logo {
+        font-size: 3.1vw;
+    }
     /* ---ハンバーガーメニュー--- */
     /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
     .openbtn {
@@ -1732,8 +1734,8 @@ div text {
         right: 2%;
         /* 画面右端からの距離を設定 */
         cursor: pointer;
-        width: 60px;
-        height: 60px;
+        width: 80px;
+        height: 80px;
         border-radius: 5px;
         background-color: #fff;
         opacity: 0.8;
@@ -1765,7 +1767,7 @@ div text {
         top: 50%;
         right: 0%;
         transform: translate(-0%, -50%);
-        font-size: 1rem;
+        font-size: 1.4rem;
         font-family: 'DreamAvenue', sans-serif;
         font-weight:bolder;
         letter-spacing: .18rem;
@@ -2202,8 +2204,8 @@ div text {
 
 .scroolwrap{
     right:  2%;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
 }
 
 .pagetopwrap{
@@ -2282,11 +2284,11 @@ div text {
     padding: 2%;
 }
 }
-@media screen and (max-width:500px) {
+@media screen and (max-width:501px) {
     
 
 }
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 376px) {
     #contactform h2.text-right, #information h2.text-right {
         font-size: 12vw;
     }

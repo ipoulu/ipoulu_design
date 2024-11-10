@@ -1300,7 +1300,7 @@ div text {
     /* 矢印を下向きに */
     transform-origin: bottom right;
     position: absolute;
-    left: -.6em;
+    left: -.55em;
     bottom: -0.1em;
     /* 矢印の位置微調整 */
     box-sizing: border-box;
@@ -1338,7 +1338,7 @@ div text {
     /* 矢印を上向きに */
     transform-origin: bottom right;
     position: absolute;
-    left: -.6em;
+    left: -.55em;
     top: .2em;
     /* 矢印の位置微調整 */
     box-sizing: border-box;
@@ -1387,6 +1387,7 @@ div text {
     background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
     -webkit-background-clip: text;
     color: transparent;
+    margin-bottom: 50px;
 }
 
 .my-name {
@@ -1396,7 +1397,7 @@ div text {
     background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
     -webkit-background-clip: text;
     color: transparent;
-    margin: 20px 0 ;
+    margin:  0 auto 50px ;
 }
 
 .profile-story {

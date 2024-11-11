@@ -435,6 +435,28 @@ body.appear #container {
         opacity: 1;
     }
 }
+.glowAnime {
+    font-size: 140px;
+    letter-spacing:.03em;
+    font-family: 'DreamAvenue', sans-serif;
+    /* font-weight: bolder; */
+    background: linear-gradient(-75deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00);
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.glowAnime span{opacity: 0;}
+/* 
+アニメーションで透過を0から1に変化させtext-shadowをつける */
+.glowAnime.glow span{ animation:glow_anime_on 1s ease-out forwards; }
+
+@keyframes glow_anime_on{
+	0% { opacity:0; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
+	50% { opacity:1;text-shadow: 0 0 10px #fff,0 0 15px #fff; }
+	100% { opacity:1; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
+}
+
+
 
 .openbtn,
 .sp-nav {
@@ -838,7 +860,37 @@ h3 {
 }
 
 .line-color {
-    font-size: 1.3rem;
+    font-size: 36px;
+    background: linear-gradient(to left,
+    rgba(247, 238, 227, 0.5),
+    rgba(242, 233, 191, 0.5),
+    rgba(242, 202, 196, 0.5),
+    rgba(193, 228, 230, 0.5),
+    rgba(159, 210, 201, 0.5));
+    background: -webkit-linear-gradient(left,
+    rgba(247, 238, 227, 0.5),
+    rgba(242, 233, 191, 0.5),
+    rgba(242, 202, 196, 0.5),
+    rgba(193, 228, 230, 0.5),
+    rgba(159, 210, 201, 0.5), transparent 50%);
+    background: -moz-linear-gradient(left, 
+    rgba(247, 238, 227, 0.5),
+    rgba(242, 233, 191, 0.5),
+    rgba(242, 202, 196, 0.5),
+    rgba(193, 228, 230, 0.5),
+    rgba(159, 210, 201, 0.5), transparent 50%);
+    background: linear-gradient(left,
+    rgba(247, 238, 227, 0.5),
+    rgba(242, 233, 191, 0.5),
+    rgba(242, 202, 196, 0.5),
+    rgba(193, 228, 230, 0.5),
+    rgba(159, 210, 201, 0.5), transparent 50%);
+    background-size: 300% .8em; 
+    background-position: 100% .5em;
+    transition: 2s;
+}
+.line-color2 {
+    font-size: 24px;
     background: linear-gradient(to left,
     rgba(247, 238, 227, 0.5),
     rgba(242, 233, 191, 0.5),
@@ -869,6 +921,9 @@ h3 {
 }
 
     .line-color.is-active{
+        background-position: 0% .5em;
+    }
+    .line-color2.is-active{
         background-position: 0% .5em;
     }
   .line-wrap {
@@ -1073,9 +1128,12 @@ h3 {
     margin: 27% auto 0px;
 }
 
-.contactform,
+.contactform {
+    width: 55%;
+}
+
 .sns {
-    width: 50%;
+    width: 45%;
 }
 
 .info-text {
@@ -1978,6 +2036,9 @@ div text {
 } */
 .line-color {
     font-size: 5.25vw;
+}
+.line-color2 {
+    font-size: 4.12vw;
 }
 
     .about-text {

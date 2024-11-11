@@ -36,15 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
-var stroke;
-stroke = new Vivus('mask', { // アニメーションをするIDの指定
-    start: 'manual', // 自動再生をせずスタートをマニュルに
-    type: 'scenario-sync', // アニメーションのタイプを設定
-    duration:14, // アニメーションの時間設定。数字が小さくなるほど速い
-    forceRender: false, // パスが更新された場合に再レンダリングさせない
-    animTimingFunction: Vivus.EASE_OUT_BOUNCE, // 動きの加速減速設定
-});
+// var stroke
 
 // ページが読み込まれた時の処理
 $(window).on('load', function () {
@@ -260,7 +252,7 @@ $(function () {
         });
 
     $(window).scroll(function (){
-    $(".line-color").each(function(){
+    $(".line-color,.line-color2").each(function(){
       var position = $(this).offset().top; //ページの一番上から要素までの距離を取得
       var scroll = $(window).scrollTop(); //スクロールの位置を取得
       var windowHeight = $(window).height(); //ウインドウの高さを取得
@@ -268,4 +260,47 @@ $(function () {
         $(this).addClass('is-active'); //クラス「active」を与える
       }
     });
+
+// glowAnimeにglowというクラス名を付ける定義
+function GlowAnimeControl() {
+	$('.glowAnime').each(function () {
+		var elemPos = $(this).offset().top - 50;
+		var scroll = $(window).scrollTop();
+		var windowHeight = $(window).height();
+		if (scroll >= elemPos - windowHeight) {
+			$(this).addClass("glow");
+
+		} else {
+			$(this).removeClass("glow");
+		}
+	});
+}
+$(window).scroll(function () {
+	GlowAnimeControl();/* アニメーション用の関数を呼ぶ*/
+});// ここまで画面をスクロールをしたら動かしたい場合の記述
+
+// 画面が読み込まれたらすぐに動かしたい場合の記述
+$(window).on('load', function () {
+	//spanタグを追加する
+	var element = $(".glowAnime");
+	element.each(function () {
+		var text = $(this).text();
+		var textbox = "";
+		text.split('').forEach(function (t, i) {
+			if (t !== " ") {
+				if (i < 10) {
+					textbox += '<span style="animation-delay: .' + i + 's;">' + t + '</span>';
+				} else {
+					var n = i / 10;
+					textbox += '<span style="animation-delay: ' + n + 's;">' + t + '</span>';
+				}
+
+			} else {
+				textbox += t;
+			}
+		});
+		$(this).html(textbox);
+	});
+    GlowAnimeControl();/* アニメーション用の関数を呼ぶ*/
+});// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
 });

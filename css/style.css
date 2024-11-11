@@ -2330,5 +2330,7 @@ div text {
     #contactform h2.text-right {
         font-size: 11.5vw;
     }
-
+    #spl-logo {
+        font-size: 3vw;
+    }
 }

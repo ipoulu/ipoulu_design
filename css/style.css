@@ -870,7 +870,12 @@ h3 {
     .line-color.is-active{
         background-position: 0% .5em;
     }
-  
+  .line-wrap {
+    display: block;
+    margin-bottom: 50px;
+  }
+
+
 /* ----works---- */
 
 .works-title,

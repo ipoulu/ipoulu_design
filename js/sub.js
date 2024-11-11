@@ -12,7 +12,9 @@
         console.log(data);
         loadingElement.style.display = "none";
     }
-
+    const path = location.pathname.split('/')
+    const file = path[path.length - 1]
+    if (file != 'banner-list.html') {
     window.addEventListener('scroll', function () {
         const scrollPos = $(window).scrollTop();
 
@@ -25,6 +27,7 @@
             $('.pagetopwrap').fadeIn(); // ページトップボタンを表示
         }
     });
+}
 
     // スクロールボタンのクリックで700px下に移動
     $('.scroolwrap').click(function () {

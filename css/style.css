@@ -792,6 +792,7 @@ h3 {
 [type="submit"]:hover {
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
     position: relative;
+    transition: 0.5s;
     /* 擬似要素の位置を相対的に */
 
 }
@@ -1187,8 +1188,8 @@ footer {
     position: fixed;
     bottom: 0%;
     right:  14%;
-    width: 80px;
-    height:80px;
+    width: 70px;
+    height:70px;
     margin: 20px auto;
     z-index: 500;
 }
@@ -1202,7 +1203,7 @@ footer {
     /* 垂直方向中央 */
     flex-direction: column;
     /* 矢印を縦に配置 */
-    height: 80px;
+    height: 70px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     padding: 9px;
@@ -1213,8 +1214,8 @@ footer {
     position: fixed;
     bottom: 0%;
     right: 14%;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     margin: 20px auto;
     z-index: 500;
 }
@@ -1228,7 +1229,7 @@ footer {
     align-items: center;
     /* 垂直方向中央 */
     flex-direction: column;
-    height: 80px;
+    height: 70px;
     /* 矢印を縦に配置 */
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
@@ -1251,7 +1252,7 @@ div path {
     fill: #804e00;
     font-weight:bolder;
     font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: -0.01rem;
+    letter-spacing: 0.05rem;
 }
 
 @keyframes donut-spin {
@@ -1766,8 +1767,8 @@ div text {
         right: 2%;
         /* 画面右端からの距離を設定 */
         cursor: pointer;
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
         border-radius: 5px;
         background-color: #fff;
         opacity: 0.8;
@@ -1792,25 +1793,28 @@ div text {
 
     .openbtn span:nth-of-type(1) {
         top: 10%;
-        right: 5%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .openbtn span:nth-of-type(2) {
         top: 50%;
-        right: 0%;
-        transform: translate(-0%, -50%);
-        font-size: 1.2rem;
+       left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1rem;
         font-family: 'DreamAvenue', sans-serif;
         font-weight:bolder;
-        letter-spacing: .3rem;
+        letter-spacing: .2rem;
         text-align: center;
         text-transform: uppercase;
         color: #804e00;
+        padding-left: 4px;
     }
 
     .openbtn span:nth-of-type(3) {
         bottom: 10%;
-        right: 5%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     /*activeクラスが付与されると線が回転して×になり、Menu表記をしている2つ目の要素が透過して消える*/
@@ -2244,8 +2248,8 @@ div text {
 
 .scroolwrap{
     right:  2%;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
 }
 
 .pagetopwrap{
@@ -2334,6 +2338,7 @@ div text {
     }
     #contactform h2.text-right {
         font-size: 11.5vw;
+        padding-left: -5px;
     }
     #spl-logo {
         font-size: 3vw;

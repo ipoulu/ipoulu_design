@@ -728,8 +728,10 @@ h3 {
     z-index: -5;
     border-radius: 10px;
 
+
 }
 .pines {
+    width: 1000px;
     position: relative;
 }
 /* 各 pine のサイズと向きをランダムに設定 */
@@ -737,7 +739,7 @@ h3 {
     display: inline-block;
     position: fixed;
     top:-5%;
-    left:29%;
+    left:10%;
     width: 500px;
     height: 500px; 
     background-image: url('../images/pine.svg'); 
@@ -752,7 +754,7 @@ h3 {
     display: inline-block;
     position: fixed;
     top:0%;
-    right: 30%;
+    right: 5%;
     width: 450px;
     height: 450px; 
     z-index: -2;
@@ -767,7 +769,7 @@ h3 {
 .pine3 {
     display: inline-block;
     position: fixed;
-    bottom: 25%;
+    bottom: 35%;
     right: 22%;
     width: 400px;
     height: 400px; 
@@ -782,7 +784,7 @@ h3 {
     display: inline-block;
     position: fixed;
     bottom:-10%;
-    left: 30%;
+    left: 3%;
     width: 600px;
     height: 600px; 
     z-index: -2;
@@ -796,7 +798,7 @@ h3 {
     display: inline-block;
     position: fixed;
    bottom:-20%;
-    right: 40%;
+    right: 0%;
     width: 700px;
     height: 700px; 
     z-index: -2;
@@ -810,8 +812,8 @@ h3 {
 .pine7 {
     display: inline-block;
     position: fixed;
-    top:70%;
-    left: 34%;
+    top:60%;
+    left: 30%;
     width: 400px;
     height: 400px; 
     z-index: -2;
@@ -1874,7 +1876,7 @@ div text {
         right:  9%;
     }}
     /* 各 pine のサイズと向きをランダムに設定 */
-.pine{
+/* .pine{
     top:-5%;
     left:5%; 
 }
@@ -1901,12 +1903,12 @@ div text {
 
 .pine7 {
    display: none;
-}
+} */
 
 @media screen and (max-width: 1050px) {
     .scroolwrap,.pagetopwrap{
         right:  2%;
-    }}
+    }
 
     .pine{
         top:-5%;
@@ -1932,11 +1934,11 @@ div text {
        bottom:-12%;
         right: -20%;
     }
-    
+}
 @media screen and (max-width:950px) {
     .scroolwrap,.pagetopwrap{
         right:  1%;
-    }}
+    }
     .pine{
         top:-5%;
         left:0%; 
@@ -1961,7 +1963,7 @@ div text {
        bottom:-15%;
         right: -20%;
     }
-    
+}
 @media screen and (max-width: 768px) {
     .pine{
         top: -15%;

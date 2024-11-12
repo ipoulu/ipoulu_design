@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18.72 115.52">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_名称未設定グラデーション_5);
+        stroke-width: 0px;
+      }
+    </style>
+    <linearGradient id="_名称未設定グラデーション_5" data-name="名称未設定グラデーション 5" x1="-277.91" y1="98.24" x2="589.91" y2="98.24" gradientTransform="translate(0 156) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#804e00"/>
+      <stop offset=".06" stop-color="#855506"/>
+      <stop offset=".15" stop-color="#946817"/>
+      <stop offset=".25" stop-color="#ac8833"/>
+      <stop offset=".33" stop-color="#c2a54c"/>
+      <stop offset=".52" stop-color="#b0923f"/>
+      <stop offset=".57" stop-color="#a17d2b"/>
+      <stop offset=".65" stop-color="#8f6313"/>
+      <stop offset=".72" stop-color="#835305"/>
+      <stop offset=".77" stop-color="#804e00"/>
+      <stop offset=".82" stop-color="#855506"/>
+      <stop offset=".89" stop-color="#926818"/>
+      <stop offset=".98" stop-color="#a98836"/>
+      <stop offset="1" stop-color="#b0923f"/>
+    </linearGradient>
+  </defs>
+  <g id="_レイヤー_2-2" data-name=" レイヤー 2">
+    <g id="_レイヤー_1-2" data-name=" レイヤー 1-2">
+      <path class="cls-1" d="M18.72,115.52H.16v-1.44c.21,0,.53-.13.96-.4.42-.26.83-.85,1.2-1.76.37-.91.72-2.16,1.04-3.76s.48-3.73.48-6.4V13.76c-.43-2.77-.99-4.58-1.68-5.44-.7-.85-1.25-1.28-1.68-1.28l-.48-1.44L15.04,0v101.76c0,2.67.13,4.8.4,6.4.26,1.6.61,2.85,1.04,3.76.42.91.85,1.5,1.28,1.76.42.27.75.4.96.4v1.44h0Z"/>
+    </g>
+  </g>
+</svg>

@@ -60,9 +60,9 @@ element.each(function () {
     text.split('').forEach(function (t, i) {
         if (t !== " ") {
             if (i < 10) {
-                textbox += '<span style="animation-delay:.' + i + 's;">' + t + '</span>';
+                textbox += '<span style="animation-delay: 3.' + i + 's;">' + t + '</span>';
             } else {
-                var n = i / 10;
+                var n = i / 10 + 3;
                 textbox += '<span style="animation-delay:' + n + 's;">' + t + '</span>';
             }
 

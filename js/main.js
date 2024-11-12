@@ -36,10 +36,46 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-// var stroke
-
+function EachTextAnimeControl() {
+    $('.eachTextAnime').each(function () {
+      var elemPos = $(this).offset().top - 50;
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (scroll >= elemPos - windowHeight) {
+        $(this).addClass("appeartext");
+  
+      } else {
+        $(this).removeClass("appeartext");
+      }
+    });
+  }
 // ページが読み込まれた時の処理
 $(window).on('load', function () {
+
+//spanタグを追加する
+var element = $(".eachTextAnime");
+element.each(function () {
+    var text = $(this).text();
+    var textbox = "";
+    text.split('').forEach(function (t, i) {
+        if (t !== " ") {
+            if (i < 10) {
+                textbox += '<span style="animation-delay:.' + i + 's;">' + t + '</span>';
+            } else {
+                var n = i / 10;
+                textbox += '<span style="animation-delay:' + n + 's;">' + t + '</span>';
+            }
+
+        } else {
+            textbox += t;
+        }
+    });
+    $(this).html(textbox);
+});
+
+EachTextAnimeControl();/* アニメーション用の関数を呼ぶ*/
+});
+
     const currentURL = window.location.href;
 
     // URLに"#"が含まれていない場合にのみ処理を実行
@@ -57,7 +93,7 @@ $(window).on('load', function () {
         // ローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
         $("#spl").delay(2000).fadeOut('slow', function () {
             $('body').addClass('appear'); // フェードアウト後bodyにappearクラス付与
-            stroke.play();
+            // stroke.play();
 
             // <div id="container">を表示
             $('#container').fadeIn('slow'); // フェードインで表示する処理
@@ -70,19 +106,10 @@ $(window).on('load', function () {
         // URLに"#"が含まれている場合は、#splを非表示にし、#containerのアニメーションを実行
         $('#spl').hide(); // スプラッシュエリアを非表示にする
         $('body').addClass('appear'); // bodyにappearクラス付与
-        stroke.play(); // アニメーションを実行
+        // stroke.play(); // アニメーションを実行
         $('#container').fadeIn('slow'); // <div id="container">をフェードインで表示
     }
 
-    // 背景が伸びた後に動かしたいJSをまとめたい場合
-    $('.splbg1').on('animationend', function () {
-        // この中に動かしたいJSを記載
-        stroke.play(); // SVGアニメーションの実行
-        setTimeout(function () {
-            stroke.play();
-        }, 30000);
-    });
-});
 
 $(function () {
     // ローディング画面の設定
@@ -251,56 +278,3 @@ $(function () {
             });
         });
 
-    $(window).scroll(function (){
-    $(".line-color,.line-color2").each(function(){
-      var position = $(this).offset().top; //ページの一番上から要素までの距離を取得
-      var scroll = $(window).scrollTop(); //スクロールの位置を取得
-      var windowHeight = $(window).height(); //ウインドウの高さを取得
-      if (scroll > position - windowHeight){ //スクロール位置が要素の位置を過ぎたとき
-        $(this).addClass('is-active'); //クラス「active」を与える
-      }
-    });
-
-// glowAnimeにglowというクラス名を付ける定義
-function GlowAnimeControl() {
-	$('.glowAnime').each(function () {
-		var elemPos = $(this).offset().top - 50;
-		var scroll = $(window).scrollTop();
-		var windowHeight = $(window).height();
-		if (scroll >= elemPos - windowHeight) {
-			$(this).addClass("glow");
-
-		} else {
-			$(this).removeClass("glow");
-		}
-	});
-}
-$(window).scroll(function () {
-	GlowAnimeControl();/* アニメーション用の関数を呼ぶ*/
-});// ここまで画面をスクロールをしたら動かしたい場合の記述
-
-// 画面が読み込まれたらすぐに動かしたい場合の記述
-$(window).on('load', function () {
-	//spanタグを追加する
-	var element = $(".glowAnime");
-	element.each(function () {
-		var text = $(this).text();
-		var textbox = "";
-		text.split('').forEach(function (t, i) {
-			if (t !== " ") {
-				if (i < 10) {
-					textbox += '<span style="animation-delay: .' + i + 's;">' + t + '</span>';
-				} else {
-					var n = i / 10;
-					textbox += '<span style="animation-delay: ' + n + 's;">' + t + '</span>';
-				}
-
-			} else {
-				textbox += t;
-			}
-		});
-		$(this).html(textbox);
-	});
-    GlowAnimeControl();/* アニメーション用の関数を呼ぶ*/
-});// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
-});

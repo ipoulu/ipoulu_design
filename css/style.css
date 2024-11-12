@@ -435,28 +435,22 @@ body.appear #container {
         opacity: 1;
     }
 }
-.glowAnime {
-    font-size: 140px;
-    letter-spacing:.03em;
+.eachTextAnime {
+    font-size:13vw;
     font-family: 'DreamAvenue', sans-serif;
-    /* font-weight: bolder; */
-    background: linear-gradient(-75deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00);
+   /* background: linear-gradient(5deg, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
     color: transparent;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
+    color: #804e00;
+    text-align: center;
 }
-.glowAnime span{opacity: 0;}
-/* 
-アニメーションで透過を0から1に変化させtext-shadowをつける */
-.glowAnime.glow span{ animation:glow_anime_on 1s ease-out forwards; }
-
-@keyframes glow_anime_on{
-	0% { opacity:0; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
-	50% { opacity:1;text-shadow: 0 0 10px #fff,0 0 15px #fff; }
-	100% { opacity:1; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
+.eachTextAnime span{opacity: 0;}
+.eachTextAnime.appeartext span{ animation:text_anime_on 1s ease-out forwards; }
+@keyframes text_anime_on {
+	0% {opacity:0;}
+	100% {opacity:1;}
 }
-
-
 
 .openbtn,
 .sp-nav {
@@ -733,9 +727,99 @@ h3 {
     text-align: center;
     z-index: -5;
     border-radius: 10px;
+
+}
+.pines {
+    position: relative;
+}
+/* 各 pine のサイズと向きをランダムに設定 */
+.pine{
+    display: inline-block;
+    position: fixed;
+    top:-5%;
+    left:29%;
+    width: 500px;
+    height: 500px; 
+    background-image: url('../images/pine.svg'); 
+    background-size: 100%; 
+    opacity: .045;
+    background-repeat: no-repeat; 
+    transform: rotate(-20deg); 
+    z-index: -2;
 }
 
+.pine2 {
+    display: inline-block;
+    position: fixed;
+    top:0%;
+    right: 30%;
+    width: 450px;
+    height: 450px; 
+    z-index: -2;
+    background-image: url('../images/pine.svg'); 
+    opacity: .045;
+    background-repeat: no-repeat; 
+    transform: rotate(-15deg); 
+    background-size: 80%;
+    transform: rotate(15deg);
+}
 
+.pine3 {
+    display: inline-block;
+    position: fixed;
+    bottom: 25%;
+    right: 22%;
+    width: 400px;
+    height: 400px; 
+    z-index: -2;
+    background-image: url('../images/pine.svg'); 
+    opacity: .045;
+    background-size: 90%;
+    transform: rotate(-20deg);
+}
+
+.pine4 {
+    display: inline-block;
+    position: fixed;
+    bottom:-10%;
+    left: 30%;
+    width: 600px;
+    height: 600px; 
+    z-index: -2;
+    background-image: url('../images/pine.svg'); 
+    opacity: .045;
+    background-size: 100%;
+    transform: rotate(-20deg);
+}
+
+.pine5 {
+    display: inline-block;
+    position: fixed;
+   bottom:-20%;
+    right: 40%;
+    width: 700px;
+    height: 700px; 
+    z-index: -2;
+    background-image: url('../images/pine.svg'); 
+    opacity: .045;
+    background-size: 80%;
+
+    transform: rotate(23deg);
+}
+
+.pine7 {
+    display: inline-block;
+    position: fixed;
+    top:70%;
+    left: 34%;
+    width: 400px;
+    height: 400px; 
+    z-index: -2;
+    background-image: url('../images/pine.svg'); 
+    opacity: .045;
+    background-size: 80%;
+    transform: rotate(25deg);
+}
 
 #about .link {
     width: 19.76vw;
@@ -829,12 +913,12 @@ h3 {
 
 .about-title {
     font-size: 36px;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.045em;
     line-height: 1.38;
 }
 
 .about-story {
-    letter-spacing: 0.05em;
+    letter-spacing: 0.045em;
     line-height: 3.18;
 }
 
@@ -1310,7 +1394,7 @@ div path {
     fill: #804e00;
     font-weight:bolder;
     font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.045rem;
 }
 
 @keyframes donut-spin {
@@ -1467,7 +1551,7 @@ div text {
 .profile-story {
     width: 500px;
     margin: 0 auto;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.045em;
     line-height: 3.18;
     text-align: left;
 }
@@ -1682,7 +1766,7 @@ div text {
     font-family: 'DreamAvenue', sans-serif;
     width: 100%;
     max-width: 20%;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.045em;
     font-weight:bolder;
     font-size: 18px;
 }
@@ -1741,7 +1825,7 @@ div text {
     text-align: center;
     align-items: center;
     display: block;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.045em;
     background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
     -webkit-background-clip: text;
     color: transparent;
@@ -1789,17 +1873,125 @@ div text {
     .scroolwrap,.pagetopwrap{
         right:  9%;
     }}
+    /* 各 pine のサイズと向きをランダムに設定 */
+.pine{
+    top:-5%;
+    left:5%; 
+}
+
+.pine2 {
+    top:-10%;
+    right: 8%;
+}
+
+.pine3 {
+    bottom: 25%;
+    right: 30%;
+}
+
+.pine4 {
+    bottom:-5%;
+    left: 0%;
+}
+
+.pine5 {
+   bottom:-12%;
+    right: -15%;
+}
+
+.pine7 {
+   display: none;
+}
+
 @media screen and (max-width: 1050px) {
     .scroolwrap,.pagetopwrap{
         right:  2%;
     }}
+
+    .pine{
+        top:-5%;
+        left:5%; 
+    }
+    
+    .pine2 {
+        top:-10%;
+        right: 8%;
+    }
+    
+    .pine3 {
+        bottom: 25%;
+        right: 18%;
+    }
+    
+    .pine4 {
+        bottom:-5%;
+        left: 0%;
+    }
+    
+    .pine5 {
+       bottom:-12%;
+        right: -20%;
+    }
+    
 @media screen and (max-width:950px) {
     .scroolwrap,.pagetopwrap{
         right:  1%;
     }}
-
+    .pine{
+        top:-5%;
+        left:0%; 
+    }
+    
+    .pine2 {
+        top:0%;
+        right: 0%;
+    }
+    
+    .pine3 {
+        bottom: 25%;
+        right: 18%;
+    }
+    
+    .pine4 {
+        bottom:-5%;
+        left: -10%;
+    }
+    
+    .pine5 {
+       bottom:-15%;
+        right: -20%;
+    }
+    
 @media screen and (max-width: 768px) {
-
+    .pine{
+        top: -15%;
+        left:-20%; 
+    }
+    
+    .pine2 {
+        top:-5%;
+        right: -25%;
+        background-size: 90%;
+    }
+    
+    .pine3 {
+    display: none;
+    }
+    
+    .pine4 {
+        bottom:0%;
+        left: -10%;
+        background-size: 60%;
+    }
+    
+    .pine5 {
+       bottom:-20%;
+        right: -35%;
+    }
+    
+    .pine7 {
+        display: none;
+    }
     body {
         font-size: 3.64vw;
     }
@@ -2010,6 +2202,7 @@ div text {
         border: 5px solid transparent;
         border-image: linear-gradient(-45deg, #fbf7c4 0%, #804e00 50%, #b1ae8a 70%, #958d57 85%, #fbf7c4 100%) 1;
         border-radius: 10px;
+        z-index: -1;
     }
 
     #about .link,
@@ -2389,11 +2582,63 @@ div text {
     padding: 2%;
 }
 }
-@media screen and (max-width:501px) {
+@media screen and (max-width:550px) {
+    .pine{
+        display: none;
+    }
     
+    .pine2 {
+        top: 5%;
+        right: -20%; 
+    }
+    
+    .pine3 {
+    display: none;
+    }
+    
+    .pine4 {
+        bottom:20%;
+       left: -20%;
+    }
+    
+    .pine5 {
+       bottom:-20%;
+        right: -35%;
+    }
+    
+    .pine7 {
+        display: none;
+    }
 
 }
 @media screen and (max-width: 390px) {
+    .pine{
+        display: none;
+    }
+    
+    .pine2 {
+        top: 5%;
+        right: -50%; 
+    }
+    
+    .pine3 {
+    display: none;
+    }
+    
+    .pine4 {
+        bottom:25%;
+       left: -20%;
+    }
+    
+    .pine5 {
+       bottom:-20%;
+        right: -55%;
+    }
+    
+    .pine7 {
+        display: none;
+    }
+
 #information h2.text-right {
         font-size: 12vw;
     }

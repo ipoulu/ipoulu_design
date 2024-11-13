@@ -36,45 +36,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-function EachTextAnimeControl() {
-    $('.eachTextAnime').each(function () {
-      var elemPos = $(this).offset().top - 50;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      if (scroll >= elemPos - windowHeight) {
-        $(this).addClass("appeartext");
-  
-      } else {
-        $(this).removeClass("appeartext");
-      }
-    });
-  }
+
 // ページが読み込まれた時の処理
 $(window).on('load', function () {
-
-//spanタグを追加する
-var element = $(".eachTextAnime");
-element.each(function () {
-    var text = $(this).text();
-    var textbox = "";
-    text.split('').forEach(function (t, i) {
-        if (t !== " ") {
-            if (i < 10) {
-                textbox += '<span style="animation-delay: 3.' + i + 's;">' + t + '</span>';
-            } else {
-                var n = i / 10 + 3;
-                textbox += '<span style="animation-delay:' + n + 's;">' + t + '</span>';
-            }
-
-        } else {
-            textbox += t;
-        }
-    });
-    $(this).html(textbox);
-});
-
-EachTextAnimeControl();/* アニメーション用の関数を呼ぶ*/
-});
+    setTimeout(() => {
+        $('.slide-in').addClass('slideAnime')
+        $('.slide-in').children('span').addClass('slideAnimeReverse')
+    }, 3000);
 
     const currentURL = window.location.href;
 
@@ -109,7 +77,15 @@ EachTextAnimeControl();/* アニメーション用の関数を呼ぶ*/
         // stroke.play(); // アニメーションを実行
         $('#container').fadeIn('slow'); // <div id="container">をフェードインで表示
     }
-
+ // 背景が伸びた後に動かしたいJSをまとめたい場合
+ $('.splbg1').on('animationend', function () {
+    // この中に動かしたいJSを記載
+    // stroke.play(); // SVGアニメーションの実行
+    setTimeout(function () {
+        // stroke.play();
+    }, 30000);
+});
+});
 
 $(function () {
     // ローディング画面の設定
@@ -203,6 +179,15 @@ $(function () {
 )
     // サブタイトルの動作の設定
     $(window).scroll(function () {
+        $(".line-color,.line-color2").each(function(){
+            var position = $(this).offset().top; //ページの一番上から要素までの距離を取得
+            var scroll = $(window).scrollTop(); //スクロールの位置を取得
+            var windowHeight = $(window).height(); //ウインドウの高さを取得
+            if (scroll > position - windowHeight){ //スクロール位置が要素の位置を過ぎたとき
+              $(this).addClass('is-active'); //クラス「active」を与える
+            }
+          });
+
         $('.text').each(function () {
             var elemPos = $(this).offset().top;
             var scroll = $(window).scrollTop();
@@ -214,6 +199,7 @@ $(function () {
             }
         });
     });
+
     $(window).scroll(function () {
         $('.text-right').each(function () {
             var elemPos = $(this).offset().top;
@@ -226,6 +212,7 @@ $(function () {
             }
         });
     });
+
     // aboutセクションのアニメーション
     const lines = document.querySelectorAll('.line');
     if (lines.length) {

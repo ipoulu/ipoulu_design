@@ -158,16 +158,6 @@ header.hidden {
     /* ヘッダーが隠れる位置 */
 }
 
-/* 
-.pc-nav ul {
-
-    max-width: 1366px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 50px;
-} */
-
 .pc-nav li {
     font-family: 'DreamAvenue', sans-serif;
     font-weight: bolder;
@@ -435,23 +425,60 @@ body.appear #container {
         opacity: 1;
     }
 }
-.eachTextAnime {
-    font-size:13vw;
+.page-title {
+    font-size:14vw;
+    letter-spacing:.05em;
     font-family: 'DreamAvenue', sans-serif;
-   /* background: linear-gradient(5deg, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
+   background: linear-gradient(-2deg, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
     color: transparent;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
-    color: #804e00;
+    -webkit-text-fill-color: transparent;
     text-align: center;
 }
-.eachTextAnime span{opacity: 0;}
-.eachTextAnime.appeartext span{ animation:text_anime_on 1s ease-out forwards; }
-@keyframes text_anime_on {
-	0% {opacity:0;}
-	100% {opacity:1;}
+
+.slide-in {
+    overflow: hidden;
+    display: inline-block;
+    opacity: 0;
+}
+.slide-in > span {
+    display: inline-block;
+}
+.slide-in .spacing {
+    margin-right: 30px;
+}
+.slideAnime {
+    animation: slideText 4s forwards;
+    opacity: 0;
 }
 
+@keyframes slideText {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slideAnimeReverse {
+    animation: slideTextReverse 4s forwards;
+    opacity: 0;
+}
+
+@keyframes slideTextReverse {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+  
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 .openbtn,
 .sp-nav {
     display: none;
@@ -467,7 +494,9 @@ body.appear #container {
 }
 
 h1 {
-    width: 75%;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -731,20 +760,21 @@ h3 {
 
 }
 .pines {
-    width: 1000px;
+    max-width:1200px;
+
+    margin: 0 auto;
     position: relative;
 }
 /* 各 pine のサイズと向きをランダムに設定 */
 .pine{
     display: inline-block;
     position: fixed;
-    top:-5%;
-    left:10%;
-    width: 500px;
-    height: 500px; 
+    top:-10%;
+    left:3%;
+    width: 45%;
+    height: 45%; 
     background-image: url('../images/pine.svg'); 
-    background-size: 100%; 
-    opacity: .045;
+    opacity: .1;
     background-repeat: no-repeat; 
     transform: rotate(-20deg); 
     z-index: -2;
@@ -753,73 +783,67 @@ h3 {
 .pine2 {
     display: inline-block;
     position: fixed;
-    top:0%;
-    right: 5%;
-    width: 450px;
-    height: 450px; 
+    top:-15%;
+    right: -5%;
+    width: 40%;
+    height: 40%; 
     z-index: -2;
     background-image: url('../images/pine.svg'); 
-    opacity: .045;
+    opacity: .1;
     background-repeat: no-repeat; 
     transform: rotate(-15deg); 
-    background-size: 80%;
     transform: rotate(15deg);
 }
 
 .pine3 {
     display: inline-block;
     position: fixed;
-    bottom: 35%;
-    right: 22%;
-    width: 400px;
-    height: 400px; 
+   top: 25%;
+    right: 20%;
+    width: 30%;
+    height: 30%; 
     z-index: -2;
     background-image: url('../images/pine.svg'); 
-    opacity: .045;
-    background-size: 90%;
+    opacity: .1;
     transform: rotate(-20deg);
 }
 
 .pine4 {
     display: inline-block;
     position: fixed;
-    bottom:-10%;
-    left: 3%;
-    width: 600px;
-    height: 600px; 
+    bottom:-26%;
+    left: 5%;
+    width: 60%;
+    height: 60%; 
     z-index: -2;
     background-image: url('../images/pine.svg'); 
-    opacity: .045;
-    background-size: 100%;
+    opacity: .1;
     transform: rotate(-20deg);
 }
 
 .pine5 {
     display: inline-block;
     position: fixed;
-   bottom:-20%;
-    right: 0%;
-    width: 700px;
-    height: 700px; 
+   bottom:-5%;
+    right: -10%;
+    width: 50%;
+    height: 50%; 
     z-index: -2;
     background-image: url('../images/pine.svg'); 
-    opacity: .045;
-    background-size: 80%;
-
+    opacity: .1;
     transform: rotate(23deg);
 }
 
 .pine7 {
     display: inline-block;
     position: fixed;
-    top:60%;
-    left: 30%;
-    width: 400px;
-    height: 400px; 
+    top:40%;
+    left: 28%;
+    width: 35%;
+    height: 35%; 
     z-index: -2;
     background-image: url('../images/pine.svg'); 
-    opacity: .045;
-    background-size: 80%;
+    opacity: .1;
     transform: rotate(25deg);
 }
 
@@ -1250,7 +1274,9 @@ h3 {
     margin-right: 0;
     /* Xアイコンの右マージンを0にする */
 }
-
+.contacttext .smooth{
+    margin: 50% 5%;
+}
 
 .sns .icon {
     width: 250px;
@@ -1396,7 +1422,7 @@ div path {
     fill: #804e00;
     font-weight:bolder;
     font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.045rem;
+    letter-spacing: 0.2rem;
 }
 
 @keyframes donut-spin {
@@ -1409,7 +1435,13 @@ div text {
     fill: #804e00;
     font-weight:bolder;
     font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.12rem;
+    letter-spacing: 0.5rem;
+}
+.bannertop text {
+    fill: #804e00;
+    font-weight:bolder;
+    font-family: 'DreamAvenue', sans-serif;
+    letter-spacing: 0.2rem;
 }
 
 @keyframes donut-spin {
@@ -1557,6 +1589,14 @@ div text {
     line-height: 3.18;
     text-align: left;
 }
+.contactstory  {
+    width: 500px;
+    margin: 0 auto;
+    letter-spacing: 0.045em;
+    line-height: 3.18;
+    text-align: left;
+}
+
 
 /* ----website list / banner list---- */
 .website-performance {
@@ -1875,125 +1915,22 @@ div text {
     .scroolwrap,.pagetopwrap{
         right:  9%;
     }}
-    /* 各 pine のサイズと向きをランダムに設定 */
-/* .pine{
-    top:-5%;
-    left:5%; 
-}
-
-.pine2 {
-    top:-10%;
-    right: 8%;
-}
-
-.pine3 {
-    bottom: 25%;
-    right: 30%;
-}
-
-.pine4 {
-    bottom:-5%;
-    left: 0%;
-}
-
-.pine5 {
-   bottom:-12%;
-    right: -15%;
-}
-
-.pine7 {
-   display: none;
-} */
-
+ 
 @media screen and (max-width: 1050px) {
     .scroolwrap,.pagetopwrap{
         right:  2%;
     }
 
-    .pine{
-        top:-5%;
-        left:5%; 
-    }
-    
-    .pine2 {
-        top:-10%;
-        right: 8%;
-    }
-    
-    .pine3 {
-        bottom: 25%;
-        right: 18%;
-    }
-    
-    .pine4 {
-        bottom:-5%;
-        left: 0%;
-    }
-    
-    .pine5 {
-       bottom:-12%;
-        right: -20%;
-    }
 }
 @media screen and (max-width:950px) {
     .scroolwrap,.pagetopwrap{
         right:  1%;
     }
-    .pine{
-        top:-5%;
-        left:0%; 
-    }
-    
-    .pine2 {
-        top:0%;
-        right: 0%;
-    }
-    
-    .pine3 {
-        bottom: 25%;
-        right: 18%;
-    }
-    
-    .pine4 {
-        bottom:-5%;
-        left: -10%;
-    }
-    
-    .pine5 {
-       bottom:-15%;
-        right: -20%;
-    }
+
 }
 @media screen and (max-width: 768px) {
-    .pine{
-        top: -15%;
-        left:-20%; 
-    }
+
     
-    .pine2 {
-        top:-5%;
-        right: -25%;
-        background-size: 90%;
-    }
-    
-    .pine3 {
-    display: none;
-    }
-    
-    .pine4 {
-        bottom:0%;
-        left: -10%;
-        background-size: 60%;
-    }
-    
-    .pine5 {
-       bottom:-20%;
-        right: -35%;
-    }
-    
-    .pine7 {
-        display: none;
-    }
     body {
         font-size: 3.64vw;
     }
@@ -2016,7 +1953,7 @@ div text {
         /* 画面に固定する */
         top: 1.5%;
         /* 画面上端からの距離を設定 */
-        right: 2%;
+        right: 20px;
         /* 画面右端からの距離を設定 */
         cursor: pointer;
         width: 60px;
@@ -2072,7 +2009,7 @@ div text {
     /*activeクラスが付与されると線が回転して×になり、Menu表記をしている2つ目の要素が透過して消える*/
     .openbtn.active span:nth-of-type(1) {
         top: 50%;
-        right: 5%;
+        left: 20%;
         transform: translateY(5%) rotate(-45deg);
         width: 80%;
     }
@@ -2083,7 +2020,7 @@ div text {
 
     .openbtn.active span:nth-of-type(3) {
         top: 50%;
-        right: 5%;
+        left: 20%;
         transform: translateY(-5%) rotate(45deg);
         width: 80%;
     }
@@ -2142,10 +2079,7 @@ div text {
     #mainvisual {
         height: 100vh;
     }
-
-    h1 {
-        width: 95vw;
-    }
+   
 
     /* ----sub title---- */
     .left-title {
@@ -2261,7 +2195,7 @@ div text {
 
 .works-title {
     font-size: 6.25vw;
-    margin: 50% 0 5% 5%;
+    margin: 55% 0 5% 5%;
 }
 
 .banner-title {
@@ -2359,10 +2293,10 @@ div text {
         font-weight: bold;
     }
 #information h2.text-right {
-        font-size: 14.1vw;      
+        font-size: 13.5vw;      
     }
     #contactform h2.text-right {
-        font-size: 12.5vw;
+        font-size: 11.5vw;
     
     }
 
@@ -2377,29 +2311,37 @@ div text {
         height: auto;
     }
 
-    .profile-text {
+    /* .profile-text {
         width: 85vw;
-    }
+    } */
+  
 
     .smooth {
         /* width: 85vw; */
         margin: 0% 5%;
     }
-
+    .contacttext .smooth{
+        margin: 50% 5%;
+    }
     .my-title {
-        font-size: 6.25vw;
+        font-size: 5.25vw;
     }
 
     .my-name {
-        font-size: 8.07vw;
+        font-size: 6.7vw;
+        text-align: center;
 
     }
 
     .profile-story {
-        width: 78.12vw;
+        width: 450px;
+        margin: 0 auto;
 
     }
-
+    .contactstory {
+        width: 450px;
+        margin: 0 auto;
+    }
 /* ----website list / banner list---- */
 .website-performance {
     margin-bottom: 50px;
@@ -2432,10 +2374,10 @@ div text {
     height: auto;
 }
 .rightAnime {
-    margin-right: -60px;
+    margin-right: -40px;
 }
 .leftAnime {
-    margin-left: -30px;
+    margin-left: -40px;
 }
 .spbr {
     display:block;
@@ -2584,63 +2526,55 @@ div text {
     padding: 2%;
 }
 }
-@media screen and (max-width:550px) {
-    .pine{
-        display: none;
-    }
-    
-    .pine2 {
-        top: 5%;
-        right: -20%; 
-    }
-    
-    .pine3 {
-    display: none;
-    }
-    
-    .pine4 {
-        bottom:20%;
-       left: -20%;
-    }
-    
-    .pine5 {
-       bottom:-20%;
-        right: -35%;
-    }
-    
-    .pine7 {
-        display: none;
-    }
 
-}
 @media screen and (max-width: 390px) {
+    .pines {
+        max-width:390px;
+        margin: 0 auto;
+    }
     .pine{
-        display: none;
+        top:-10%;
+        left:2%;
+        width: 65%;
+        height: 65%; 
     }
     
     .pine2 {
-        top: 5%;
-        right: -50%; 
+        top:5%;
+        right: 2%;
+        width: 45%;
+        height: 45%; 
+       
     }
     
     .pine3 {
-    display: none;
+       top: 25%;
+        right: 16%;
+        width: 40%;
+        height: 40%; 
     }
     
     .pine4 {
-        bottom:25%;
-       left: -20%;
+
+        bottom:-50%;
+        left: 2%;
+        width: 70%;
+        height: 70%; 
     }
     
     .pine5 {
-       bottom:-20%;
-        right: -55%;
+       bottom:-25%;
+        right: 2%;
+        width: 65%;
+        height: 65%; 
     }
     
     .pine7 {
-        display: none;
+        top:45%;
+        left: 2%;
+        width: 55%;
+        height: 55%; 
     }
-
 #information h2.text-right {
         font-size: 12vw;
     }

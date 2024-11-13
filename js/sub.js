@@ -19,7 +19,7 @@
         const scrollPos = $(window).scrollTop();
 
         // 上から1000px未満のときに「スクロールボタン」を表示し、他の位置では「ページトップボタン」を表示0
-        if (scrollPos < 500) {
+        if (scrollPos < 300) {
             $('.scroolwrap').fadeIn(); // スクロールボタンを表示
             $('.pagetopwrap').fadeOut(); // ページトップボタンは非表示
         } else {
@@ -38,6 +38,11 @@
    // ページトップボタンのクリックで#WORKSに移動
 $('.pagetopwrap').click(function () {
 $('html, body').animate({ scrollTop: $('/banner-list.html').offset().top }, 'smooth');
+return false;
+});
+   // ページトップボタンのクリックで#WORKSに移動
+$('.pagetopwrap').click(function () {
+$('html, body').animate({ scrollTop: $('/website-list.html').offset().top }, 'smooth');
 return false;
 });
 

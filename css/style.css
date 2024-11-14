@@ -2100,7 +2100,7 @@ div text {
     }
 
     .sp-nav ul li {
-        margin: 5% auto;
+        margin: 10% auto;
         font-weight:bolder;
     }
 
@@ -2109,7 +2109,7 @@ div text {
         background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: 5vw;
+        font-size: 5.5vw;
         letter-spacing: 0.08em;
         text-decoration: none;
     }

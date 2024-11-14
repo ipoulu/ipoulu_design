@@ -488,7 +488,7 @@ body.appear #container {
 #mainvisual {
     width: 100%;
     height: 115vh;
-    background-color: #fff;
+    background: #fff;
     z-index: 2;
 
 }
@@ -630,7 +630,7 @@ h1 {
 #banner-list,
 #website-detail-1 {
     position: relative;
-    padding: 12% 0 8%;
+    padding: 15% 0 8%;
 }
 
 #banner-list,
@@ -754,14 +754,13 @@ h3 {
     border-image: linear-gradient(-45deg, #fbf7c4 0%, #804e00 50%, #b1ae8a 70%, #958d57 85%, #fbf7c4 100%) 1;
     /* グラデーションをボーダーに適用 */
     text-align: center;
-    z-index: -5;
+    z-index: -1;
     border-radius: 10px;
 
 
 }
 .pines {
     max-width:1200px;
-
     margin: 0 auto;
     position: relative;
 }
@@ -770,7 +769,7 @@ h3 {
     display: inline-block;
     position: fixed;
     top:-10%;
-    left:3%;
+    left:5%;
     width: 45%;
     height: 45%; 
     background-image: url('../images/pine.svg'); 
@@ -2622,7 +2621,7 @@ div text {
         font-size: 12vw;
     }
     #contactform h2.text-right {
-        font-size: 11.5vw;
+        font-size: 11vw;
         padding-left: -5px;
     }
     #spl-logo {

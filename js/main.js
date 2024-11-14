@@ -42,7 +42,7 @@ $(window).on('load', function () {
     setTimeout(() => {
         $('.slide-in').addClass('slideAnime')
         $('.slide-in').children('span').addClass('slideAnimeReverse')
-    }, 3000);
+    }, 3500);
 
     const currentURL = window.location.href;
 

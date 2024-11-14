@@ -426,7 +426,7 @@ body.appear #container {
     }
 }
 .page-title {
-    font-size:14vw;
+    font-size:13vw;
     letter-spacing:.05em;
     font-family: 'DreamAvenue', sans-serif;
    background: linear-gradient(-2deg, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
@@ -774,7 +774,7 @@ h3 {
     width: 45%;
     height: 45%; 
     background-image: url('../images/pine.svg'); 
-    opacity: .1;
+    opacity: .04;
     background-repeat: no-repeat; 
     transform: rotate(-20deg); 
     z-index: -2;
@@ -789,7 +789,7 @@ h3 {
     height: 40%; 
     z-index: -2;
     background-image: url('../images/pine.svg'); 
-    opacity: .1;
+    opacity: .04;
     background-repeat: no-repeat; 
     transform: rotate(-15deg); 
     transform: rotate(15deg);
@@ -804,7 +804,7 @@ h3 {
     height: 30%; 
     z-index: -2;
     background-image: url('../images/pine.svg'); 
-    opacity: .1;
+    opacity: .04;
     transform: rotate(-20deg);
 }
 
@@ -817,7 +817,7 @@ h3 {
     height: 60%; 
     z-index: -2;
     background-image: url('../images/pine.svg'); 
-    opacity: .1;
+    opacity: .04;
     transform: rotate(-20deg);
 }
 
@@ -830,7 +830,7 @@ h3 {
     height: 50%; 
     z-index: -2;
     background-image: url('../images/pine.svg'); 
-    opacity: .1;
+    opacity: .04;
     transform: rotate(23deg);
 }
 
@@ -843,7 +843,7 @@ h3 {
     height: 35%; 
     z-index: -2;
     background-image: url('../images/pine.svg'); 
-    opacity: .1;
+    opacity: .04;
     transform: rotate(25deg);
 }
 
@@ -1937,7 +1937,29 @@ div text {
 
 }
 @media screen and (max-width: 768px) {
-
+    .rainbow-1, .rainbow-2, .rainbow-3, .rainbow-4, .rainbow-5 {
+        height: 3%;
+    }
+    .rainbow-1 {
+        bottom: 25%;
+    }
+    
+    .rainbow-2 {
+        bottom: 21%;
+    }
+    
+    .rainbow-3 {
+        bottom: 17%;
+    }
+    
+    .rainbow-4 {
+        bottom: 13%;
+    }
+    
+    .rainbow-5 {
+        bottom: 9%;
+    }
+    
     
     body {
         font-size: 3.64vw;
@@ -2092,7 +2114,7 @@ div text {
         text-decoration: none;
     }
     .page-title {
-        font-size: 12vw;
+        font-size: 14.5vw;
     }
     /* -----mainvisual---- */
     #mainvisual {
@@ -2156,7 +2178,6 @@ div text {
         margin: 80px 15px;
         border: 5px solid transparent;
         border-image: linear-gradient(-45deg, #fbf7c4 0%, #804e00 50%, #b1ae8a 70%, #958d57 85%, #fbf7c4 100%) 1;
-        border-radius: 10px;
         z-index: -1;
     }
 
@@ -2605,6 +2626,14 @@ div text {
         padding-left: -5px;
     }
     #spl-logo {
-        font-size: 3vw;
+        font-size:4vw;
+        letter-spacing: .2em;
+        line-height: 2.5;
+    }
+    .logoname {
+        width: 100%;
+        font-size:4.35vw;
+       padding-top: 30px;
+        letter-spacing: .2em;
     }
 }

@@ -2113,7 +2113,7 @@ div text {
         text-decoration: none;
     }
     .page-title {
-        font-size: 14.5vw;
+        font-size: 14vw;
     }
     /* -----mainvisual---- */
     #mainvisual {
@@ -2622,17 +2622,16 @@ div text {
     }
     #contactform h2.text-right {
         font-size: 11vw;
-        padding-left: -5px;
+        padding-left: -10px;
     }
     #spl-logo {
-        font-size:4vw;
+        font-size:3vw;
         letter-spacing: .2em;
-        line-height: 2.5;
+        line-height: 1.8;
     }
     .logoname {
         width: 100%;
-        font-size:4.35vw;
-       padding-top: 30px;
+        font-size:4vw;
         letter-spacing: .2em;
     }
 }

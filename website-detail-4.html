@@ -136,13 +136,13 @@
 
         <a href="#mainvisual">
             <div class="pagetopwrap">
-                <div class="pagetop">
+                <div class="pagetop websitetop">
                     <svg viewBox="0 0 100 100">
                         <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
                         <text>
                             <textPath xlink:href="#circle">
-                                WEBSITE&thinsp;
-                                WEBSITE&thinsp;
+                                WEBSITETOP&thinsp;
+                                WEBSITETOP&thinsp;
                             </textPath>
                         </text>
                     </svg>
@@ -174,7 +174,7 @@
                 const scrollPos = $(window).scrollTop();
 
                 // 上から1000px未満のときに「スクロールボタン」を表示し、他の位置では「ページトップボタン」を表示
-                if (scrollPos < 1000) {
+                if (scrollPos < 1500) {
                     $('.scroolwrap').fadeIn(); // スクロールボタンを表示
                     $('.pagetopwrap').fadeOut(); // ページトップボタンは非表示
                 } else {

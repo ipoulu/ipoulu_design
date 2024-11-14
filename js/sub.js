@@ -14,7 +14,7 @@
     }
     const path = location.pathname.split('/')
     const file = path[path.length - 1]
-    if (file != 'banner-list.html') {
+    if (file != 'banner-list.html'&&file !='website-list.html'&&file !='website-detail-1.html'&&file !='website-detail-2.html'&&file !='website-detail-3.html') {
     window.addEventListener('scroll', function () {
         const scrollPos = $(window).scrollTop();
 

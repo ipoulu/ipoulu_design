@@ -1134,7 +1134,7 @@ h3 {
 .skill {
     width: 300px;
     height: auto;
-    padding: 20px;
+    padding: 20px 10px;
     margin-bottom: 50px;
     background: linear-gradient(125deg,
             rgba(247, 238, 227, 0.25),
@@ -1205,7 +1205,7 @@ h3 {
 
 .icon-img {
     height: 70px;
-    padding: 10px;
+    padding: 5px;
     opacity: 0;
 }
 
@@ -1258,7 +1258,7 @@ h3 {
     justify-content: center;
     height: 80px;
     align-items: center;
-    margin: 10% auto;
+    margin: 3% auto;
 }
 
 .contactform-icon img {
@@ -1436,19 +1436,19 @@ div text {
     fill: #804e00;
     font-weight:bolder;
     font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.45rem;
+    letter-spacing: 0.1rem;
 }
 .websitetop text {
     fill: #804e00;
     font-weight:bolder;
     font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.17rem;
 }
 .bannertop text {
     fill: #804e00;
     font-weight:bolder;
     font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.25rem;
+    letter-spacing: 0.23rem;
 }
 
 @keyframes donut-spin {
@@ -1464,7 +1464,7 @@ div text {
     line-height: 1;
     position: relative;
     width: 0.1em;
-    height: 1.3em;
+    height: 3vh;
     background: currentColor;
     animation: arrow-bounce 1s infinite;
 }
@@ -1509,7 +1509,7 @@ div text {
     line-height: 1;
     position: relative;
     width: 0.1em;
-    height: 1.3em;
+    height: 3vh;
     background: currentColor;
     animation: arrow-bounce 1s infinite;
 }
@@ -1590,7 +1590,7 @@ div text {
 }
 
 .profile-story {
-    /* width: 500px; */
+    max-width:500px;
     margin: 0 auto;
     letter-spacing: 0.045em;
     line-height: 3.18;
@@ -1743,7 +1743,7 @@ div text {
 
 .detail-text {
     width: 70%;
-    line-height: 1.75;
+    line-height: 2;
 }
 
 .banner-detail-img {
@@ -1786,7 +1786,7 @@ div text {
 /* ----contactform---- */
 
 .contactform-text {
-    max-width: 600px;
+    max-width: 550px;
     margin: 0 auto ;
     text-align: left;
     line-height: 1.75em;
@@ -1805,7 +1805,7 @@ div text {
     padding-bottom: 24px;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     text-align: left;
 }
 
@@ -1818,11 +1818,12 @@ div text {
     letter-spacing: 0.045em;
     font-weight:bolder;
     font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .Form-Item-Label.isMsg {
     margin-top: 8px;
-    margin-bottom: auto;
+    margin-bottom:10px;
 }
 
 
@@ -1832,7 +1833,7 @@ div text {
     margin-left: 40px;
     padding-left: 1em;
     padding-right: 1em;
-    height: 48px;
+    height: 50px;
     flex: 1;
     width: 100%;
   
@@ -1853,7 +1854,7 @@ div text {
     margin-left: 40px;
     padding-left: 1em;
     padding-right: 1em;
-    height: 250px;
+    height: 350px;
     flex: 1;
     width: 85%;
     max-width: 100%;
@@ -1961,7 +1962,7 @@ div text {
     
     
     body {
-        font-size: 3.64vw;
+        font-size: 3.7vw;
     }
 
     header.hidden {
@@ -1985,8 +1986,8 @@ div text {
         right: 20px;
         /* 画面右端からの距離を設定 */
         cursor: pointer;
-        width: 60px;
-        height: 60px;
+        width: 13vw;
+        height: 13vw;
         border-radius: 5px;
         background-color: #fff;
         opacity: 0.8;
@@ -2019,14 +2020,14 @@ div text {
         top: 50%;
        left: 50%;
         transform: translate(-50%, -50%);
-        font-size: .8rem;
+        font-size: 2.3vw;
         font-family: 'DreamAvenue', sans-serif;
         font-weight:bolder;
-        letter-spacing: .2rem;
+        letter-spacing: .3rem;
         text-align: center;
         text-transform: uppercase;
         color: #804e00;
-        padding-left: 4px;
+        padding-left: 5px;
     }
 
     .openbtn span:nth-of-type(3) {
@@ -2088,12 +2089,13 @@ div text {
     .sp-nav ul {
         list-style-type: none;
         padding: 5%;
-        width: 80%;
+        max-width: 80%;
+        object-fit: cover;
         height:auto;
         position: absolute;
-        top: 50%;
+        top: 30%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -30%);
 
 
     }
@@ -2108,13 +2110,13 @@ div text {
         background: linear-gradient(-65deg, #804e00, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #804e00, #c2a54c, #b0923f, #c2a54c, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c, #b0923f, #804e00, #c2a54c, #b0923f, #b0923f, #804e00, #c2a54c, #b0923f, #c2a54c);
         -webkit-background-clip: text;
         color: transparent;
-        font-size: 5.5vw;
+        font-size: 8vw;
         letter-spacing: 0.08em;
         text-decoration: none;
     }
-    .page-title {
-        font-size: 14vw;
-    }
+    /* .page-title {
+        font-size: 13.5vw;
+    } */
     /* -----mainvisual---- */
     #mainvisual {
         height: 100vh;
@@ -2139,9 +2141,9 @@ div text {
         height: auto;
         padding: 3%;
         position: absolute;
-        top: 3%;
+        top: 2%;
         left: 50%;
-        transform: translate(-50%, -3%);
+        transform: translate(-50%, -2%);
         z-index: 1;
     }
 
@@ -2193,12 +2195,12 @@ div text {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 20% auto 0;
+        margin: 10% auto 0;
         font-size: 4.68vw;
         font-weight:bolder;
     }
     #works a.link {
-        margin: 10% auto;
+        margin: 20% auto;
     }
     /* ----about---- */
 /* #about {
@@ -2287,10 +2289,8 @@ div text {
     }
 
     .icon-img {
-        width:80px ;
+        width:62px ;
         height: auto;
-        padding: 10px;
-
     }
 
     /* ----information---- */
@@ -2398,6 +2398,7 @@ div text {
 
 .website-performance-img {
     width: 580px;
+    margin-top: 50px;
 }
 
 .performance-name {
@@ -2448,7 +2449,8 @@ div text {
     border: none;
 }
 .banner-detail-img {
-    width: 350px;
+    width: 50vw;
+    height: 50vw;
     object-fit: cover;
     margin: 0 0 50px -37px;
     /* border: 1px solid blue; */
@@ -2538,7 +2540,7 @@ div text {
 
 .Form-Item-Label.isMsg {
     margin-top: 8px;
-    margin-bottom: auto;
+    margin-bottom: 10px;
 }
 
 
@@ -2565,7 +2567,7 @@ div text {
 }
 
 .contactform-text {
-    padding: 10% 3%;
+    padding: 15% 3%;
 }
 }
 

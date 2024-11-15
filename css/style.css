@@ -595,7 +595,7 @@ h1 {
             #f2cac4,
             #c1e4e6,
             #9fd2c9);
-            padding: 2% 10%;
+            padding: 2% 5%;
     position: absolute;
     top: 80px;
     left: -3%;
@@ -650,7 +650,7 @@ h1 {
             #9fd2c9);
     background-size: 400% 400%;
     /* アニメーションのためのサイズ */
-    padding: 2% 10%;
+    padding: 2% 5%;
     position: absolute;
     top: 80px;
     right: -3%;
@@ -1465,7 +1465,7 @@ div text {
     line-height: 1;
     position: relative;
     width: 0.1em;
-    height: 3vh;
+    height: 2.5vh;
     background: currentColor;
     animation: arrow-bounce 1s infinite;
 }
@@ -1510,7 +1510,7 @@ div text {
     line-height: 1;
     position: relative;
     width: 0.1em;
-    height: 3vh;
+    height: 2.5vh;
     background: currentColor;
     animation: arrow-bounce 1s infinite;
 }

@@ -769,7 +769,7 @@ h3 {
     display: inline-block;
     position: fixed;
     top:-10%;
-    left:5%;
+    left:7%;
     width: 45%;
     height: 45%; 
     background-image: url('../images/pine.svg'); 
@@ -959,7 +959,7 @@ h3 {
     /* 初期状態は透明 */
     transform: translateY(20px);
     /* 下にずらす */
-    transition: opacity 2s ease, transform 5s ease;
+    transition: opacity 2s ease, transform 3s ease;
     /* アニメーションの効果 */
 }
 

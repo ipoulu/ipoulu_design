@@ -18,7 +18,7 @@
     window.addEventListener('scroll', function () {
         const scrollPos = $(window).scrollTop();
 
-        // 上から1000px未満のときに「スクロールボタン」を表示し、他の位置では「ページトップボタン」を表示0
+        
         if (scrollPos < 300) {
             $('.scroolwrap').fadeIn(); // スクロールボタンを表示
             $('.pagetopwrap').fadeOut(); // ページトップボタンは非表示
@@ -159,7 +159,7 @@ const details = document.querySelectorAll('.detail,.detail-taitle ');
 const observer = new IntersectionObserver(entries => {
 entries.forEach(entry => {
     if (entry.isIntersecting) {
-        entry.target.classList.add('show-border'); // クラスを追加
+        entry.target.classList.add('show-border'); 
         observer.unobserve(entry.target); // 一度表示されたら監視を停止
     }
 });

@@ -83,7 +83,7 @@ $(window).on('load', function () {
     // stroke.play(); // SVGアニメーションの実行
     setTimeout(function () {
         // stroke.play();
-    }, 30000);
+    }, 500);
 });
 });
 

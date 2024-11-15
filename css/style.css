@@ -448,7 +448,7 @@ body.appear #container {
     margin-right: 30px;
 }
 .slideAnime {
-    animation: slideText 4s forwards;
+    animation: slideText 2s forwards;
     opacity: 0;
 }
 
@@ -464,7 +464,7 @@ body.appear #container {
 }
 
 .slideAnimeReverse {
-    animation: slideTextReverse 4s forwards;
+    animation: slideTextReverse 2s forwards;
     opacity: 0;
 }
 
@@ -959,7 +959,7 @@ h3 {
     /* 初期状態は透明 */
     transform: translateY(20px);
     /* 下にずらす */
-    transition: opacity 3s ease, transform 5s ease;
+    transition: opacity 2s ease, transform 5s ease;
     /* アニメーションの効果 */
 }
 

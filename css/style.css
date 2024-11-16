@@ -1178,6 +1178,7 @@ h3 {
     line-height: 1.5;
     text-align: left;
     margin: 0 3%;
+    height: 80px;
 }
 
 @keyframes fadeup {

@@ -152,11 +152,11 @@ header {
 
 }
 
-/* header.hidden {
+header.hidden {
 
     top: -100px;
-    /* ヘッダーが隠れる位置 */
-
+    /* ヘッダーが隠れる位置*/
+}
 
 .pc-nav li {
     font-family: 'DreamAvenue', sans-serif;
@@ -1369,7 +1369,7 @@ footer {
 }
 
 .scroll {
-    font-size: 18px;
+    font-size: 17px;
     display: flex;
     justify-content: center;
     /* 水平方向中央 */
@@ -1395,7 +1395,7 @@ footer {
 }
 
 .pagetop {
-    font-size: 18px;
+    font-size: 17px;
     animation: donut-spin 10s linear infinite;
     display: flex;
     justify-content: center;
@@ -1436,18 +1436,21 @@ div path {
 }
 
 div text {
+    font-size: 17px;
     fill: #804e00;
     font-weight:bolder;
     font-family: 'DreamAvenue', sans-serif;
     letter-spacing: 0.115rem;
 }
 .websitetop text {
+    font-size: 17px;
     fill: #804e00;
     font-weight:bolder;
     font-family: 'DreamAvenue', sans-serif;
     letter-spacing: 0.165rem;
 }
 .bannertop text {
+    font-size: 17px;
     fill: #804e00;
     font-weight:bolder;
     font-family: 'DreamAvenue', sans-serif;

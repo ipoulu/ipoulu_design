@@ -137,11 +137,12 @@ $(function () {
     });
     window.addEventListener('scroll', function () {
         const scrollPos = $(this).scrollTop();
+        const mainvisualOffset = $('#mainvisual').offset().top;
         const aboutOffset = $('#about').offset().top;
         const skillsOffset = $('#skills').offset().top;
         const worksOffset = $('#works').offset().top;
 
-        if (scrollPos >= aboutOffset && scrollPos < skillsOffset) {
+        if (scrollPos >= mainvisualOffset && scrollPos < skillsOffset) {
             $('.scroolwrap').fadeIn();
             $('.pagetopwrap').fadeOut();
         } else if (scrollPos >= skillsOffset) {

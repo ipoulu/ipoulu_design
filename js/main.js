@@ -61,9 +61,6 @@ $(window).on('load', function () {
         // ローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
         $("#spl").delay(2000).fadeOut('slow', function () {
             $('body').addClass('appear'); // フェードアウト後bodyにappearクラス付与
-            // stroke.play();
-
-            // <div id="container">を表示
             $('#container').fadeIn('slow'); // フェードインで表示する処理
             if($(window).width()<768){
                 $('.openbtn').fadeIn();

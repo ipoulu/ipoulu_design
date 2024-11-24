@@ -1423,10 +1423,11 @@ div path {
 }
 
 .scroolwrap text {
+    font-size: 17px;
     fill: #804e00;
     font-weight:bolder;
     font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.215rem;
+    letter-spacing: 0.24rem;
 }
 
 @keyframes donut-spin {
@@ -1440,7 +1441,7 @@ div text {
     fill: #804e00;
     font-weight:bolder;
     font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.115rem;
+    letter-spacing: 0.14rem;
 }
 .websitetop text {
     font-size: 17px;
@@ -1454,7 +1455,7 @@ div text {
     fill: #804e00;
     font-weight:bolder;
     font-family: 'DreamAvenue', sans-serif;
-    letter-spacing: 0.25rem;
+    letter-spacing: 0rem;
 }
 
 @keyframes donut-spin {

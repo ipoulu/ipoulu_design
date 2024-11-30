@@ -770,7 +770,7 @@ h3 {
     display: inline-block;
     position: fixed;
     top:-10%;
-    left:7%;
+    left:12%;
     width: 45%;
     height: 45%; 
     background-image: url('../images/pine.svg'); 
@@ -825,7 +825,7 @@ h3 {
     display: inline-block;
     position: fixed;
    bottom:-5%;
-    right: -10%;
+    right: -6%;
     width: 50%;
     height: 50%; 
     z-index: -2;

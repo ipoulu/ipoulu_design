@@ -149,7 +149,6 @@ header {
     background-color: rgb(255, 255, 255, 1);
     transition: top 0.3s;
     /* アニメーション効果 */
-
 }
 
 header.hidden {
@@ -1471,7 +1470,7 @@ div text {
     line-height: 1;
     position: relative;
     width: 0.1em;
-    height: 2.5vh;
+    height: 1.5rem;
     background: currentColor;
     animation: arrow-bounce 1s infinite;
 }

@@ -849,6 +849,7 @@ h3 {
 #about .link {
     width: 19.76vw;
     height: 4.98vw;
+    margin:  0 auto;
     border: #b0923f 1px solid;
     font-family: 'DreamAvenue', sans-serif;
     display: flex;
@@ -932,9 +933,10 @@ h3 {
 
 /* ----about---- */
 .about-text {
-    max-width: 550px;
+    max-width: 600px;
+    margin: 0 auto;
     margin-top: 23%;
-    margin-left: 38%;
+   
     text-align: left;
 }
 
@@ -1083,7 +1085,7 @@ h3 {
 }
 
 .website_image {
-    width: 680px;
+    width: 600px;
     margin: 0 30px;
 }
 
@@ -1111,7 +1113,7 @@ h3 {
 
 .banner_image {
     width: auto;
-    height: 400px;
+    height: 300px;
     /* 画像の高さを400pxに指定 */
     margin: 0 30px;
     object-fit: cover;
@@ -1179,7 +1181,7 @@ h3 {
     text-align: left;
     margin: 3% 15%;
     height:     130px;
-    font-size: 16px;
+    font-size: 16px;XZxxzsx
 }
 
 @keyframes fadeup {
@@ -2293,10 +2295,10 @@ div text {
     .skill-title {
       margin: 0 auto;
     }
-
+/* 
     .skill-text {
         font-size: 3.64vw;
-    }
+    } */
 
     .icon-img {
         width:70px ;

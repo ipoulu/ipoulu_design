@@ -1181,7 +1181,7 @@ h3 {
     text-align: left;
     margin: 3% 15%;
     height:     130px;
-    font-size: 16px;XZxxzsx
+    font-size: 20px;
 }
 
 @keyframes fadeup {
@@ -1235,7 +1235,7 @@ h3 {
 /* ----information---- */
 #information {
     padding-bottom: 50px;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 
@@ -1317,6 +1317,7 @@ footer {
     letter-spacing: .07em;
     line-height: 20px;
     text-align: center;
+    font-size: 14px;
 }
 
 .footer-rainbow-1 {
@@ -1735,7 +1736,7 @@ div text {
     width: 600px;
     text-align: left;
     margin: 50px auto;
-    font-size: 16px;
+    /* font-size: 16px; */
 }
 
 .detail {
